@@ -74,6 +74,7 @@ namespace TechSupport
             this.userTextBox.Name = "userTextBox";
             this.userTextBox.Size = new System.Drawing.Size(199, 20);
             this.userTextBox.TabIndex = 0;
+            this.userTextBox.TextChanged += new System.EventHandler(this.ClearErrors);
             // 
             // passwordTextBox
             // 
@@ -82,6 +83,7 @@ namespace TechSupport
             this.passwordTextBox.Size = new System.Drawing.Size(199, 20);
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
+            this.passwordTextBox.TextChanged += new System.EventHandler(this.ClearErrors);
             // 
             // loginButton
             // 

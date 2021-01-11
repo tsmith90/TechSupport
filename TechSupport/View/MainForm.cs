@@ -12,10 +12,16 @@ namespace TechSupport.View
             nameLabel.Text = LoginForm.UserName;
         }
 
+        private void logoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LoginForm newLoginForm = new LoginForm();
+            newLoginForm.Show();
+            this.Hide();
+        }
+
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

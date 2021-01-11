@@ -29,6 +29,11 @@ namespace TechSupport
             }
         }
 
+        private void ClearErrors(object sender, EventArgs e)
+        {
+            errorTextBox.Text = "";
+        }
+
         private void loginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
