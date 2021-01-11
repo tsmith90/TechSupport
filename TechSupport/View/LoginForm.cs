@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TechSupport.View;
 
 namespace TechSupport
 {
@@ -17,22 +18,14 @@ namespace TechSupport
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void errorsLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             if (userTextBox.Text == "Jane" &&
                 passwordTextBox.Text == "test1234")
             {
-                MessageBox.Show("it's correct");
+                this.Hide();
+                var mainForm = new MainForm();
+                mainForm.Show();
             }
             else
             {
