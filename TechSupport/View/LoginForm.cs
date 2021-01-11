@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechSupport
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
         }
@@ -25,6 +25,19 @@ namespace TechSupport
         private void errorsLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            if (userTextBox.Text == "Jane" &&
+                passwordTextBox.Text == "test1234")
+            {
+                MessageBox.Show("it's correct");
+            }
+            else
+            {
+                errorTextBox.Text = "invalid username/password";
+            }
         }
     }
 }

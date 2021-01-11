@@ -1,7 +1,7 @@
 ﻿
 namespace TechSupport
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,6 +34,7 @@ namespace TechSupport
             this.errorsLabel = new System.Windows.Forms.Label();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
             this.errorTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -84,28 +85,41 @@ namespace TechSupport
             this.passwordTextBox.TabIndex = 1;
             this.passwordTextBox.UseSystemPasswordChar = true;
             // 
+            // loginButton
+            // 
+            this.loginButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.loginButton.Location = new System.Drawing.Point(218, 281);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(100, 50);
+            this.loginButton.TabIndex = 2;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
             // errorTextBox
             // 
+            this.errorTextBox.ForeColor = System.Drawing.Color.Red;
             this.errorTextBox.Location = new System.Drawing.Point(172, 228);
             this.errorTextBox.Name = "errorTextBox";
-            this.errorTextBox.ReadOnly = true;
             this.errorTextBox.Size = new System.Drawing.Size(199, 20);
-            this.errorTextBox.TabIndex = 0;
+            this.errorTextBox.TabIndex = 100;
             this.errorTextBox.TabStop = false;
             // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
             this.Controls.Add(this.errorTextBox);
+            this.Controls.Add(this.loginButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.userTextBox);
             this.Controls.Add(this.errorsLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.userNameLabel);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LoginForm";
+            this.Text = "LoginForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,6 +132,7 @@ namespace TechSupport
         private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox errorTextBox;
     }
 }
