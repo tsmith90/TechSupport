@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.View;
 
@@ -13,16 +6,19 @@ namespace TechSupport
 {
     public partial class LoginForm : Form
     {
+        public static string UserName { get; private set; }
+        
         public LoginForm()
         {
             InitializeComponent();
         }
 
-        private void loginButton_Click(object sender, EventArgs e)
+        private void LoginButtonClick(object sender, EventArgs e)
         {
-            if (userTextBox.Text == "Jane" &&
-                passwordTextBox.Text == "test1234")
+            if ((userTextBox.Text == "Jane") &&
+                (passwordTextBox.Text == "test1234"))
             {
+                UserName = userTextBox.Text;
                 this.Hide();
                 var mainForm = new MainForm();
                 mainForm.Show();
@@ -31,6 +27,11 @@ namespace TechSupport
             {
                 errorTextBox.Text = "invalid username/password";
             }
+        }
+
+        private void loginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

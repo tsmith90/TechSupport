@@ -47,7 +47,6 @@ namespace TechSupport
             this.userNameLabel.TabIndex = 0;
             this.userNameLabel.Text = "Username: ";
             this.userNameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            
             // 
             // passwordLabel
             // 
@@ -68,7 +67,6 @@ namespace TechSupport
             this.errorsLabel.TabIndex = 99;
             this.errorsLabel.Text = "Error Message:";
             this.errorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-           
             // 
             // userTextBox
             // 
@@ -95,7 +93,7 @@ namespace TechSupport
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
-            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            this.loginButton.Click += new System.EventHandler(this.LoginButtonClick);
             // 
             // errorTextBox
             // 
@@ -123,6 +121,7 @@ namespace TechSupport
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.loginForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
