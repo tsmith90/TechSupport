@@ -7,7 +7,7 @@ namespace TechSupport
     public partial class LoginForm : Form
     {
         public static string UserName { get; private set; }
-        
+
         public LoginForm()
         {
             InitializeComponent();
@@ -34,7 +34,7 @@ namespace TechSupport
             errorTextBox.Text = "";
         }
 
-        private void loginForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Forms;
-
+﻿using System.Windows.Forms;
 
 namespace TechSupport.View
 {
@@ -12,7 +10,7 @@ namespace TechSupport.View
             nameLabel.Text = LoginForm.UserName;
         }
 
-        private void logoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LoginForm newLoginForm = new LoginForm();
             newLoginForm.Show();

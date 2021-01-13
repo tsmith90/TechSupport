@@ -53,7 +53,7 @@ namespace TechSupport.View
             this.logoutLink.TabStop = true;
             this.logoutLink.Text = "Logout";
             this.logoutLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLink_LinkClicked);
+            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
             // MainForm
             // 
