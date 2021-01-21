@@ -33,6 +33,8 @@ namespace TechSupport.View
             this.logoutLink = new System.Windows.Forms.LinkLabel();
             this.addIncidentButton = new System.Windows.Forms.Button();
             this.searchIncidentButton = new System.Windows.Forms.Button();
+            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -75,11 +77,23 @@ namespace TechSupport.View
             this.searchIncidentButton.Text = "Search Incident";
             this.searchIncidentButton.UseVisualStyleBackColor = true;
             // 
+            // incidentDataGridView
+            // 
+            this.incidentDataGridView.AllowUserToAddRows = false;
+            this.incidentDataGridView.AllowUserToDeleteRows = false;
+            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentDataGridView.Location = new System.Drawing.Point(21, 162);
+            this.incidentDataGridView.Name = "incidentDataGridView";
+            this.incidentDataGridView.ReadOnly = true;
+            this.incidentDataGridView.Size = new System.Drawing.Size(309, 178);
+            this.incidentDataGridView.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.incidentDataGridView);
             this.Controls.Add(this.searchIncidentButton);
             this.Controls.Add(this.addIncidentButton);
             this.Controls.Add(this.logoutLink);
@@ -90,6 +104,7 @@ namespace TechSupport.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,5 +115,6 @@ namespace TechSupport.View
         private System.Windows.Forms.LinkLabel logoutLink;
         private System.Windows.Forms.Button addIncidentButton;
         private System.Windows.Forms.Button searchIncidentButton;
+        private System.Windows.Forms.DataGridView incidentDataGridView;
     }
 }
