@@ -20,6 +20,20 @@ namespace TechSupport.Model
             {
                 throw new ArgumentException("Incident title cannot be null or empty", "title");
             }
+
+            if (string.IsNullOrEmpty(description))
+            {
+                throw new ArgumentException("Incident description cannot be null or empty", "description");
+            }
+
+            if(customerID < 0)
+            {
+                throw new ArgumentOutOfRangeException("customerID", "CustomerID must be a positive number");
+            }
+
+            this.Title = title;
+            this.Description = description;
+            this.CustomerID = customerID;
         }
     }
 }

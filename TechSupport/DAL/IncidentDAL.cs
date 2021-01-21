@@ -13,5 +13,21 @@ namespace TechSupport.DAL
         { 
         
         };
+
+        public List<Incident> GetIncidentCustomerID() 
+        {
+            return incidents;
+        }
+
+        public void Add(Incident incident)
+        {
+            if (incident == null)
+            {
+                throw new ArgumentNullException("Movie cannot be null");
+            }
+
+            incidents.Add(incident);
+        }
+
     }
 }
