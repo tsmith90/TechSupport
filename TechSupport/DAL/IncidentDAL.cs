@@ -11,7 +11,7 @@ namespace TechSupport.DAL
     {
         private static List<Incident> incidents = new List<Incident> 
         { 
-        
+            
         };
 
         public List<Incident> GetIncidentCustomerID() 

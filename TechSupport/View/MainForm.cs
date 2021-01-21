@@ -1,12 +1,16 @@
 ﻿using System.Windows.Forms;
+using TechSupport.Controller;
 
 namespace TechSupport.View
 {
     public partial class MainForm : Form
     {
+        private readonly IncidentController incidentController;
+
         public MainForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
+            this.incidentController = new IncidentController();
             nameLabel.Text = LoginForm.UserName;
         }
 
@@ -20,6 +24,17 @@ namespace TechSupport.View
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MainForm_Load(object sender, System.EventArgs e)
+        {
+            this.RefreshDataGrid();
+        }
+
+        private void RefreshDataGrid()
+        {
+            this.incidentDataGridView.DataSource = null;
+            this.incidentDataGridView.DataSource = this.incidentController.GetIncidentCustomerID();
         }
     }
 }

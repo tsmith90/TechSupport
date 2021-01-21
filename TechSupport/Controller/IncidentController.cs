@@ -17,7 +17,7 @@ namespace TechSupport.Controller
             this.incidentSource = new IncidentDAL();
         }
 
-        public List<Incident> getIncidentCustomerID() 
+        public List<Incident> GetIncidentCustomerID() 
         {
             return this.incidentSource.GetIncidentCustomerID();
         }
