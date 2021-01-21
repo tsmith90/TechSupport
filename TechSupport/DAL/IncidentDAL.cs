@@ -9,9 +9,9 @@ namespace TechSupport.DAL
 {
     public class IncidentDAL
     {
-        private static List<Incident> incidents = new List<Incident> 
-        { 
-            
+        private static List<Incident> incidents = new List<Incident>
+        {
+            new Incident("Sample", "Incident", 123)
         };
 
         public List<Incident> GetIncidentCustomerID() 

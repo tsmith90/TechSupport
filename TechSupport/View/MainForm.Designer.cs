@@ -67,6 +67,7 @@ namespace TechSupport.View
             this.addIncidentButton.TabIndex = 2;
             this.addIncidentButton.Text = "Add Incident";
             this.addIncidentButton.UseVisualStyleBackColor = true;
+            this.addIncidentButton.Click += new System.EventHandler(this.addIncidentButton_Click);
             // 
             // searchIncidentButton
             // 

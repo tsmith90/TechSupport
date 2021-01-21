@@ -36,5 +36,11 @@ namespace TechSupport.View
             this.incidentDataGridView.DataSource = null;
             this.incidentDataGridView.DataSource = this.incidentController.GetIncidentCustomerID();
         }
+
+        private void addIncidentButton_Click(object sender, System.EventArgs e)
+        {
+            Form addIncidentDialog = new AddIncidentDialog();
+            DialogResult result = addIncidentDialog.ShowDialog();
+        }
     }
 }
