@@ -31,6 +31,8 @@ namespace TechSupport.View
         {
             this.nameLabel = new System.Windows.Forms.Label();
             this.logoutLink = new System.Windows.Forms.LinkLabel();
+            this.addIncidentButton = new System.Windows.Forms.Button();
+            this.searchIncidentButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -55,11 +57,31 @@ namespace TechSupport.View
             this.logoutLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
+            // addIncidentButton
+            // 
+            this.addIncidentButton.Location = new System.Drawing.Point(21, 86);
+            this.addIncidentButton.Name = "addIncidentButton";
+            this.addIncidentButton.Size = new System.Drawing.Size(139, 56);
+            this.addIncidentButton.TabIndex = 2;
+            this.addIncidentButton.Text = "Add Incident";
+            this.addIncidentButton.UseVisualStyleBackColor = true;
+            // 
+            // searchIncidentButton
+            // 
+            this.searchIncidentButton.Location = new System.Drawing.Point(191, 86);
+            this.searchIncidentButton.Name = "searchIncidentButton";
+            this.searchIncidentButton.Size = new System.Drawing.Size(139, 56);
+            this.searchIncidentButton.TabIndex = 3;
+            this.searchIncidentButton.Text = "Search Incident";
+            this.searchIncidentButton.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 361);
+            this.Controls.Add(this.searchIncidentButton);
+            this.Controls.Add(this.addIncidentButton);
             this.Controls.Add(this.logoutLink);
             this.Controls.Add(this.nameLabel);
             this.MaximizeBox = false;
@@ -76,5 +98,7 @@ namespace TechSupport.View
 
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.LinkLabel logoutLink;
+        private System.Windows.Forms.Button addIncidentButton;
+        private System.Windows.Forms.Button searchIncidentButton;
     }
 }
