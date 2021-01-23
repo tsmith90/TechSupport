@@ -3,14 +3,16 @@ using System.Windows.Forms;
 using TechSupport.View;
 
 namespace TechSupport
-{
+
     public partial class LoginForm : Form
     {
-        public static string UserName { get; private set; }
+        public static string UserName { get; set; }
+        public static MainForm mainForm;
 
         public LoginForm()
         {
             InitializeComponent();
+            mainForm = new MainForm();
         }
 
         private void LoginButtonClick(object sender, EventArgs e)
@@ -20,18 +22,17 @@ namespace TechSupport
             {
                 UserName = userTextBox.Text;
                 this.Hide();
-                var mainForm = new MainForm();
                 mainForm.Show();
             }
             else
             {
-                errorTextBox.Text = "invalid username/password";
+                errorLabelBox.Text = "invalid username/password";
             }
         }
 
         private void ClearErrors(object sender, EventArgs e)
         {
-            errorTextBox.Text = "";
+            errorLabelBox.Text = "";
         }
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)

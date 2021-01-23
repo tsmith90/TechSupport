@@ -6,17 +6,17 @@ namespace TechSupport.View
     public partial class MainForm : Form
     {
         private readonly IncidentController incidentController;
+        public LoginForm newLoginForm;
 
         public MainForm()
-        {
+        {   
             this.InitializeComponent();
             this.incidentController = new IncidentController();
-            nameLabel.Text = LoginForm.UserName;
         }
 
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginForm newLoginForm = new LoginForm();
+            newLoginForm = new LoginForm();
             newLoginForm.Show();
             this.Hide();
         }
@@ -29,6 +29,7 @@ namespace TechSupport.View
         private void MainForm_Load(object sender, System.EventArgs e)
         {
             this.RefreshDataGrid();
+            nameLabel.Text = LoginForm.UserName;
         }
 
         private void RefreshDataGrid()
