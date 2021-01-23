@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -48,7 +47,7 @@ namespace TechSupport.Controller
         /// Method to search Incident objects
         /// </summary>
         /// <param name = "customerID">Searches the Incident list for certain objects with a given CustomerID</param>
-        public List<Incident> Search(int customerID)
+        public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
             List<Incident> searchedIncident = new List<Incident>();
 

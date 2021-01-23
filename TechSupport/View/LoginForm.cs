@@ -18,7 +18,6 @@ namespace TechSupport
         public LoginForm()
         {
             InitializeComponent();
-            mainForm = new MainForm();
         }
 
         /// <summary>
@@ -29,9 +28,11 @@ namespace TechSupport
             if ((userTextBox.Text == "Jane") &&
                 (passwordTextBox.Text == "test1234"))
             {
+                mainForm = new MainForm();
                 UserName = userTextBox.Text;
                 this.Hide();
-                mainForm.Show();
+                mainForm.ShowDialog();
+                this.Close();
             }
             else
             {

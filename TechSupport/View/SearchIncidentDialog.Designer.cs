@@ -30,11 +30,11 @@ namespace TechSupport.View
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
             this.incidentSearchButton = new System.Windows.Forms.Button();
-            this.cancelSearchButton = new System.Windows.Forms.Button();
             this.customerIDLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
+            this.cancelSearchButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,18 @@ namespace TechSupport.View
             this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 358);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // incidentDataGridView
+            // 
+            this.incidentDataGridView.AllowUserToAddRows = false;
+            this.incidentDataGridView.AllowUserToDeleteRows = false;
+            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentDataGridView.Location = new System.Drawing.Point(11, 147);
+            this.incidentDataGridView.Name = "incidentDataGridView";
+            this.incidentDataGridView.ReadOnly = true;
+            this.incidentDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.incidentDataGridView.Size = new System.Drawing.Size(284, 202);
+            this.incidentDataGridView.TabIndex = 0;
+            // 
             // incidentSearchButton
             // 
             this.incidentSearchButton.Location = new System.Drawing.Point(11, 3);
@@ -69,16 +81,6 @@ namespace TechSupport.View
             this.incidentSearchButton.Text = "Search Incidents";
             this.incidentSearchButton.UseVisualStyleBackColor = true;
             this.incidentSearchButton.Click += new System.EventHandler(this.incidentSearchButton_Click);
-            // 
-            // cancelSearchButton
-            // 
-            this.cancelSearchButton.Location = new System.Drawing.Point(302, 3);
-            this.cancelSearchButton.Name = "cancelSearchButton";
-            this.cancelSearchButton.Size = new System.Drawing.Size(157, 63);
-            this.cancelSearchButton.TabIndex = 2;
-            this.cancelSearchButton.Text = "Cancel Search";
-            this.cancelSearchButton.UseVisualStyleBackColor = true;
-            this.cancelSearchButton.Click += new System.EventHandler(this.cancelSearchButton_Click);
             // 
             // customerIDLabel
             // 
@@ -96,17 +98,15 @@ namespace TechSupport.View
             this.searchTextBox.Size = new System.Drawing.Size(197, 20);
             this.searchTextBox.TabIndex = 3;
             // 
-            // incidentDataGridView
+            // cancelSearchButton
             // 
-            this.incidentDataGridView.AllowUserToAddRows = false;
-            this.incidentDataGridView.AllowUserToDeleteRows = false;
-            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.incidentDataGridView.Location = new System.Drawing.Point(11, 147);
-            this.incidentDataGridView.Name = "incidentDataGridView";
-            this.incidentDataGridView.ReadOnly = true;
-            this.incidentDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.incidentDataGridView.Size = new System.Drawing.Size(285, 202);
-            this.incidentDataGridView.TabIndex = 0;
+            this.cancelSearchButton.Location = new System.Drawing.Point(301, 3);
+            this.cancelSearchButton.Name = "cancelSearchButton";
+            this.cancelSearchButton.Size = new System.Drawing.Size(157, 63);
+            this.cancelSearchButton.TabIndex = 2;
+            this.cancelSearchButton.Text = "Cancel Search";
+            this.cancelSearchButton.UseVisualStyleBackColor = true;
+            this.cancelSearchButton.Click += new System.EventHandler(this.cancelSearchButton_Click);
             // 
             // SearchIncidentDialog
             // 

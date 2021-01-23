@@ -57,7 +57,7 @@ namespace TechSupport.View
             this.incidentDataGridView.DataSource = null;
 
             ///fix the second part of this statement and add parameter to the comment
-            this.incidentDataGridView.DataSource = this.incidentController.Search(id);
+            this.incidentDataGridView.DataSource = this.incidentController.SearchIncidentsByCustomerID(id);
         }
     }
 }

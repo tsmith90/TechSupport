@@ -26,8 +26,9 @@ namespace TechSupport.View
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             newLoginForm = new LoginForm();
-            newLoginForm.Show();
             this.Hide();
+            newLoginForm.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
@@ -59,12 +60,12 @@ namespace TechSupport.View
         /// <summary>
         /// Method to handle the Add Incident button event  
         /// </summary>
-        private void addIncidentButton_Click(object sender, System.EventArgs e)
+        private void AddIncidentButton_Click(object sender, System.EventArgs e)
         {
             Form addIncidentDialog = new AddIncidentDialog();
             DialogResult result = addIncidentDialog.ShowDialog();
 
-            if (result == DialogResult.OK) 
+            if (result == DialogResult.OK)
             {
                 this.RefreshDataGrid();
             }
@@ -73,7 +74,7 @@ namespace TechSupport.View
         /// <summary>
         /// Method to handle the Search Incident button event   
         /// </summary>
-        private void searchIncidentButton_Click(object sender, System.EventArgs e)
+        private void SearchIncidentButton_Click(object sender, System.EventArgs e)
         {
             Form searchIncidentDialog = new SearchIncidentDialog();
             DialogResult result = searchIncidentDialog.ShowDialog();
