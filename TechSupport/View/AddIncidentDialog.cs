@@ -5,6 +5,9 @@ using TechSupport.Model;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Class to represent a Add Incident form   
+    /// </summary>
     public partial class AddIncidentDialog : Form
     {
         #region Data members
@@ -14,6 +17,10 @@ namespace TechSupport.View
         #endregion
 
         #region Constructors
+
+        /// <summary>
+        /// 0-parameter constructor for the AddIncidentDialog class    
+        /// </summary>
         public AddIncidentDialog()
         {
             InitializeComponent();
@@ -22,6 +29,11 @@ namespace TechSupport.View
         #endregion
 
         #region Methods
+
+
+        /// <summary>
+        /// Event handler for the add button   
+        /// </summary>
         private void AddButton_Click(object sender, System.EventArgs e)
         {
             try
@@ -40,11 +52,14 @@ namespace TechSupport.View
             }
         }
 
-        #endregion
-
+        /// <summary>
+        /// Event handler for the cancel button   
+        /// </summary>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
         }
+
+        #endregion
     }
 }
