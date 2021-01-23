@@ -30,7 +30,6 @@ namespace TechSupport.View
 
         #region Methods
 
-
         /// <summary>
         /// Event handler for the add button   
         /// </summary>

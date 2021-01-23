@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TechSupport.Model
 {
+    /// <summary>
+    /// Model for the Incident object
+    /// </summary>
     public class Incident
     {
         public string Title { get; }
@@ -14,6 +13,12 @@ namespace TechSupport.Model
 
         public int CustomerID { get; }
 
+        /// <summary>
+        /// Method to handle the Add Incident button event  
+        /// </summary>
+        /// <param name = "title">The title of the incident</param>
+        /// <param name = "description">The description of the incident</param> 
+        /// <param name = "customerID">The customerID of the incident (int)</param> 
         public Incident(string title, string description, int customerID)
         {
             if (string.IsNullOrEmpty(title))
