@@ -41,5 +41,10 @@ namespace TechSupport.View
         }
 
         #endregion
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

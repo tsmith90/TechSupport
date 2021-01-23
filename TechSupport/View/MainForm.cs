@@ -63,6 +63,11 @@ namespace TechSupport.View
         {
             Form addIncidentDialog = new AddIncidentDialog();
             DialogResult result = addIncidentDialog.ShowDialog();
+
+            if (result == DialogResult.OK) 
+            {
+                this.RefreshDataGrid();
+            }
         }
     }
 }
