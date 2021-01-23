@@ -16,5 +16,10 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        private void cancelSearchButton_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }
