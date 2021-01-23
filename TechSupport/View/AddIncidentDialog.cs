@@ -41,7 +41,7 @@ namespace TechSupport.View
                 var description = this.descriptionTextBox.Text;
                 var customerID = int.Parse(this.customerIDTextBox.Text);
 
-                this.incidentController.Add(new Incident(title, description, customerID));
+                this.incidentController.AddIncident(new Incident(title, description, customerID));
                 this.DialogResult = DialogResult.OK;
             }
             catch (Exception ex)

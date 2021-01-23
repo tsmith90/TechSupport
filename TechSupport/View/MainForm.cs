@@ -53,7 +53,7 @@ namespace TechSupport.View
         private void RefreshDataGrid()
         {
             this.incidentDataGridView.DataSource = null;
-            this.incidentDataGridView.DataSource = this.incidentController.GetIncidentCustomerID();
+            this.incidentDataGridView.DataSource = this.incidentController.GetIncidents();
         }
 
         /// <summary>
@@ -70,6 +70,9 @@ namespace TechSupport.View
             }
         }
 
+        /// <summary>
+        /// Method to handle the Search Incident button event   
+        /// </summary>
         private void searchIncidentButton_Click(object sender, System.EventArgs e)
         {
             Form searchIncidentDialog = new SearchIncidentDialog();

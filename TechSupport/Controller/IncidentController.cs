@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -21,25 +22,25 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
-        /// Method to get the list of Incident objects according to the customerID 
+        /// Method to get the list of Incidents 
         /// </summary>
-        public List<Incident> GetIncidentCustomerID() 
+        public List<Incident> GetIncidents() 
         {
-            return this.incidentSource.GetIncidentCustomerID();
+            return this.incidentSource.GetIncidents();
         }
 
         /// <summary>
         /// Method to add Incident objects to the application list
         /// </summary>
         /// <param name = "incident">A complete Incident object to be added to the list</param>
-        public void Add(Incident incident)
+        public void AddIncident(Incident incident)
         {
             if (incident == null)
             {
                 throw new ArgumentNullException("Incident cannot be null");
             }
 
-            this.incidentSource.Add(incident);
+            this.incidentSource.AddIncident(incident);
         }
 
 
@@ -49,7 +50,14 @@ namespace TechSupport.Controller
         /// <param name = "customerID">Searches the Incident list for certain objects with a given CustomerID</param>
         public List<Incident> Search(int customerID)
         {
-            return null;
+            List<Incident> searchedIncident = new List<Incident>();
+
+            foreach(Incident incident in this.GetIncidents())
+            {
+                searchedIncident.Add(incident);
+            }
+
+            return searchedIncident;
         }
     }
 }

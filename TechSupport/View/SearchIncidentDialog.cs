@@ -39,7 +39,8 @@ namespace TechSupport.View
             try
             {
                 var customerID = int.Parse(this.searchTextBox.Text);
-                this.RefreshDataGrid();
+                this.RefreshDataGrid(customerID);
+                this.searchTextBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -51,10 +52,12 @@ namespace TechSupport.View
         /// <summary>
         /// Method to refresh the data grid
         /// </summary>
-        private void RefreshDataGrid()
+        private void RefreshDataGrid(int id)
         {
             this.incidentDataGridView.DataSource = null;
-            this.incidentDataGridView.DataSource = this.incidentController.GetIncidentCustomerID();
+
+            ///fix the second part of this statement and add parameter to the comment
+            this.incidentDataGridView.DataSource = this.incidentController.Search(id);
         }
     }
 }

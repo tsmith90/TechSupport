@@ -7,23 +7,36 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// DAL class to store the data for Incident objects   
+    /// </summary>
     public class IncidentDAL
     {
+        /// <summary>
+        /// The list of currently stored Incident objects   
+        /// </summary>
         private static List<Incident> incidents = new List<Incident>
         {
             new Incident("Sample", "Incident", 123)
         };
 
-        public List<Incident> GetIncidentCustomerID() 
+        /// <summary>
+        /// Method return the list of stored Incident objects  
+        /// </summary>
+        public List<Incident> GetIncidents() 
         {
             return incidents;
         }
 
-        public void Add(Incident incident)
+        /// <summary>
+        /// Method to add an Incident object
+        /// </summary>
+        /// <param name = "incident">preformatted object to be added to the incidents list.</param> 
+        public void AddIncident(Incident incident)
         {
             if (incident == null)
             {
-                throw new ArgumentNullException("Movie cannot be null");
+                throw new ArgumentNullException("Incident cannot be null");
             }
 
             incidents.Add(incident);
