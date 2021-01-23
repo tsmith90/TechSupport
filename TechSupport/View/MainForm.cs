@@ -9,7 +9,7 @@ namespace TechSupport.View
     public partial class MainForm : Form
     {
         private readonly IncidentController incidentController;
-        public LoginForm newLoginForm;
+        public LoginForm newLoginForm; 
 
         /// <summary>
         /// 0-parameter constructor for the MainForm class   
@@ -68,6 +68,12 @@ namespace TechSupport.View
             {
                 this.RefreshDataGrid();
             }
+        }
+
+        private void searchIncidentButton_Click(object sender, System.EventArgs e)
+        {
+            Form searchIncidentDialog = new SearchIncidentDialog();
+            DialogResult result = searchIncidentDialog.ShowDialog();
         }
     }
 }

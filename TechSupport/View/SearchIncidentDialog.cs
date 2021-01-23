@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TechSupport.View
 {
-    public partial class SearchIncidents : Form
+    public partial class SearchIncidentDialog : Form
     {
-        public SearchIncidents()
+        public SearchIncidentDialog()
         {
             InitializeComponent();
         }
