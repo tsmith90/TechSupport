@@ -34,29 +34,30 @@ namespace TechSupport.View
             this.cancelSearchButton = new System.Windows.Forms.Button();
             this.customerIDLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.67364F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.32636F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.87866F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.12134F));
+            this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.incidentSearchButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.customerIDLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.searchTextBox, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.cancelSearchButton, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.customerIDLabel, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.searchTextBox, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-3, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(-3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.19658F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.80342F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 242F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 360);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 213F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 358);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // incidentSearchButton
@@ -67,10 +68,11 @@ namespace TechSupport.View
             this.incidentSearchButton.TabIndex = 1;
             this.incidentSearchButton.Text = "Search Incidents";
             this.incidentSearchButton.UseVisualStyleBackColor = true;
+            this.incidentSearchButton.Click += new System.EventHandler(this.incidentSearchButton_Click);
             // 
             // cancelSearchButton
             // 
-            this.cancelSearchButton.Location = new System.Drawing.Point(258, 3);
+            this.cancelSearchButton.Location = new System.Drawing.Point(302, 3);
             this.cancelSearchButton.Name = "cancelSearchButton";
             this.cancelSearchButton.Size = new System.Drawing.Size(157, 63);
             this.cancelSearchButton.TabIndex = 2;
@@ -81,29 +83,30 @@ namespace TechSupport.View
             // customerIDLabel
             // 
             this.customerIDLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerIDLabel.Location = new System.Drawing.Point(258, 95);
+            this.customerIDLabel.Location = new System.Drawing.Point(11, 102);
             this.customerIDLabel.Name = "customerIDLabel";
-            this.customerIDLabel.Size = new System.Drawing.Size(141, 22);
+            this.customerIDLabel.Size = new System.Drawing.Size(141, 19);
             this.customerIDLabel.TabIndex = 2;
             this.customerIDLabel.Text = "customerID:";
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(258, 120);
+            this.searchTextBox.Location = new System.Drawing.Point(11, 124);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(197, 20);
             this.searchTextBox.TabIndex = 3;
             // 
-            // dataGridView1
+            // incidentDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(238, 228);
-            this.dataGridView1.TabIndex = 0;
+            this.incidentDataGridView.AllowUserToAddRows = false;
+            this.incidentDataGridView.AllowUserToDeleteRows = false;
+            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentDataGridView.Location = new System.Drawing.Point(11, 147);
+            this.incidentDataGridView.Name = "incidentDataGridView";
+            this.incidentDataGridView.ReadOnly = true;
+            this.incidentDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.incidentDataGridView.Size = new System.Drawing.Size(285, 202);
+            this.incidentDataGridView.TabIndex = 0;
             // 
             // SearchIncidentDialog
             // 
@@ -119,7 +122,7 @@ namespace TechSupport.View
             this.Text = "SearchIncidents";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -131,6 +134,6 @@ namespace TechSupport.View
         private System.Windows.Forms.Button cancelSearchButton;
         private System.Windows.Forms.Label customerIDLabel;
         private System.Windows.Forms.TextBox searchTextBox;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView incidentDataGridView;
     }
 }

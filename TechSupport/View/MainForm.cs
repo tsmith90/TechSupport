@@ -39,7 +39,7 @@ namespace TechSupport.View
         }
 
         /// <summary>
-        /// Method to MainForm load event  
+        /// Method for MainForm load event  
         /// </summary>
         private void MainForm_Load(object sender, System.EventArgs e)
         {
@@ -48,7 +48,7 @@ namespace TechSupport.View
         }
 
         /// <summary>
-        /// Method Refresh the data grid in the MainForm
+        /// Method to refresh the data grid in the MainForm
         /// </summary>
         private void RefreshDataGrid()
         {

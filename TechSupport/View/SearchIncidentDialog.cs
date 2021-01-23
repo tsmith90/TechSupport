@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using TechSupport.Controller;
 
 namespace TechSupport.View
 {
@@ -8,12 +9,18 @@ namespace TechSupport.View
     /// </summary>
     public partial class SearchIncidentDialog : Form
     {
+        #region Data members
+
+        private readonly IncidentController incidentController;
+
+        #endregion
         /// <summary>
         /// 0-parameter constructor for the SearchIncidentDialog class  
         /// </summary>
         public SearchIncidentDialog()
         {
             InitializeComponent();
+            this.incidentController = new IncidentController();
         }
 
         /// <summary>
@@ -22,6 +29,32 @@ namespace TechSupport.View
         private void cancelSearchButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        /// <summary>
+        /// Method to handle the search incident button event  
+        /// </summary>
+        private void incidentSearchButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var customerID = int.Parse(this.searchTextBox.Text);
+                this.RefreshDataGrid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Something is wrong with your input!!! \n" + ex.Message,
+                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Method to refresh the data grid
+        /// </summary>
+        private void RefreshDataGrid()
+        {
+            this.incidentDataGridView.DataSource = null;
+            this.incidentDataGridView.DataSource = this.incidentController.GetIncidentCustomerID();
         }
     }
 }

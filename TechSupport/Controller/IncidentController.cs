@@ -41,5 +41,15 @@ namespace TechSupport.Controller
 
             this.incidentSource.Add(incident);
         }
+
+
+        /// <summary>
+        /// Method to search Incident objects
+        /// </summary>
+        /// <param name = "customerID">Searches the Incident list for certain objects with a given CustomerID</param>
+        public List<Incident> Search(int customerID)
+        {
+            return null;
+        }
     }
 }
