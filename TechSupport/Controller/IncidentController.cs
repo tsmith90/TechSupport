@@ -32,14 +32,22 @@ namespace TechSupport.Controller
         /// Method to add Incident objects to the application list
         /// </summary>
         /// <param name = "incident">A complete Incident object to be added to the list</param>
-        public void AddIncident(Incident incident)
+        public void AddIncident(string title, string description, int customerID)
         {
-            if (incident == null)
+            if (title == null)
             {
-                throw new ArgumentNullException("Incident cannot be null");
+                throw new ArgumentNullException("title cannot be null");
+            }
+            else if (description == null)
+            {
+                throw new ArgumentNullException("description cannot be null");
+            }
+            else if (customerID < 0)
+            {
+                throw new ArgumentOutOfRangeException("customerID must be a positive number");
             }
 
-            this.incidentSource.AddIncident(incident);
+            ///this.incidentSource.AddIncident(incident);
         }
 
 
@@ -50,11 +58,6 @@ namespace TechSupport.Controller
         public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
             List<Incident> searchedIncident = new List<Incident>();
-
-            foreach(Incident incident in this.GetIncidents())
-            {
-                searchedIncident.Add(incident);
-            }
 
             return searchedIncident;
         }
