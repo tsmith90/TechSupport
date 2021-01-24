@@ -55,8 +55,6 @@ namespace TechSupport.View
         private void RefreshDataGrid(int id)
         {
             this.incidentDataGridView.DataSource = null;
-
-            ///fix the second part of this statement and add parameter to the comment
             this.incidentDataGridView.DataSource = this.incidentController.SearchIncidentsByCustomerID(id);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -47,7 +48,7 @@ namespace TechSupport.Controller
                 throw new ArgumentOutOfRangeException("customerID must be a positive number");
             }
 
-            ///this.incidentSource.AddIncident(incident);
+            this.incidentSource.AddIncident(title, description, customerID);
         }
 
 
@@ -58,6 +59,12 @@ namespace TechSupport.Controller
         public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
             List<Incident> searchedIncident = new List<Incident>();
+            IEnumerable<Incident> getIncidentsByCustomerID = this.incidentSource.GetIncidents().Where(incident => incident.CustomerID == customerID);
+
+            foreach(Incident incident in getIncidentsByCustomerID)
+            {
+                searchedIncident.Add(incident);
+            }
 
             return searchedIncident;
         }

@@ -17,7 +17,7 @@ namespace TechSupport.DAL
         /// </summary>
         private static List<Incident> incidents = new List<Incident>
         {
-            new Incident("Sample", "Incident", 123)
+            
         };
 
         /// <summary>
@@ -32,14 +32,22 @@ namespace TechSupport.DAL
         /// Method to add an Incident object
         /// </summary>
         /// <param name = "incident">preformatted object to be added to the incidents list.</param> 
-        public void AddIncident(Incident incident)
+        public void AddIncident(string title, string description, int customerID)
         {
-            if (incident == null)
+            if (title == null)
             {
-                throw new ArgumentNullException("Incident cannot be null");
+                throw new ArgumentNullException("title cannot be null");
+            }
+            else if (description == null)
+            {
+                throw new ArgumentNullException("description cannot be null");
+            }
+            else if (customerID < 0)
+            {
+                throw new ArgumentOutOfRangeException("customerID must be a positive number");
             }
 
-            incidents.Add(incident);
+            incidents.Add(new Incident(title, description, customerID));
         }
 
     }
