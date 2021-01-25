@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -15,14 +12,15 @@ namespace TechSupport.DAL
         /// <summary>
         /// The list of currently stored Incident objects   
         /// </summary>
-        private static List<Incident> incidents = new List<Incident>
+        private static readonly List<Incident> incidents = new List<Incident>
         {
-            
+            new Incident("CS6232", "Incident Sample", 001)
         };
 
         /// <summary>
         /// Method return the list of stored Incident objects  
         /// </summary>
+        /// <returns>The incident list</returns>
         public List<Incident> GetIncidents() 
         {
             return incidents;
@@ -31,7 +29,9 @@ namespace TechSupport.DAL
         /// <summary>
         /// Method to add an Incident object
         /// </summary>
-        /// <param name = "incident">preformatted object to be added to the incidents list.</param> 
+        /// <param name = "title">the title string to be added to the incidents list.</param> 
+        /// <param name = "description">the description string to be added to the incidents list.</param> 
+        /// <param name = "incident">the customerID int to be added to the incidents list.</param> 
         public void AddIncident(string title, string description, int customerID)
         {
             if (title == null)
@@ -49,6 +49,5 @@ namespace TechSupport.DAL
 
             incidents.Add(new Incident(title, description, customerID));
         }
-
     }
 }

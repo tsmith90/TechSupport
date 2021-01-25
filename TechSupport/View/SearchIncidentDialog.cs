@@ -9,38 +9,35 @@ namespace TechSupport.View
     /// </summary>
     public partial class SearchIncidentDialog : Form
     {
-        #region Data members
-
         private readonly IncidentController incidentController;
 
-        #endregion
         /// <summary>
         /// 0-parameter constructor for the SearchIncidentDialog class  
         /// </summary>
         public SearchIncidentDialog()
         {
             InitializeComponent();
-            this.incidentController = new IncidentController();
+            incidentController = new IncidentController();
         }
 
         /// <summary>
         /// Method to handle the cancel search incident button event  
         /// </summary>
-        private void cancelSearchButton_Click(object sender, EventArgs e)
+        private void CancelSearchButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         /// <summary>
         /// Method to handle the search incident button event  
         /// </summary>
-        private void incidentSearchButton_Click(object sender, EventArgs e)
+        private void IncidentSearchButton_Click(object sender, EventArgs e)
         {
             try
             {
-                var customerID = int.Parse(this.searchTextBox.Text);
-                this.RefreshDataGrid(customerID);
-                this.searchTextBox.Text = "";
+                int customerID = int.Parse(searchTextBox.Text);
+                RefreshDataGrid(customerID);
+                searchTextBox.Text = "";
             }
             catch (Exception ex)
             {
@@ -52,10 +49,11 @@ namespace TechSupport.View
         /// <summary>
         /// Method to refresh the data grid
         /// </summary>
-        private void RefreshDataGrid(int id)
+        /// <param name = "customerID">The customerID to be searched in the incident list</param>
+        private void RefreshDataGrid(int customerID)
         {
-            this.incidentDataGridView.DataSource = null;
-            this.incidentDataGridView.DataSource = this.incidentController.SearchIncidentsByCustomerID(id);
+            incidentDataGridView.DataSource = null;
+            incidentDataGridView.DataSource = incidentController.SearchIncidentsByCustomerID(customerID);
         }
     }
 }

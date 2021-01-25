@@ -36,9 +36,9 @@ namespace TechSupport.Model
                 throw new ArgumentOutOfRangeException("customerID", "CustomerID must be a positive number");
             }
 
-            this.Title = title;
-            this.Description = description;
-            this.CustomerID = customerID;
+            Title = title;
+            Description = description;
+            CustomerID = customerID;
         }
     }
 }

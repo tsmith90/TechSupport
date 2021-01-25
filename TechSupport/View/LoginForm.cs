@@ -30,9 +30,9 @@ namespace TechSupport
             {
                 mainForm = new MainForm();
                 UserName = userTextBox.Text;
-                this.Hide();
+                Hide();
                 mainForm.ShowDialog();
-                this.Close();
+                Close();
             }
             else
             {

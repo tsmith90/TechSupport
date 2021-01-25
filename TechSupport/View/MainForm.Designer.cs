@@ -88,7 +88,8 @@ namespace TechSupport.View
             this.incidentDataGridView.Name = "incidentDataGridView";
             this.incidentDataGridView.ReadOnly = true;
             this.incidentDataGridView.Size = new System.Drawing.Size(309, 178);
-            this.incidentDataGridView.TabIndex = 4;
+            this.incidentDataGridView.TabIndex = 0;
+            this.incidentDataGridView.TabStop = false;
             // 
             // MainForm
             // 

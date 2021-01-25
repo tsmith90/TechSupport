@@ -71,6 +71,7 @@ namespace TechSupport.View
             this.incidentDataGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.incidentDataGridView.Size = new System.Drawing.Size(284, 202);
             this.incidentDataGridView.TabIndex = 0;
+            this.incidentDataGridView.TabStop = false;
             // 
             // incidentSearchButton
             // 
@@ -80,7 +81,7 @@ namespace TechSupport.View
             this.incidentSearchButton.TabIndex = 1;
             this.incidentSearchButton.Text = "Search Incidents";
             this.incidentSearchButton.UseVisualStyleBackColor = true;
-            this.incidentSearchButton.Click += new System.EventHandler(this.incidentSearchButton_Click);
+            this.incidentSearchButton.Click += new System.EventHandler(this.IncidentSearchButton_Click);
             // 
             // customerIDLabel
             // 
@@ -106,7 +107,7 @@ namespace TechSupport.View
             this.cancelSearchButton.TabIndex = 2;
             this.cancelSearchButton.Text = "Cancel Search";
             this.cancelSearchButton.UseVisualStyleBackColor = true;
-            this.cancelSearchButton.Click += new System.EventHandler(this.cancelSearchButton_Click);
+            this.cancelSearchButton.Click += new System.EventHandler(this.CancelSearchButton_Click);
             // 
             // SearchIncidentDialog
             // 

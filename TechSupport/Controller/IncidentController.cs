@@ -11,28 +11,31 @@ namespace TechSupport.Controller
     /// </summary>
     class IncidentController
     {
-        private IncidentDAL incidentSource;
+        private readonly IncidentDAL incidentSource;
 
         /// <summary>
         /// 0-parameter constructor for the IncidentController class  
         /// </summary>
         public IncidentController()
         {
-            this.incidentSource = new IncidentDAL();
+            incidentSource = new IncidentDAL();
         }
 
         /// <summary>
         /// Method to get the list of Incidents 
         /// </summary>
+        /// <returns>The Incident list</returns>
         public List<Incident> GetIncidents() 
         {
-            return this.incidentSource.GetIncidents();
+            return incidentSource.GetIncidents();
         }
 
         /// <summary>
         /// Method to add Incident objects to the application list
         /// </summary>
-        /// <param name = "incident">A complete Incident object to be added to the list</param>
+        /// <param name = "title">the title string to be added to the incidents list.</param> 
+        /// <param name = "description">the description string to be added to the incidents list.</param> 
+        /// <param name = "customerID">the customerID int to be added to the incidents list.</param> 
         public void AddIncident(string title, string description, int customerID)
         {
             if (title == null)
@@ -48,18 +51,18 @@ namespace TechSupport.Controller
                 throw new ArgumentOutOfRangeException("customerID must be a positive number");
             }
 
-            this.incidentSource.AddIncident(title, description, customerID);
+            incidentSource.AddIncident(title, description, customerID);
         }
-
 
         /// <summary>
         /// Method to search Incident objects
         /// </summary>
-        /// <param name = "customerID">Searches the Incident list for certain objects with a given CustomerID</param>
+        /// <param name = "customerID">Searches the Incident list for certain objects for a given CustomerID</param>
+        /// <returns>A new Incident list of the only incidents of a given customerID</returns>
         public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
             List<Incident> searchedIncident = new List<Incident>();
-            IEnumerable<Incident> getIncidentsByCustomerID = this.incidentSource.GetIncidents().Where(incident => incident.CustomerID == customerID);
+            IEnumerable<Incident> getIncidentsByCustomerID = incidentSource.GetIncidents().Where(incident => incident.CustomerID == customerID);
 
             foreach(Incident incident in getIncidentsByCustomerID)
             {

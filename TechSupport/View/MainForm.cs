@@ -16,8 +16,8 @@ namespace TechSupport.View
         /// </summary>
         public MainForm()
         {   
-            this.InitializeComponent();
-            this.incidentController = new IncidentController();
+            InitializeComponent();
+            incidentController = new IncidentController();
         }
 
         /// <summary>
@@ -26,9 +26,9 @@ namespace TechSupport.View
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             newLoginForm = new LoginForm();
-            this.Hide();
+            Hide();
             newLoginForm.ShowDialog();
-            this.Close();
+            Close();
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace TechSupport.View
         /// </summary>
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-            this.RefreshDataGrid();
+            RefreshDataGrid();
             nameLabel.Text = LoginForm.UserName;
         }
 
@@ -53,8 +53,8 @@ namespace TechSupport.View
         /// </summary>
         private void RefreshDataGrid()
         {
-            this.incidentDataGridView.DataSource = null;
-            this.incidentDataGridView.DataSource = this.incidentController.GetIncidents();
+            incidentDataGridView.DataSource = null;
+            incidentDataGridView.DataSource = incidentController.GetIncidents();
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace TechSupport.View
 
             if (result == DialogResult.OK)
             {
-                this.RefreshDataGrid();
+                RefreshDataGrid();
             }
         }
 
@@ -77,7 +77,7 @@ namespace TechSupport.View
         private void SearchIncidentButton_Click(object sender, System.EventArgs e)
         {
             Form searchIncidentDialog = new SearchIncidentDialog();
-            DialogResult result = searchIncidentDialog.ShowDialog();
+            _ = searchIncidentDialog.ShowDialog();
         }
     }
 }

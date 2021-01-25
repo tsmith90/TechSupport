@@ -10,13 +10,7 @@ namespace TechSupport.View
     /// </summary>
     public partial class AddIncidentDialog : Form
     {
-        #region Data members
-
         private readonly IncidentController incidentController;
-
-        #endregion
-
-        #region Constructors
 
         /// <summary>
         /// 0-parameter constructor for the AddIncidentDialog class    
@@ -24,27 +18,22 @@ namespace TechSupport.View
         public AddIncidentDialog()
         {
             InitializeComponent();
-            this.incidentController = new IncidentController();
+            incidentController = new IncidentController();
         }
-        #endregion
-
-        #region Methods
 
         /// <summary>
         /// Event handler for the add button   
         /// </summary>
-        private void AddButton_Click(object sender, System.EventArgs e)
+        private void AddButton_Click(object sender, EventArgs e)
         {
             try
             {
-                var title = this.titleTextBox.Text;
-                var description = this.descriptionTextBox.Text;
-                var customerID = int.Parse(this.customerIDTextBox.Text);
+                var title = titleTextBox.Text;
+                var description = descriptionTextBox.Text;
+                int customerID = int.Parse(customerIDTextBox.Text);
 
-
-                ///fix this
-                this.incidentController.AddIncident(title, description, customerID);
-                this.DialogResult = DialogResult.OK;
+                incidentController.AddIncident(title, description, customerID);
+                DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -58,9 +47,7 @@ namespace TechSupport.View
         /// </summary>
         private void CancelButton_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
-
-        #endregion
     }
 }
