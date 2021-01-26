@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.Model;
 
 namespace TechSupport.View
 {

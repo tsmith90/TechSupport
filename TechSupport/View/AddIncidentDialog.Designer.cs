@@ -46,7 +46,7 @@ namespace TechSupport.View
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.81132F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.18868F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 341F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 342F));
             this.tableLayoutPanel1.Controls.Add(this.titleLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.customerIdLabel, 1, 3);
@@ -69,7 +69,7 @@ namespace TechSupport.View
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(31, 55);
+            this.titleLabel.Location = new System.Drawing.Point(30, 55);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(100, 23);
             this.titleLabel.TabIndex = 100;
@@ -79,7 +79,7 @@ namespace TechSupport.View
             // descriptionLabel
             // 
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(31, 106);
+            this.descriptionLabel.Location = new System.Drawing.Point(30, 106);
             this.descriptionLabel.Name = "descriptionLabel";
             this.descriptionLabel.Size = new System.Drawing.Size(100, 23);
             this.descriptionLabel.TabIndex = 101;
@@ -89,7 +89,7 @@ namespace TechSupport.View
             // customerIdLabel
             // 
             this.customerIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerIdLabel.Location = new System.Drawing.Point(31, 163);
+            this.customerIdLabel.Location = new System.Drawing.Point(30, 163);
             this.customerIdLabel.Name = "customerIdLabel";
             this.customerIdLabel.Size = new System.Drawing.Size(100, 23);
             this.customerIdLabel.TabIndex = 102;
@@ -98,28 +98,28 @@ namespace TechSupport.View
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(144, 58);
+            this.titleTextBox.Location = new System.Drawing.Point(143, 58);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(214, 20);
             this.titleTextBox.TabIndex = 103;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(144, 109);
+            this.descriptionTextBox.Location = new System.Drawing.Point(143, 109);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(214, 20);
             this.descriptionTextBox.TabIndex = 104;
             // 
             // customerIDTextBox
             // 
-            this.customerIDTextBox.Location = new System.Drawing.Point(144, 166);
+            this.customerIDTextBox.Location = new System.Drawing.Point(143, 166);
             this.customerIDTextBox.Name = "customerIDTextBox";
             this.customerIDTextBox.Size = new System.Drawing.Size(214, 20);
             this.customerIDTextBox.TabIndex = 105;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(31, 236);
+            this.addButton.Location = new System.Drawing.Point(30, 236);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(107, 70);
             this.addButton.TabIndex = 106;
@@ -129,7 +129,7 @@ namespace TechSupport.View
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(144, 236);
+            this.cancelButton.Location = new System.Drawing.Point(143, 236);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(110, 70);
             this.cancelButton.TabIndex = 107;
