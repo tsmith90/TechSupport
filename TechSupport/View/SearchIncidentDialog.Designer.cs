@@ -120,7 +120,7 @@ namespace TechSupport.View
             this.MinimizeBox = false;
             this.Name = "SearchIncidentDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SearchIncidents";
+            this.Text = "Search Incidents";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
