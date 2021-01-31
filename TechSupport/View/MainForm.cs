@@ -45,7 +45,7 @@ namespace TechSupport.View
         private void MainForm_Load(object sender, System.EventArgs e)
         {
             RefreshDataGrid();
-            nameLabel.Text = LoginForm.UserName;
+            nameLabel.Text = "fix this";
         }
 
         /// <summary>

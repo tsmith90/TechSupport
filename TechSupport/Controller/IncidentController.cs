@@ -9,7 +9,7 @@ namespace TechSupport.Controller
     /// <summary>
     /// Controller class for the Incident object  
     /// </summary>
-    class IncidentController
+    public class IncidentController
     {
         private IncidentDAL incidentSource { get; set; }
 

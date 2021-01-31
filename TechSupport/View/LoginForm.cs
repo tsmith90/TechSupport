@@ -9,8 +9,9 @@ namespace TechSupport
     /// </summary>
     public partial class LoginForm : Form
     {
-        public static string UserName { get; set; }
-        public static MainForm mainForm;
+        public string UserName { get; set; }
+        public TabbedDashboard dashboard;
+        public MainForm mainForm;
 
         /// <summary>
         /// 0-parameter constructor for the LoginForm object  
@@ -18,6 +19,7 @@ namespace TechSupport
         public LoginForm()
         {
             InitializeComponent();
+            this.dashboard = new TabbedDashboard();
         }
 
         /// <summary>
@@ -28,10 +30,12 @@ namespace TechSupport
             if ((userTextBox.Text == "Jane") &&
                 (passwordTextBox.Text == "test1234"))
             {
-                mainForm = new MainForm();
-                UserName = userTextBox.Text;
+                
+                //mainForm = new MainForm();
+               // UserName = userTextBox.Text;
                 Hide();
-                mainForm.ShowDialog();
+                //mainForm.ShowDialog();
+                dashboard.ShowDialog();
                 Close();
             }
             else
