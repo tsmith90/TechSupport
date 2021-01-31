@@ -61,15 +61,12 @@ namespace TechSupport.Controller
         /// <returns>A new Incident list of the only incidents of a given customerID</returns>
         public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
-            List<Incident> searchedIncident = new List<Incident>();
-            IEnumerable<Incident> getIncidentsByCustomerID = incidentSource.GetIncidents().Where(incident => incident.CustomerID == customerID);
-
-            foreach(Incident incident in getIncidentsByCustomerID)
+            if (customerID < 0)
             {
-                searchedIncident.Add(incident);
+                throw new ArgumentOutOfRangeException("customerID must be a positive number");
             }
 
-            return searchedIncident;
+            return incidentSource.SearchIncidentsByCustomerID(customerID);
         }
     }
 }

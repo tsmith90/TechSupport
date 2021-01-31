@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -12,7 +13,7 @@ namespace TechSupport.DAL
         /// <summary>
         /// The list of currently stored Incident objects   
         /// </summary>
-        private List<Incident> incidents = new List<Incident>
+        private readonly List<Incident> incidents = new List<Incident>
         {
             new Incident("CS6232", "Incident Sample", 001),
             new Incident("CS6232", "Another Sample", 002)
@@ -49,6 +50,24 @@ namespace TechSupport.DAL
             }
 
             incidents.Add(new Incident(title, description, customerID));
+        }
+
+        /// <summary>
+        /// Method to search Incident objects
+        /// </summary>
+        /// <param name = "customerID">Searches the Incident list for certain objects for a given CustomerID</param>
+        /// <returns>A new Incident list of the only incidents of a given customerID</returns>
+        public List<Incident> SearchIncidentsByCustomerID(int customerID)
+        {
+            if (customerID < 0)
+            {
+                throw new ArgumentOutOfRangeException("customerID must be a positive number");
+            }
+
+            List<Incident> searchedIncident = new List<Incident>();
+            searchedIncident = incidents.FindAll(incident => incident.CustomerID == customerID);
+
+            return searchedIncident;
         }
     }
 }

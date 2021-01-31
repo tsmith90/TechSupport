@@ -6,7 +6,6 @@ namespace TechSupport.UserControls
     public partial class AllIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;
-        public LoginForm newLoginForm;
 
         /// <summary>
         /// 0-parameter constructor for the MainForm class   
@@ -16,17 +15,6 @@ namespace TechSupport.UserControls
             InitializeComponent();
             incidentController = new IncidentController();
             RefreshDataGrid();
-        }
-
-        /// <summary>
-        /// Method to handle the Logout link event   
-        /// </summary>
-        private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            newLoginForm = new LoginForm();
-            Hide();
-            newLoginForm.Show();
-            //Close();
         }
 
         /// <summary>

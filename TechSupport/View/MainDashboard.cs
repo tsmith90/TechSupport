@@ -1,11 +1,12 @@
 ﻿using System.Windows.Forms;
-using TechSupport.Controller;
-using TechSupport.UserControls;
 
 namespace TechSupport.View
 {
     public partial class MainDashboard : Form
     {
+        /// <summary>
+        /// 0-parameter constructor for the MainDashBoard class  
+        /// </summary>
         public MainDashboard()
         {
             InitializeComponent();
