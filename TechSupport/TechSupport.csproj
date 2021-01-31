@@ -55,6 +55,12 @@
     <Compile Include="Controller\IncidentController.cs" />
     <Compile Include="DAL\IncidentDAL.cs" />
     <Compile Include="Model\Incident.cs" />
+    <Compile Include="UserControls\AddIncidentUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddIncidentUserControl.Designer.cs">
+      <DependentUpon>AddIncidentUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MainFormUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\AddIncidentUserControl.resx">
+      <DependentUpon>AddIncidentUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MainFormUserControl.resx">
       <DependentUpon>MainFormUserControl.cs</DependentUpon>
     </EmbeddedResource>

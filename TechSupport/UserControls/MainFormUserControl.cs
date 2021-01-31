@@ -49,7 +49,7 @@ namespace TechSupport.UserControls
         /// <summary>
         /// Method to refresh the data grid in the MainForm
         /// </summary>
-        private void RefreshDataGrid()
+        public void RefreshDataGrid()
         {
             incidentDataGridView.DataSource = null;
             incidentDataGridView.DataSource = incidentController.GetIncidents();
