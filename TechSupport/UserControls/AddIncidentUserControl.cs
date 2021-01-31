@@ -23,14 +23,19 @@ namespace TechSupport.UserControls
             {
                 var title = titleTextBox.Text;
                 var description = descriptionTextBox.Text;
-                int customerID = int.Parse(customerIDTextBox.Text);
+                int customerID;
 
-                incidentController.AddIncident(title, description, customerID);
+                if (!int.TryParse(customerIDTextBox.Text, out customerID))
+                {
+                    throw new ArgumentOutOfRangeException("customerID must be a valid number");
+                }
+
+                    incidentController.AddIncident(title, description, customerID);
                 ClearControl();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("title/description should be text. customerID should be a number. " + Environment.NewLine + ex.Message,
+                MessageBox.Show(ex.Message,
                     "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

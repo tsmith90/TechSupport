@@ -30,7 +30,13 @@ namespace TechSupport.UserControls
         {
             try
             {
-                int customerID = int.Parse(searchTextBox.Text);
+                int customerID;
+
+                if (!int.TryParse(searchTextBox.Text, out customerID))
+                {
+                    throw new ArgumentOutOfRangeException("customerID must be a valid number");
+                }
+
                 RefreshDataGrid(customerID);
                 searchTextBox.Text = "";
             }
