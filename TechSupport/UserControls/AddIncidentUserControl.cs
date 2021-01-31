@@ -30,7 +30,7 @@ namespace TechSupport.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message,
+                MessageBox.Show("title/description should be text. customerID should be a number. " + Environment.NewLine + ex.Message,
                     "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
