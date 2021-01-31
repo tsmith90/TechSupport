@@ -14,7 +14,8 @@ namespace TechSupport.DAL
         /// </summary>
         private List<Incident> incidents = new List<Incident>
         {
-            new Incident("CS6232", "Incident Sample", 001)
+            new Incident("CS6232", "Incident Sample", 001),
+            new Incident("CS6232", "Another Sample", 002)
         };
 
         /// <summary>

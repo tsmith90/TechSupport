@@ -1,7 +1,7 @@
 ﻿
 namespace TechSupport.View
 {
-    partial class TabbedDashboard
+    partial class MainDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -31,12 +31,6 @@ namespace TechSupport.View
         {
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.mainTabPage = new System.Windows.Forms.TabPage();
-            this.logoutLink = new System.Windows.Forms.LinkLabel();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.addIncidentButton = new System.Windows.Forms.Button();
-            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
-            this.searchIncidentButton = new System.Windows.Forms.Button();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.titleLabel = new System.Windows.Forms.Label();
@@ -52,12 +46,11 @@ namespace TechSupport.View
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.incidentSearchButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
             this.cancelSearchButton = new System.Windows.Forms.Button();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.mainFormUserControl1 = new TechSupport.UserControls.MainFormUserControl();
             this.dashboardTabControl.SuspendLayout();
             this.mainTabPage.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.addIncidentTabPage.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.searchIncidentTabPage.SuspendLayout();
@@ -80,9 +73,7 @@ namespace TechSupport.View
             // 
             // mainTabPage
             // 
-            this.mainTabPage.Controls.Add(this.logoutLink);
-            this.mainTabPage.Controls.Add(this.nameLabel);
-            this.mainTabPage.Controls.Add(this.tableLayoutPanel1);
+            this.mainTabPage.Controls.Add(this.mainFormUserControl1);
             this.mainTabPage.Location = new System.Drawing.Point(4, 29);
             this.mainTabPage.Name = "mainTabPage";
             this.mainTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -90,74 +81,6 @@ namespace TechSupport.View
             this.mainTabPage.TabIndex = 0;
             this.mainTabPage.Text = "Main Form";
             this.mainTabPage.UseVisualStyleBackColor = true;
-            // 
-            // logoutLink
-            // 
-            this.logoutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutLink.Location = new System.Drawing.Point(382, 27);
-            this.logoutLink.Name = "logoutLink";
-            this.logoutLink.Size = new System.Drawing.Size(64, 30);
-            this.logoutLink.TabIndex = 6;
-            this.logoutLink.TabStop = true;
-            this.logoutLink.Text = "Logout";
-            this.logoutLink.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLabel.Location = new System.Drawing.Point(364, -1);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(100, 40);
-            this.nameLabel.TabIndex = 5;
-            this.nameLabel.Text = "Username";
-            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.82979F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.17021F));
-            this.tableLayoutPanel1.Controls.Add(this.addIncidentButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.searchIncidentButton, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 75F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 320);
-            this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // addIncidentButton
-            // 
-            this.addIncidentButton.Location = new System.Drawing.Point(3, 3);
-            this.addIncidentButton.Name = "addIncidentButton";
-            this.addIncidentButton.Size = new System.Drawing.Size(139, 56);
-            this.addIncidentButton.TabIndex = 7;
-            this.addIncidentButton.Text = "Add Incident";
-            this.addIncidentButton.UseVisualStyleBackColor = true;
-            // 
-            // incidentDataGridView
-            // 
-            this.incidentDataGridView.AllowUserToAddRows = false;
-            this.incidentDataGridView.AllowUserToDeleteRows = false;
-            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel1.SetColumnSpan(this.incidentDataGridView, 2);
-            this.incidentDataGridView.Location = new System.Drawing.Point(3, 83);
-            this.incidentDataGridView.Name = "incidentDataGridView";
-            this.incidentDataGridView.ReadOnly = true;
-            this.incidentDataGridView.Size = new System.Drawing.Size(306, 234);
-            this.incidentDataGridView.TabIndex = 4;
-            this.incidentDataGridView.TabStop = false;
-            // 
-            // searchIncidentButton
-            // 
-            this.searchIncidentButton.Location = new System.Drawing.Point(162, 3);
-            this.searchIncidentButton.Name = "searchIncidentButton";
-            this.searchIncidentButton.Size = new System.Drawing.Size(139, 56);
-            this.searchIncidentButton.TabIndex = 8;
-            this.searchIncidentButton.Text = "Search Incident";
-            this.searchIncidentButton.UseVisualStyleBackColor = true;
             // 
             // addIncidentTabPage
             // 
@@ -175,7 +98,7 @@ namespace TechSupport.View
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.81132F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.18868F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 345F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 346F));
             this.tableLayoutPanel2.Controls.Add(this.titleLabel, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.descriptionLabel, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.customerIdLabel, 1, 3);
@@ -227,21 +150,21 @@ namespace TechSupport.View
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(140, 50);
+            this.titleTextBox.Location = new System.Drawing.Point(139, 50);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(214, 26);
             this.titleTextBox.TabIndex = 103;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(140, 94);
+            this.descriptionTextBox.Location = new System.Drawing.Point(139, 94);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(214, 26);
             this.descriptionTextBox.TabIndex = 104;
             // 
             // customerIDTextBox
             // 
-            this.customerIDTextBox.Location = new System.Drawing.Point(140, 151);
+            this.customerIDTextBox.Location = new System.Drawing.Point(139, 151);
             this.customerIDTextBox.Name = "customerIDTextBox";
             this.customerIDTextBox.Size = new System.Drawing.Size(214, 26);
             this.customerIDTextBox.TabIndex = 105;
@@ -250,14 +173,14 @@ namespace TechSupport.View
             // 
             this.addButton.Location = new System.Drawing.Point(30, 221);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(104, 70);
+            this.addButton.Size = new System.Drawing.Size(103, 70);
             this.addButton.TabIndex = 106;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(140, 221);
+            this.cancelButton.Location = new System.Drawing.Point(139, 221);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(110, 70);
             this.cancelButton.TabIndex = 107;
@@ -328,21 +251,30 @@ namespace TechSupport.View
             this.label1.Text = "customerID:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // searchTextBox
-            // 
-            this.searchTextBox.Location = new System.Drawing.Point(164, 93);
-            this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(162, 26);
-            this.searchTextBox.TabIndex = 3;
-            // 
             // cancelSearchButton
             // 
-            this.cancelSearchButton.Location = new System.Drawing.Point(164, 3);
+            this.cancelSearchButton.Location = new System.Drawing.Point(165, 3);
             this.cancelSearchButton.Name = "cancelSearchButton";
             this.cancelSearchButton.Size = new System.Drawing.Size(162, 63);
             this.cancelSearchButton.TabIndex = 2;
             this.cancelSearchButton.Text = "Cancel Search";
             this.cancelSearchButton.UseVisualStyleBackColor = true;
+            // 
+            // searchTextBox
+            // 
+            this.searchTextBox.Location = new System.Drawing.Point(165, 93);
+            this.searchTextBox.Name = "searchTextBox";
+            this.searchTextBox.Size = new System.Drawing.Size(162, 26);
+            this.searchTextBox.TabIndex = 3;
+            // 
+            // mainFormUserControl1
+            // 
+            this.mainFormUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainFormUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.mainFormUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.mainFormUserControl1.Name = "mainFormUserControl1";
+            this.mainFormUserControl1.Size = new System.Drawing.Size(476, 328);
+            this.mainFormUserControl1.TabIndex = 0;
             // 
             // TabbedDashboard
             // 
@@ -357,8 +289,6 @@ namespace TechSupport.View
             this.Text = "Tabbed Dashboard";
             this.dashboardTabControl.ResumeLayout(false);
             this.mainTabPage.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.addIncidentTabPage.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -376,12 +306,6 @@ namespace TechSupport.View
         private System.Windows.Forms.TabPage mainTabPage;
         private System.Windows.Forms.TabPage addIncidentTabPage;
         private System.Windows.Forms.TabPage searchIncidentTabPage;
-        private System.Windows.Forms.LinkLabel logoutLink;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button addIncidentButton;
-        private System.Windows.Forms.DataGridView incidentDataGridView;
-        private System.Windows.Forms.Button searchIncidentButton;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label descriptionLabel;
@@ -397,5 +321,6 @@ namespace TechSupport.View
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button cancelSearchButton;
+        private UserControls.MainFormUserControl mainFormUserControl1;
     }
 }

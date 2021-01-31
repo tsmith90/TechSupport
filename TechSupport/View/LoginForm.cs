@@ -10,7 +10,7 @@ namespace TechSupport
     public partial class LoginForm : Form
     {
         public string UserName { get; set; }
-        public TabbedDashboard dashboard;
+        public MainDashboard dashboard;
         public MainForm mainForm;
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace TechSupport
         public LoginForm()
         {
             InitializeComponent();
-            this.dashboard = new TabbedDashboard();
+            this.dashboard = new MainDashboard();
         }
 
         /// <summary>
