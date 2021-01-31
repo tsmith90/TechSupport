@@ -12,7 +12,7 @@ using TechSupport.View;
 
 namespace TechSupport.UserControls
 {
-    public partial class MainFormUserControl : UserControl
+    public partial class AllIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;
         public LoginForm newLoginForm;
@@ -20,7 +20,7 @@ namespace TechSupport.UserControls
         /// <summary>
         /// 0-parameter constructor for the MainForm class   
         /// </summary>
-        public MainFormUserControl()
+        public AllIncidentsUserControl()
         {
             InitializeComponent();
             incidentController = new IncidentController();
@@ -34,7 +34,7 @@ namespace TechSupport.UserControls
         {
             newLoginForm = new LoginForm();
             Hide();
-            newLoginForm.ShowDialog();
+            newLoginForm.Show();
             //Close();
         }
 
@@ -53,29 +53,6 @@ namespace TechSupport.UserControls
         {
             incidentDataGridView.DataSource = null;
             incidentDataGridView.DataSource = incidentController.GetIncidents();
-        }
-
-        /// <summary>
-        /// Method to handle the Add Incident button event  
-        /// </summary>
-        private void AddIncidentButton_Click(object sender, System.EventArgs e)
-        {
-            Form addIncidentDialog = new AddIncidentDialog();
-            DialogResult result = addIncidentDialog.ShowDialog();
-
-            if (result == DialogResult.OK)
-            {
-                RefreshDataGrid();
-            }
-        }
-
-        /// <summary>
-        /// Method to handle the Search Incident button event   
-        /// </summary>
-        private void SearchIncidentButton_Click(object sender, System.EventArgs e)
-        {
-            Form searchIncidentDialog = new SearchIncidentDialog();
-            _ = searchIncidentDialog.ShowDialog();
         }
     }
 }

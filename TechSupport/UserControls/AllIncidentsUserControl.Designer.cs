@@ -1,7 +1,7 @@
 ﻿
 namespace TechSupport.UserControls
 {
-    partial class MainFormUserControl
+    partial class AllIncidentsUserControl
     {
         /// <summary> 
         /// Required designer variable.

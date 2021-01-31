@@ -20,9 +20,6 @@ namespace TechSupport.View
             incidentController = new IncidentController();
         }
 
-        /// <summary>
-        /// Event handler for the add button   
-        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             try
@@ -41,9 +38,6 @@ namespace TechSupport.View
             }
         }
 
-        /// <summary>
-        /// Event handler for the cancel button   
-        /// </summary>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

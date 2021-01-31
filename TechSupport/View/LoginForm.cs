@@ -11,7 +11,6 @@ namespace TechSupport
     {
         public string UserName { get; set; }
         public MainDashboard dashboard;
-        public MainForm mainForm;
 
         /// <summary>
         /// 0-parameter constructor for the LoginForm object  

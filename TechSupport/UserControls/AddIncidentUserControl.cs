@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.Controller;
 
@@ -13,7 +6,7 @@ namespace TechSupport.UserControls
 {
     public partial class AddIncidentUserControl : UserControl
     {
-        private IncidentController incidentController;
+        private readonly IncidentController incidentController;
 
         /// <summary>
         /// 0-parameter constructor for the AddIncidentDialog class    
@@ -24,9 +17,6 @@ namespace TechSupport.UserControls
             incidentController = new IncidentController();
         }
 
-        /// <summary>
-        /// Event handler for the add button   
-        /// </summary>
         private void AddButton_Click(object sender, EventArgs e)
         {
             try
@@ -45,9 +35,6 @@ namespace TechSupport.UserControls
             }
         }
 
-        /// <summary>
-        /// Event handler for the cancel button   
-        /// </summary>
         private void CancelButton_Click(object sender, EventArgs e)
         {
             ClearControl();

@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TechSupport.UserControls;
 
 namespace TechSupport.View
 {
@@ -8,5 +9,15 @@ namespace TechSupport.View
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Method to exit the application when the form is closed   
+        /// </summary>
+        private void MainDashBoard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }
