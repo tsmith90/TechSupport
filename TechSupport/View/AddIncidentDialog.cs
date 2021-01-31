@@ -9,7 +9,7 @@ namespace TechSupport.View
     /// </summary>
     public partial class AddIncidentDialog : Form
     {
-        private readonly IncidentController incidentController;
+        private IncidentController incidentController;
 
         /// <summary>
         /// 0-parameter constructor for the AddIncidentDialog class    

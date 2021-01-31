@@ -31,7 +31,6 @@ namespace TechSupport
         {
             this.userNameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.errorsLabel = new System.Windows.Forms.Label();
             this.userTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
@@ -59,16 +58,6 @@ namespace TechSupport
             this.passwordLabel.TabIndex = 99;
             this.passwordLabel.Text = "Password:";
             this.passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // errorsLabel
-            // 
-            this.errorsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorsLabel.Location = new System.Drawing.Point(56, 205);
-            this.errorsLabel.Name = "errorsLabel";
-            this.errorsLabel.Size = new System.Drawing.Size(121, 30);
-            this.errorsLabel.TabIndex = 99;
-            this.errorsLabel.Text = "Error Message:";
-            this.errorsLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userTextBox
             // 
@@ -119,7 +108,6 @@ namespace TechSupport
             this.tableLayoutPanel1.Controls.Add(this.loginButton, 2, 4);
             this.tableLayoutPanel1.Controls.Add(this.errorLabelBox, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.passwordLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.errorsLabel, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.userTextBox, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.passwordTextBox, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.userNameLabel, 1, 1);
@@ -156,7 +144,6 @@ namespace TechSupport
 
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label passwordLabel;
-        private System.Windows.Forms.Label errorsLabel;
         private System.Windows.Forms.TextBox userTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Button loginButton;

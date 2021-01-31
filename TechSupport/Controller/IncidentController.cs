@@ -11,7 +11,7 @@ namespace TechSupport.Controller
     /// </summary>
     class IncidentController
     {
-        private readonly IncidentDAL incidentSource;
+        private IncidentDAL incidentSource { get; set; }
 
         /// <summary>
         /// 0-parameter constructor for the IncidentController class  

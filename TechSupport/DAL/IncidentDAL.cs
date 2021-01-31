@@ -12,7 +12,7 @@ namespace TechSupport.DAL
         /// <summary>
         /// The list of currently stored Incident objects   
         /// </summary>
-        private static readonly List<Incident> incidents = new List<Incident>
+        private List<Incident> incidents = new List<Incident>
         {
             new Incident("CS6232", "Incident Sample", 001)
         };
