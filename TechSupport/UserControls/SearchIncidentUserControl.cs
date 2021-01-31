@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.Controller;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// UserControl class to search Incidents
+    /// </summary>
     public partial class SearchIncidentUserControl : UserControl
     {
         private readonly IncidentController incidentController;
@@ -24,18 +20,12 @@ namespace TechSupport.UserControls
             incidentController = new IncidentController();
         }
 
-        /// <summary>
-        /// Method to handle the cancel search incident button event  
-        /// </summary>
-        private void CancelSearchButton_Click(object sender, EventArgs e)
+        private void ClearSearchButton_Click(object sender, EventArgs e)
         {
             searchTextBox.Text = "";
             incidentDataGridView.DataSource = null;
         }
 
-        /// <summary>
-        /// Method to handle the search incident button event  
-        /// </summary>
         private void IncidentSearchButton_Click(object sender, EventArgs e)
         {
             try
@@ -57,6 +47,11 @@ namespace TechSupport.UserControls
         /// <param name = "customerID">The customerID to be searched in the incident list</param>
         private void RefreshDataGrid(int customerID)
         {
+            if (customerID < 0)
+            {
+                throw new ArgumentOutOfRangeException("customerID", "CustomerID must be a positive number");
+            }
+
             incidentDataGridView.DataSource = null;
             incidentDataGridView.DataSource = incidentController.SearchIncidentsByCustomerID(customerID);
         }

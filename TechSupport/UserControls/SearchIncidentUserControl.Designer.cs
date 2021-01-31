@@ -100,7 +100,7 @@ namespace TechSupport.UserControls
             this.cancelSearchButton.TabIndex = 2;
             this.cancelSearchButton.Text = "Clear Search";
             this.cancelSearchButton.UseVisualStyleBackColor = true;
-            this.cancelSearchButton.Click += new System.EventHandler(this.CancelSearchButton_Click);
+            this.cancelSearchButton.Click += new System.EventHandler(this.ClearSearchButton_Click);
             // 
             // searchTextBox
             // 
