@@ -36,7 +36,7 @@ namespace TechSupport.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something is wrong with your input!!! \n" + ex.Message,
+                MessageBox.Show(ex.Message,
                     "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -44,12 +44,12 @@ namespace TechSupport.UserControls
         /// <summary>
         /// Method to refresh the data grid
         /// </summary>
-        /// <param name = "customerID">The customerID to be searched in the incident list</param>
+        /// <param name = "customerID">The customerID to be searched in the incident list (must be greater than 0)</param>
         private void RefreshDataGrid(int customerID)
         {
             if (customerID < 0)
             {
-                throw new ArgumentOutOfRangeException("customerID", "CustomerID must be a positive number");
+                throw new ArgumentOutOfRangeException("customerID", "Please enter a valid number!!! \n");
             }
 
             incidentDataGridView.DataSource = null;
