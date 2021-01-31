@@ -53,7 +53,7 @@ namespace TechSupport.View
             this.dashboardTabControl.Name = "dashboardTabControl";
             this.dashboardTabControl.SelectedIndex = 0;
             this.dashboardTabControl.Size = new System.Drawing.Size(484, 359);
-            this.dashboardTabControl.TabIndex = 0;
+            this.dashboardTabControl.TabIndex = 3;
             // 
             // addIncidentTabPage
             // 

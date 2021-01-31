@@ -78,7 +78,7 @@ namespace TechSupport.UserControls
             this.incidentSearchButton.Location = new System.Drawing.Point(3, 3);
             this.incidentSearchButton.Name = "incidentSearchButton";
             this.incidentSearchButton.Size = new System.Drawing.Size(141, 62);
-            this.incidentSearchButton.TabIndex = 1;
+            this.incidentSearchButton.TabIndex = 4;
             this.incidentSearchButton.Text = "Search Incidents";
             this.incidentSearchButton.UseVisualStyleBackColor = true;
             this.incidentSearchButton.Click += new System.EventHandler(this.IncidentSearchButton_Click);
@@ -97,7 +97,7 @@ namespace TechSupport.UserControls
             this.cancelSearchButton.Location = new System.Drawing.Point(150, 3);
             this.cancelSearchButton.Name = "cancelSearchButton";
             this.cancelSearchButton.Size = new System.Drawing.Size(157, 63);
-            this.cancelSearchButton.TabIndex = 2;
+            this.cancelSearchButton.TabIndex = 5;
             this.cancelSearchButton.Text = "Clear Search";
             this.cancelSearchButton.UseVisualStyleBackColor = true;
             this.cancelSearchButton.Click += new System.EventHandler(this.ClearSearchButton_Click);
@@ -107,7 +107,7 @@ namespace TechSupport.UserControls
             this.searchTextBox.Location = new System.Drawing.Point(150, 72);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(197, 20);
-            this.searchTextBox.TabIndex = 3;
+            this.searchTextBox.TabIndex = 6;
             // 
             // SearchIncidentUserControl
             // 

@@ -46,7 +46,7 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.81132F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.18868F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 327F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 328F));
             this.tableLayoutPanel1.Controls.Add(this.titleLabel, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.customerIdLabel, 1, 3);
@@ -98,41 +98,41 @@ namespace TechSupport.UserControls
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(141, 53);
+            this.titleTextBox.Location = new System.Drawing.Point(140, 53);
             this.titleTextBox.Name = "titleTextBox";
             this.titleTextBox.Size = new System.Drawing.Size(214, 20);
-            this.titleTextBox.TabIndex = 103;
+            this.titleTextBox.TabIndex = 4;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(141, 101);
+            this.descriptionTextBox.Location = new System.Drawing.Point(140, 101);
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.Size = new System.Drawing.Size(214, 20);
-            this.descriptionTextBox.TabIndex = 104;
+            this.descriptionTextBox.TabIndex = 5;
             // 
             // customerIDTextBox
             // 
-            this.customerIDTextBox.Location = new System.Drawing.Point(141, 151);
+            this.customerIDTextBox.Location = new System.Drawing.Point(140, 151);
             this.customerIDTextBox.Name = "customerIDTextBox";
             this.customerIDTextBox.Size = new System.Drawing.Size(214, 20);
-            this.customerIDTextBox.TabIndex = 105;
+            this.customerIDTextBox.TabIndex = 6;
             // 
             // addButton
             // 
             this.addButton.Location = new System.Drawing.Point(30, 210);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(105, 70);
-            this.addButton.TabIndex = 106;
+            this.addButton.Size = new System.Drawing.Size(104, 70);
+            this.addButton.TabIndex = 7;
             this.addButton.Text = "Add";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(141, 210);
+            this.cancelButton.Location = new System.Drawing.Point(140, 210);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(110, 70);
-            this.cancelButton.TabIndex = 107;
+            this.cancelButton.TabIndex = 8;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
