@@ -30,7 +30,7 @@ namespace TechSupport.UserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Something is wrong with your input!!! \n" + ex.Message,
+                MessageBox.Show(ex.Message,
                     "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }

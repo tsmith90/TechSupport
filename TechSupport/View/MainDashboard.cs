@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TechSupport.Controller;
 using TechSupport.UserControls;
 
 namespace TechSupport.View
@@ -17,7 +18,5 @@ namespace TechSupport.View
         {
             Application.Exit();
         }
-
-        
     }
 }
