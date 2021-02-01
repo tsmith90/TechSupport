@@ -10,9 +10,14 @@ namespace TechSupport.DAL
     /// </summary>
     public class IncidentDAL
     {
+
         /// <summary>
-        /// The list of currently stored Incident objects   
+        /// 0-parameter constructor for the IncidentDAL class  
         /// </summary>
+        public IncidentDAL()
+        { 
+        }
+
         private readonly List<Incident> incidents = new List<Incident>
         {
             new Incident("CS6232", "Incident Sample", 001),

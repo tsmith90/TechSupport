@@ -3,6 +3,9 @@ using TechSupport.Controller;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Class to display all Incidents from the Incident list    
+    /// </summary>
     public partial class AllIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;

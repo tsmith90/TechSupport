@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.View;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Usercontrol class to add incidents to the Incident list    
+    /// </summary>
     public partial class AddIncidentUserControl : UserControl
     {
         private readonly IncidentController incidentController;

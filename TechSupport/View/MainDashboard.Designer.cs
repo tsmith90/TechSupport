@@ -35,7 +35,7 @@ namespace TechSupport.View
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.addIncidentUserControl1 = new TechSupport.UserControls.AddIncidentUserControl();
             this.allIncidentsTabPage = new System.Windows.Forms.TabPage();
-            this.mainFormUserControl1 = new TechSupport.UserControls.AllIncidentsUserControl();
+            this.allIncidentsUserControl = new TechSupport.UserControls.AllIncidentsUserControl();
             this.searchIncidentTabPage = new System.Windows.Forms.TabPage();
             this.searchIncidentUserControl1 = new TechSupport.UserControls.SearchIncidentUserControl();
             this.dashboardTabControl.SuspendLayout();
@@ -80,7 +80,7 @@ namespace TechSupport.View
             // 
             // allIncidentsTabPage
             // 
-            this.allIncidentsTabPage.Controls.Add(this.mainFormUserControl1);
+            this.allIncidentsTabPage.Controls.Add(this.allIncidentsUserControl);
             this.allIncidentsTabPage.Location = new System.Drawing.Point(4, 29);
             this.allIncidentsTabPage.Name = "allIncidentsTabPage";
             this.allIncidentsTabPage.Padding = new System.Windows.Forms.Padding(3);
@@ -89,14 +89,14 @@ namespace TechSupport.View
             this.allIncidentsTabPage.Text = "All Incidents";
             this.allIncidentsTabPage.UseVisualStyleBackColor = true;
             // 
-            // mainFormUserControl1
+            // allIncidentsUserControl
             // 
-            this.mainFormUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainFormUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.mainFormUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.mainFormUserControl1.Name = "mainFormUserControl1";
-            this.mainFormUserControl1.Size = new System.Drawing.Size(476, 328);
-            this.mainFormUserControl1.TabIndex = 0;
+            this.allIncidentsUserControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allIncidentsUserControl.Location = new System.Drawing.Point(0, 0);
+            this.allIncidentsUserControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.allIncidentsUserControl.Name = "allIncidentsUserControl";
+            this.allIncidentsUserControl.Size = new System.Drawing.Size(476, 328);
+            this.allIncidentsUserControl.TabIndex = 0;
             // 
             // searchIncidentTabPage
             // 
@@ -142,7 +142,7 @@ namespace TechSupport.View
         private System.Windows.Forms.TabControl dashboardTabControl;
         private System.Windows.Forms.TabPage allIncidentsTabPage;
         private System.Windows.Forms.TabPage searchIncidentTabPage;
-        private UserControls.AllIncidentsUserControl mainFormUserControl1;
+        private UserControls.AllIncidentsUserControl allIncidentsUserControl;
         private System.Windows.Forms.TabPage addIncidentTabPage;
         private UserControls.SearchIncidentUserControl searchIncidentUserControl1;
         private UserControls.AddIncidentUserControl addIncidentUserControl1;

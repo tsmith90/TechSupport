@@ -5,6 +5,9 @@ using TechSupport.UserControls;
 
 namespace TechSupport.View
 {
+    /// <summary>
+    /// Class to hold and control user controls  
+    /// </summary>
     public partial class MainDashboard : Form
     {
         private IncidentController incidentController;
@@ -18,9 +21,6 @@ namespace TechSupport.View
             incidentController = new IncidentController();
         }
 
-        /// <summary>
-        /// Method to exit the application when the form is closed   
-        /// </summary>
         private void MainDashBoard_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
@@ -30,7 +30,7 @@ namespace TechSupport.View
         {
             if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["allIncidentsTabPage"])
             {
-                MessageBox.Show("changed");
+                allIncidentsUserControl.RefreshDataGrid();
             }
         }
     }
