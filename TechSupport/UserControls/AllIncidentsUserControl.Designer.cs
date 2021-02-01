@@ -71,6 +71,7 @@ namespace TechSupport.UserControls
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AllIncidentsUserControl";
             this.Size = new System.Drawing.Size(476, 327);
+            this.Enter += new System.EventHandler(this.Incident_FormEntered);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.ResumeLayout(false);

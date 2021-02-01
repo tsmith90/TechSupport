@@ -1,4 +1,6 @@
 ﻿
+using TechSupport.Controller;
+
 namespace TechSupport.View
 {
     partial class MainDashboard
@@ -54,6 +56,7 @@ namespace TechSupport.View
             this.dashboardTabControl.SelectedIndex = 0;
             this.dashboardTabControl.Size = new System.Drawing.Size(484, 359);
             this.dashboardTabControl.TabIndex = 3;
+            this.dashboardTabControl.SelectedIndexChanged += new System.EventHandler(this.SelectedIndexChanged);
             // 
             // addIncidentTabPage
             // 

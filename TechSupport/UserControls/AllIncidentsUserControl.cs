@@ -17,12 +17,9 @@ namespace TechSupport.UserControls
             RefreshDataGrid();
         }
 
-        /// <summary>
-        /// Method to exit the application when the form is closed   
-        /// </summary>
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void Incident_FormEntered(object sender, System.EventArgs e)
         {
-            Application.Exit();
+            RefreshDataGrid();
         }
 
         /// <summary>

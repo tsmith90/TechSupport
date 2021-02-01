@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.View;
 
 namespace TechSupport.UserControls
 {
@@ -23,15 +24,14 @@ namespace TechSupport.UserControls
             {
                 var title = titleTextBox.Text;
                 var description = descriptionTextBox.Text;
-                int customerID;
 
-                if (!int.TryParse(customerIDTextBox.Text, out customerID))
+                if (!int.TryParse(customerIDTextBox.Text, out int customerID))
                 {
                     throw new ArgumentOutOfRangeException("customerID must be a valid number");
                 }
 
-                    incidentController.AddIncident(title, description, customerID);
-                ClearControl();
+                incidentController.AddIncident(title, description, customerID);
+                MessageBox.Show("" + incidentController.GetIncidents().Count);
             }
             catch (Exception ex)
             {
