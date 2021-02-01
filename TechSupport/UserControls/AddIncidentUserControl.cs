@@ -31,7 +31,7 @@ namespace TechSupport.UserControls
                 }
 
                 incidentController.AddIncident(title, description, customerID);
-                MessageBox.Show("" + incidentController.GetIncidents().Count);
+                ClearControl();
             }
             catch (Exception ex)
             {

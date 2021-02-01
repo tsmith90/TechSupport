@@ -6,7 +6,8 @@ namespace TechSupport.View
 {
     public partial class MainDashboard : Form
     {
-        public IncidentController incidentController { get; set; }
+        private IncidentController incidentController;
+
         /// <summary>
         /// 0-parameter constructor for the MainDashBoard class  
         /// </summary>
@@ -26,7 +27,7 @@ namespace TechSupport.View
 
         private void SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("" + incidentController.GetIncidents().Count);
+            
         }
     }
 }
