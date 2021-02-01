@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.UserControls;
 
 namespace TechSupport.View
 {
@@ -27,7 +28,10 @@ namespace TechSupport.View
 
         private void SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["allIncidentsTabPage"])
+            {
+                MessageBox.Show("changed");
+            }
         }
     }
 }
