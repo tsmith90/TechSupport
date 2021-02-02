@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -11,7 +10,7 @@ namespace TechSupport.Controller
     /// </summary>
     public class IncidentController
     {
-        private readonly IncidentDAL incidentSource;
+        private static IncidentDAL incidentSource;
 
         /// <summary>
         /// 0-parameter constructor for the IncidentController class  
@@ -58,7 +57,7 @@ namespace TechSupport.Controller
         /// Method to search Incident objects
         /// </summary>
         /// <param name = "customerID">Searches the Incident list for certain objects for a given CustomerID</param>
-        /// <returns>A new Incident list of the only incidents of a given customerID</returns>
+        /// <returns>A new Incident list of only incidents of a given customerID</returns>
         public List<Incident> SearchIncidentsByCustomerID(int customerID)
         {
             if (customerID < 0)

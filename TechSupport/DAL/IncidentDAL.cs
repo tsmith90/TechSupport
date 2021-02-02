@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -20,8 +19,8 @@ namespace TechSupport.DAL
 
         private readonly List<Incident> incidents = new List<Incident>
         {
-            new Incident("CS6232", "Incident Sample", 001),
-            new Incident("CS6232", "Another Sample", 002)
+            new Incident("CS6232", "First Sample", 001),
+            new Incident("CS6232", "Second Sample", 002)
         };
 
         /// <summary>

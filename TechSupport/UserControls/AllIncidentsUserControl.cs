@@ -20,13 +20,8 @@ namespace TechSupport.UserControls
             RefreshDataGrid();
         }
 
-        private void Incident_FormEntered(object sender, System.EventArgs e)
-        {
-            RefreshDataGrid();
-        }
-
         /// <summary>
-        /// Method to refresh the data grid in the MainForm
+        /// Method to refresh the data grid
         /// </summary>
         public void RefreshDataGrid()
         {
