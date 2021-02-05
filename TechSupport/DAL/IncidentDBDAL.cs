@@ -12,9 +12,9 @@ namespace TechSupport.DAL
     {
         public List<Incident> GetOpenIncidents()
         {
-            List<Incident> incidents = new List<Incident>();
+            List<Incident> incidentList = new List<Incident>();
 
-            string selectStatement = "SELECT i.productCode, i.dateOpened, c.name, t.name, i.title" +
+            string selectStatement = "SELECT i.productCode, i.dateOpened, c.name as customerName, t.name as technicianName, i.title" +
                 "FROM Incidents i" +
                 "left join Customers c on i.CustomerID = c.CustomerID" +
                 "left join Technicians t on i.TechID = t.TechID " +
@@ -28,11 +28,21 @@ namespace TechSupport.DAL
                 {
                     using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
                     {
-
+                        while (dataReader.Read())
+                        {
+                            Incident incident = new Incident();
+                            incident.ProductCode = dataReader["ProductCode"].ToString();
+                            incident.DateOpened = dataReader["DateOpened"].ToString();
+                            incident.CustomerName = dataReader["customerName"].ToString();
+                            incident.TechnicianName = dataReader["technicianName"].ToString();
+                            incident.Title = dataReader["title"].ToString();
+                            incidentList.Add(incident);
+                        }
                     }
                 }
             }
-                return incidents; 
+
+            return incidentList; 
         }
     }
 }
