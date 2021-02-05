@@ -11,6 +11,7 @@ namespace TechSupport.Controller
     public class IncidentController
     {
         private static IncidentDAL incidentSource;
+        private static IncidentDBDAL incidentDBDAL;
 
         /// <summary>
         /// 0-parameter constructor for the IncidentController class  
@@ -18,6 +19,7 @@ namespace TechSupport.Controller
         public IncidentController()
         {
             incidentSource = new IncidentDAL();
+            incidentDBDAL = new IncidentDBDAL();
         }
 
         /// <summary>
@@ -35,22 +37,13 @@ namespace TechSupport.Controller
         /// <param name = "title">the title string to be added to the incidents list.</param> 
         /// <param name = "description">the description string to be added to the incidents list.</param> 
         /// <param name = "customerID">the customerID int to be added to the incidents list.</param> 
-        public void AddIncident(string title, string description, int customerID)
+        public void AddIncident(Incident incident)
         {
-            if (title == null)
+            if (incident == null)
             {
-                throw new ArgumentNullException("title cannot be null");
+                throw new ArgumentNullException("incident cannot be null");
             }
-            else if (description == null)
-            {
-                throw new ArgumentNullException("description cannot be null");
-            }
-            else if (customerID < 0)
-            {
-                throw new ArgumentOutOfRangeException("customerID must be a positive number");
-            }
-
-            incidentSource.AddIncident(title, description, customerID);
+            incidentSource.AddIncident(incident);
         }
 
         /// <summary>

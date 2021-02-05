@@ -37,16 +37,14 @@ namespace TechSupport.UserControls
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 39.28571F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60.71429F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.75F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 86.25F));
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 320);
             this.tableLayoutPanel1.TabIndex = 12;
@@ -57,10 +55,10 @@ namespace TechSupport.UserControls
             this.incidentDataGridView.AllowUserToDeleteRows = false;
             this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel1.SetColumnSpan(this.incidentDataGridView, 2);
-            this.incidentDataGridView.Location = new System.Drawing.Point(3, 47);
+            this.incidentDataGridView.Location = new System.Drawing.Point(3, 3);
             this.incidentDataGridView.Name = "incidentDataGridView";
             this.incidentDataGridView.ReadOnly = true;
-            this.incidentDataGridView.Size = new System.Drawing.Size(386, 270);
+            this.incidentDataGridView.Size = new System.Drawing.Size(464, 314);
             this.incidentDataGridView.TabIndex = 1;
             this.incidentDataGridView.TabStop = false;
             // 

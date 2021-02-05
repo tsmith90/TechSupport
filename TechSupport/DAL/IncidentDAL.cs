@@ -19,8 +19,7 @@ namespace TechSupport.DAL
 
         private readonly List<Incident> incidents = new List<Incident>
         {
-            new Incident("CS6232", "First Sample", 001),
-            new Incident("CS6232", "Second Sample", 002)
+
         };
 
         /// <summary>
@@ -38,22 +37,9 @@ namespace TechSupport.DAL
         /// <param name = "title">the title string to be added to the incidents list.</param> 
         /// <param name = "description">the description string to be added to the incidents list.</param> 
         /// <param name = "incident">the customerID int to be added to the incidents list.</param> 
-        public void AddIncident(string title, string description, int customerID)
+        public void AddIncident(Incident incident)
         {
-            if (title == null)
-            {
-                throw new ArgumentNullException("title cannot be null");
-            }
-            else if (description == null)
-            {
-                throw new ArgumentNullException("description cannot be null");
-            }
-            else if (customerID < 0)
-            {
-                throw new ArgumentOutOfRangeException("customerID must be a positive number");
-            }
-
-            incidents.Add(new Incident(title, description, customerID));
+            incidents.Add(incident);
         }
 
         /// <summary>

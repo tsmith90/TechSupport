@@ -7,38 +7,20 @@ namespace TechSupport.Model
     /// </summary>
     public class Incident
     {
-        public string Title { get; }
+        public int IncidentID { get; set; }
 
-        public string Description { get; }
+        public int CustomerID { get; set; }
 
-        public int CustomerID { get; }
+        public string ProductCode { get; set; }
 
-        /// <summary>
-        /// Method to handle the Add Incident button event  
-        /// </summary>
-        /// <param name = "title">The title of the incident</param>
-        /// <param name = "description">The description of the incident</param> 
-        /// <param name = "customerID">The customerID of the incident (int)</param> 
-        public Incident(string title, string description, int customerID)
-        {
-            if (string.IsNullOrEmpty(title))
-            {
-                throw new ArgumentException("Incident title cannot be null or empty", "title");
-            }
+        public int TechID { get; set; }
 
-            if (string.IsNullOrEmpty(description))
-            {
-                throw new ArgumentException("Incident description cannot be null or empty", "description");
-            }
+        public string DateOpened { get; set; }
 
-            if(customerID < 0)
-            {
-                throw new ArgumentOutOfRangeException("customerID", "CustomerID must be a positive number");
-            }
+        public string DateClosed { get; set; }
 
-            Title = title;
-            Description = description;
-            CustomerID = customerID;
-        }
+        public string Title { get; set; }
+
+        public string Description { get; set; }
     }
 }

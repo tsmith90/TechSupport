@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
@@ -31,8 +32,12 @@ namespace TechSupport.UserControls
                 {
                     throw new ArgumentOutOfRangeException("customerID must be a valid number");
                 }
+                Incident newIncident = new Incident();
+                newIncident.Title = title;
+                newIncident.Description = description;
+                newIncident.CustomerID = customerID;
 
-                incidentController.AddIncident(title, description, customerID);
+                incidentController.AddIncident(newIncident);
                 ClearControl();
             }
             catch (Exception ex)
