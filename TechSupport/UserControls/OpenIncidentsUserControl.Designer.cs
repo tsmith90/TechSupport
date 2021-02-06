@@ -1,5 +1,4 @@
-﻿
-namespace TechSupport.UserControls
+﻿namespace TechSupport.UserControls
 {
     partial class OpenIncidentsUserControl
     {

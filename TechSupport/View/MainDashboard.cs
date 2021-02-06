@@ -20,5 +20,13 @@ namespace TechSupport.View
         {
             Application.Exit();
         }
+
+        private void Dashboard_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["openIncidentsTabPage"])
+            {
+                this.openIncidentsUserControl1.openIncidentsList();
+            }
+        }
     }
 }
