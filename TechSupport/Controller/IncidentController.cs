@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -29,6 +30,11 @@ namespace TechSupport.Controller
         public List<Incident> GetIncidents() 
         {
             return incidentSource.GetIncidents();
+        }
+
+        public List<Incident> GetOpenIncidents()
+        {
+            return incidentDBDAL.GetOpenIncidents();
         }
 
         /// <summary>

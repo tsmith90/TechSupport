@@ -20,13 +20,5 @@ namespace TechSupport.View
         {
             Application.Exit();
         }
-
-        private void SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["allIncidentsTabPage"])
-            {
-                allIncidentsUserControl.RefreshDataGrid();
-            }
-        }
     }
 }

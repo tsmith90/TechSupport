@@ -29,49 +29,78 @@ namespace TechSupport.UserControls
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.openIncidentsListView = new System.Windows.Forms.ListView();
+            this.productCodeColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateOpenedHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.customerColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.technicianColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.titleColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // openIncidentsListView
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(465, 316);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.openIncidentsListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.productCodeColumn,
+            this.dateOpenedHeader,
+            this.customerColumn,
+            this.technicianColumn,
+            this.titleColumn});
+            this.openIncidentsListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.openIncidentsListView.HideSelection = false;
+            this.openIncidentsListView.Location = new System.Drawing.Point(0, 0);
+            this.openIncidentsListView.Name = "openIncidentsListView";
+            this.openIncidentsListView.Size = new System.Drawing.Size(470, 309);
+            this.openIncidentsListView.TabIndex = 2;
+            this.openIncidentsListView.UseCompatibleStateImageBehavior = false;
+            this.openIncidentsListView.View = System.Windows.Forms.View.Details;
             // 
-            // dataGridView1
+            // productCodeColumn
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(459, 310);
-            this.dataGridView1.TabIndex = 0;
+            this.productCodeColumn.Text = "Product Code";
+            this.productCodeColumn.Width = 90;
+            // 
+            // dateOpenedHeader
+            // 
+            this.dateOpenedHeader.Text = "Date Opened";
+            this.dateOpenedHeader.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.dateOpenedHeader.Width = 90;
+            // 
+            // customerColumn
+            // 
+            this.customerColumn.Text = "Customer";
+            this.customerColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.customerColumn.Width = 90;
+            // 
+            // technicianColumn
+            // 
+            this.technicianColumn.Text = "Technician";
+            this.technicianColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.technicianColumn.Width = 90;
+            // 
+            // titleColumn
+            // 
+            this.titleColumn.Text = "Title";
+            this.titleColumn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.titleColumn.Width = 90;
             // 
             // OpenIncidentsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.openIncidentsListView);
             this.Name = "OpenIncidentsUserControl";
-            this.Size = new System.Drawing.Size(472, 323);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Size = new System.Drawing.Size(470, 309);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ListView openIncidentsListView;
+        private System.Windows.Forms.ColumnHeader productCodeColumn;
+        private System.Windows.Forms.ColumnHeader dateOpenedHeader;
+        private System.Windows.Forms.ColumnHeader customerColumn;
+        private System.Windows.Forms.ColumnHeader technicianColumn;
+        private System.Windows.Forms.ColumnHeader titleColumn;
     }
 }

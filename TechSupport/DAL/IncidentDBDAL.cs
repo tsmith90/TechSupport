@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -24,20 +25,15 @@ namespace TechSupport.DAL
             {
                 connection.Open();
 
-                using (SqlCommand sqlCommand = new SqlCommand(selectStatement, connection))
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
-                    using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
-                        while (dataReader.Read())
-                        {
-                            Incident incident = new Incident();
-                            incident.ProductCode = dataReader["ProductCode"].ToString();
-                            incident.DateOpened = dataReader["DateOpened"].ToString();
-                            incident.CustomerName = dataReader["customerName"].ToString();
-                            incident.TechnicianName = dataReader["technicianName"].ToString();
-                            incident.Title = dataReader["title"].ToString();
-                            incidentList.Add(incident);
-                        }
+                        Incident incident = new Incident();
+
+                        incident.ProductCode = reader["ProductCode"].ToString();
+
+                        incidentList.Add(incident);
                     }
                 }
             }
