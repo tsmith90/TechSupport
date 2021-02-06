@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -32,6 +31,10 @@ namespace TechSupport.Controller
             return incidentSource.GetIncidents();
         }
 
+        /// <summary>
+        /// Method to interact with IncidentDBDal and get the open incidents  
+        /// </summary
+        /// <returns>The IncidentDBDal open incident list</returns>
         public List<Incident> GetOpenIncidents()
         {
             return incidentDBDAL.GetOpenIncidents();

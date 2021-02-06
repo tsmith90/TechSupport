@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace TechSupport.Model
+﻿namespace TechSupport.Model
 {
     /// <summary>
     /// Model for the Incident object
@@ -15,7 +13,7 @@ namespace TechSupport.Model
 
         public string ProductCode { get; set; }
 
-        public int TechID { get; set; }
+        public int TechnicianID { get; set; }
 
         public string TechnicianName { get; set; }
 

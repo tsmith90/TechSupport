@@ -9,6 +9,7 @@ namespace TechSupport.DAL
     /// </summary>
     public class IncidentDAL
     {
+        private readonly List<Incident> incidents = new List<Incident>();
 
         /// <summary>
         /// 0-parameter constructor for the IncidentDAL class  
@@ -16,11 +17,6 @@ namespace TechSupport.DAL
         public IncidentDAL()
         { 
         }
-
-        private readonly List<Incident> incidents = new List<Incident>
-        {
-
-        };
 
         /// <summary>
         /// Method return the list of stored Incident objects  

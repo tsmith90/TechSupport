@@ -1,30 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Class for the OpenIncidents tab 
+    /// </summary>
     public partial class OpenIncidentsUserControl : UserControl
     {
         private readonly IncidentController incidentController;
 
+        /// <summary>
+        /// 0-parameter constructor for the OpenIncidentsUserControl class
+        /// </summary>
         public OpenIncidentsUserControl()
         {
             InitializeComponent();
             this.incidentController = new IncidentController();
         }
 
-
+        /// <summary>
+        /// Method to format and add open incidents to the ListView
+        /// </summary>
         public void openIncidentsList()
         {
+            openIncidentsListView.Items.Clear();
             List<Incident> incidentsList;
 
             try

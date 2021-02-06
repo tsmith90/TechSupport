@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+
+    /// <summary>
+    /// Class to read and interact with the TechSupport DB 
+    /// </summary>
     class IncidentDBDAL
     {
+        /// <summary>
+        /// Method to read Incidents without a DateClosed from the TechSupport DB 
+        /// </summary>
+        /// <returns>List of open Incidents</returns>
         public List<Incident> GetOpenIncidents()
         {
             List<Incident> incidentList = new List<Incident>();
