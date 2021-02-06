@@ -15,11 +15,10 @@ namespace TechSupport.DAL
         {
             List<Incident> incidentList = new List<Incident>();
 
-            string selectStatement = "SELECT i.productCode, i.dateOpened, c.name as customerName, t.name as technicianName, i.title" +
-                "FROM Incidents i" +
-                "left join Customers c on i.CustomerID = c.CustomerID" +
-                "left join Technicians t on i.TechID = t.TechID " +
-                "WHERE i.dateclosed is null;";
+            string selectStatement = "SELECT * " +
+                "FROM Incidents " +
+
+                ";";
 
             using (SqlConnection connection = IncidentDBConnection.GetConnection())
             {
@@ -29,11 +28,19 @@ namespace TechSupport.DAL
                 {
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
-                        Incident incident = new Incident();
+                        while (reader.Read()) {
+                            Incident incident = new Incident();
 
-                        incident.ProductCode = reader["ProductCode"].ToString();
+                            incident.CustomerID = (int)reader["CustomerID"];
+                            incident.Title = reader["Title"].ToString();
+                            incident.Description = reader["Description"].ToString();
+                            incident.TechnicianName = reader["TechID"].ToString();
+                            incident.CustomerName = reader["CustomerID"].ToString();
+                            incident.DateOpened = reader["DateOpened"].ToString();
+                            incident.ProductCode = reader["ProductCode"].ToString();
 
-                        incidentList.Add(incident);
+                            incidentList.Add(incident);
+                        }
                     }
                 }
             }
