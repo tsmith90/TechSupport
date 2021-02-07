@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using TechSupport.Model;
 
@@ -18,7 +19,8 @@ namespace TechSupport.DAL
         {
             List<Incident> incidentList = new List<Incident>();
 
-            string selectStatement = "SELECT ProductCode,  DateOpened, c.Name as CustomerName, t.Name as TechName, Title " +
+            string selectStatement = 
+                "SELECT ProductCode,  FORMAT (DateOpened, 'MM-dd-yyyy') as Date, c.Name as CustomerName, t.Name as TechName, Title " +
                 "FROM Incidents i " +
                 "JOIN Technicians t on i.TechID = t.TechID " +
                 "JOIN Customers c on i.CustomerID = c.CustomerID " +
@@ -36,7 +38,7 @@ namespace TechSupport.DAL
                             Incident incident = new Incident();
 
                             incident.ProductCode = reader["ProductCode"].ToString();
-                            incident.DateOpened = reader["DateOpened"].ToString();
+                            incident.DateOpened = reader["Date"].ToString();
                             incident.CustomerName = reader["CustomerName"].ToString();
                             incident.TechnicianName = reader["TechName"].ToString();
                             incident.Title = reader["Title"].ToString();
