@@ -48,7 +48,7 @@
             this.openIncidentsListView.HideSelection = false;
             this.openIncidentsListView.Location = new System.Drawing.Point(0, 0);
             this.openIncidentsListView.Name = "openIncidentsListView";
-            this.openIncidentsListView.Size = new System.Drawing.Size(620, 364);
+            this.openIncidentsListView.Size = new System.Drawing.Size(620, 339);
             this.openIncidentsListView.TabIndex = 2;
             this.openIncidentsListView.UseCompatibleStateImageBehavior = false;
             this.openIncidentsListView.View = System.Windows.Forms.View.Details;
@@ -88,7 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.openIncidentsListView);
             this.Name = "OpenIncidentsUserControl";
-            this.Size = new System.Drawing.Size(620, 364);
+            this.Size = new System.Drawing.Size(620, 339);
             this.ResumeLayout(false);
 
         }

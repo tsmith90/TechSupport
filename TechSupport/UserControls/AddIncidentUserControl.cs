@@ -21,42 +21,15 @@ namespace TechSupport.UserControls
             incidentController = new IncidentController();
         }
 
-        private void AddButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var title = titleTextBox.Text;
-                var description = descriptionTextBox.Text;
-
-                if (!int.TryParse(customerIDTextBox.Text, out int customerID))
-                {
-                    throw new ArgumentOutOfRangeException("customerID must be a valid number");
-                }
-                Incident newIncident = new Incident();
-                newIncident.Title = title;
-                newIncident.Description = description;
-                newIncident.CustomerID = customerID;
-
-                incidentController.AddIncident(newIncident);
-                ClearControl();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message,
-                    "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void CancelButton_Click(object sender, EventArgs e)
+        private void ClearButton_Click(object sender, EventArgs e)
         {
             ClearControl();
         }
 
-        private void ClearControl() 
+        private void ClearControl()
         {
             titleTextBox.Text = "";
             descriptionTextBox.Text = "";
-            customerIDTextBox.Text = "";
         }
     }
 }

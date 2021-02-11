@@ -30,112 +30,132 @@ namespace TechSupport.UserControls
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.productLabel = new System.Windows.Forms.Label();
+            this.customerLabel = new System.Windows.Forms.Label();
             this.titleLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
-            this.customerIdLabel = new System.Windows.Forms.Label();
+            this.customerComboBox = new System.Windows.Forms.ComboBox();
+            this.productComboBox = new System.Windows.Forms.ComboBox();
             this.titleTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
-            this.customerIDTextBox = new System.Windows.Forms.TextBox();
-            this.addButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
+            this.clearButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 19.81132F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.18868F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 328F));
-            this.tableLayoutPanel1.Controls.Add(this.titleLabel, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.customerIdLabel, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.titleTextBox, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.descriptionTextBox, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.customerIDTextBox, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.addButton, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.cancelButton, 2, 4);
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.55932F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 86.44068F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 166F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 228F));
+            this.tableLayoutPanel1.Controls.Add(this.productLabel, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.customerLabel, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.titleLabel, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.descriptionLabel, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.customerComboBox, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.productComboBox, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.titleTextBox, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.descriptionTextBox, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.clearButton, 3, 5);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.51515F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48.48485F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(466, 317);
+            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 185F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(511, 353);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // productLabel
+            // 
+            this.productLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productLabel.Location = new System.Drawing.Point(18, 50);
+            this.productLabel.Name = "productLabel";
+            this.productLabel.Size = new System.Drawing.Size(95, 30);
+            this.productLabel.TabIndex = 1;
+            this.productLabel.Text = "Product:";
+            this.productLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // customerLabel
+            // 
+            this.customerLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customerLabel.Location = new System.Drawing.Point(18, 17);
+            this.customerLabel.Name = "customerLabel";
+            this.customerLabel.Size = new System.Drawing.Size(95, 33);
+            this.customerLabel.TabIndex = 0;
+            this.customerLabel.Text = "Customer:";
+            this.customerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // titleLabel
             // 
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(30, 50);
+            this.titleLabel.Location = new System.Drawing.Point(18, 80);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(100, 23);
-            this.titleLabel.TabIndex = 100;
+            this.titleLabel.Size = new System.Drawing.Size(95, 32);
+            this.titleLabel.TabIndex = 2;
             this.titleLabel.Text = "Title:";
-            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // descriptionLabel
             // 
             this.descriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descriptionLabel.Location = new System.Drawing.Point(30, 98);
+            this.descriptionLabel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.descriptionLabel.Location = new System.Drawing.Point(18, 112);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(100, 23);
-            this.descriptionLabel.TabIndex = 101;
+            this.descriptionLabel.Size = new System.Drawing.Size(95, 40);
+            this.descriptionLabel.TabIndex = 3;
             this.descriptionLabel.Text = "Description:";
-            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.descriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // customerIdLabel
+            // customerComboBox
             // 
-            this.customerIdLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customerIdLabel.Location = new System.Drawing.Point(30, 148);
-            this.customerIdLabel.Name = "customerIdLabel";
-            this.customerIdLabel.Size = new System.Drawing.Size(100, 23);
-            this.customerIdLabel.TabIndex = 102;
-            this.customerIdLabel.Text = "CustomerID:";
-            this.customerIdLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tableLayoutPanel1.SetColumnSpan(this.customerComboBox, 2);
+            this.customerComboBox.FormattingEnabled = true;
+            this.customerComboBox.Location = new System.Drawing.Point(119, 20);
+            this.customerComboBox.Name = "customerComboBox";
+            this.customerComboBox.Size = new System.Drawing.Size(272, 21);
+            this.customerComboBox.TabIndex = 4;
+            // 
+            // productComboBox
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.productComboBox, 2);
+            this.productComboBox.FormattingEnabled = true;
+            this.productComboBox.Location = new System.Drawing.Point(119, 53);
+            this.productComboBox.Name = "productComboBox";
+            this.productComboBox.Size = new System.Drawing.Size(272, 21);
+            this.productComboBox.TabIndex = 5;
             // 
             // titleTextBox
             // 
-            this.titleTextBox.Location = new System.Drawing.Point(140, 53);
+            this.tableLayoutPanel1.SetColumnSpan(this.titleTextBox, 2);
+            this.titleTextBox.Location = new System.Drawing.Point(119, 83);
             this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(214, 20);
-            this.titleTextBox.TabIndex = 4;
+            this.titleTextBox.Size = new System.Drawing.Size(272, 20);
+            this.titleTextBox.TabIndex = 6;
             // 
             // descriptionTextBox
             // 
-            this.descriptionTextBox.Location = new System.Drawing.Point(140, 101);
+            this.tableLayoutPanel1.SetColumnSpan(this.descriptionTextBox, 2);
+            this.descriptionTextBox.Location = new System.Drawing.Point(119, 115);
+            this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
-            this.descriptionTextBox.Size = new System.Drawing.Size(214, 20);
-            this.descriptionTextBox.TabIndex = 5;
+            this.descriptionTextBox.Size = new System.Drawing.Size(272, 179);
+            this.descriptionTextBox.TabIndex = 7;
             // 
-            // customerIDTextBox
+            // clearButton
             // 
-            this.customerIDTextBox.Location = new System.Drawing.Point(140, 151);
-            this.customerIDTextBox.Name = "customerIDTextBox";
-            this.customerIDTextBox.Size = new System.Drawing.Size(214, 20);
-            this.customerIDTextBox.TabIndex = 6;
-            // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(30, 210);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(104, 70);
-            this.addButton.TabIndex = 7;
-            this.addButton.Text = "Add";
-            this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(140, 210);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(110, 70);
-            this.cancelButton.TabIndex = 8;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
+            this.clearButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearButton.Location = new System.Drawing.Point(285, 300);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.Size = new System.Drawing.Size(107, 40);
+            this.clearButton.TabIndex = 8;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // AddIncidentUserControl
             // 
@@ -143,7 +163,7 @@ namespace TechSupport.UserControls
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AddIncidentUserControl";
-            this.Size = new System.Drawing.Size(472, 323);
+            this.Size = new System.Drawing.Size(517, 359);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -153,13 +173,14 @@ namespace TechSupport.UserControls
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label customerLabel;
+        private System.Windows.Forms.Label productLabel;
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label customerIdLabel;
+        private System.Windows.Forms.ComboBox customerComboBox;
+        private System.Windows.Forms.ComboBox productComboBox;
         private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox descriptionTextBox;
-        private System.Windows.Forms.TextBox customerIDTextBox;
-        private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button clearButton;
     }
 }
