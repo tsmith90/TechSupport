@@ -89,7 +89,28 @@ namespace TechSupport.DAL
         /// <returns>List of products</returns>
         public List<string> GetProducts()
         {
-            List<string> products = new List<string> { "hello", "bye", "stuff" };
+            List<string> products = new List<string> {};
+
+            string selectStatement = "SELECT Name FROM Products;";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            products.Add(name);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
             return products;
         }
     }
