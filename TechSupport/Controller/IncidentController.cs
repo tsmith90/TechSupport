@@ -44,20 +44,18 @@ namespace TechSupport.Controller
         /// Method to retrieve the customer name list from the DB
         /// </summary
         /// <returns>The IncidentDBDal customers list</returns>
-        public List<String> GetCustomers()
-        {
-            List<String> customers = new List<string> { "hello", "bye", "stuff" };
-            return customers;
+        public List<string> GetCustomers()
+        {  
+            return incidentDBDAL.GetCustomers();
         }
 
         /// <summary>
         /// Method to retrieve the product name list from the DB
         /// </summary
         /// <returns>The IncidentDBDal products list</returns>
-        public List<String> GetProducts()
+        public List<string> GetProducts()
         {
-            List<String> products = new List<string> { "hello", "bye", "stuff" };
-            return products;
+            return incidentDBDAL.GetProducts();
         }
 
         /// <summary>

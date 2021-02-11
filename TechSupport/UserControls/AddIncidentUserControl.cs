@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
-using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
@@ -47,12 +45,26 @@ namespace TechSupport.UserControls
 
         private void SetNameList()
         {
-            customerComboBox.DataSource = incidentController.GetCustomers();
+            try
+            {
+                customerComboBox.DataSource = incidentController.GetCustomers();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void SetProductList()
         {
-            productComboBox.DataSource = incidentController.GetProducts();
+            try
+            {
+                productComboBox.DataSource = incidentController.GetProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }

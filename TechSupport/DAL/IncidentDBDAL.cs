@@ -50,5 +50,17 @@ namespace TechSupport.DAL
 
             return incidentList; 
         }
+
+        public List<string> GetCustomers()
+        {
+            List<string> customers = new List<string> { "hello", "bye", "stuff" };
+            return customers;
+        }
+
+        public List<string> GetProducts()
+        {
+            List<string> products = new List<string> { "hello", "bye", "stuff" };
+            return products;
+        }
     }
 }
