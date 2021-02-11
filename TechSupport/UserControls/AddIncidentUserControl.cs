@@ -47,12 +47,12 @@ namespace TechSupport.UserControls
 
         private void SetNameList()
         {
-            customerComboBox.DataSource = new List<string> { "hi", "bye", "stuff" };
+            customerComboBox.DataSource = incidentController.GetCustomers();
         }
 
         private void SetProductList()
         {
-            productComboBox.DataSource = new List<string> { "hi", "bye", "stuff" };
+            productComboBox.DataSource = incidentController.GetProducts();
         }
     }
 }

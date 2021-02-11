@@ -41,6 +41,26 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Method to retrieve the customer name list from the DB
+        /// </summary
+        /// <returns>The IncidentDBDal customers list</returns>
+        public List<String> GetCustomers()
+        {
+            List<String> customers = new List<string> { "hello", "bye", "stuff" };
+            return customers;
+        }
+
+        /// <summary>
+        /// Method to retrieve the product name list from the DB
+        /// </summary
+        /// <returns>The IncidentDBDal products list</returns>
+        public List<String> GetProducts()
+        {
+            List<String> products = new List<string> { "hello", "bye", "stuff" };
+            return products;
+        }
+
+        /// <summary>
         /// Method to add Incident objects to the application list
         /// </summary>
         /// <param name = "title">the title string to be added to the incidents list.</param> 
