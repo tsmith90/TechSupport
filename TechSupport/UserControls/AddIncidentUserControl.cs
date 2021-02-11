@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -19,6 +20,8 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             incidentController = new IncidentController();
+            SetNameList();
+            SetProductList();
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
@@ -30,6 +33,16 @@ namespace TechSupport.UserControls
         {
             titleTextBox.Text = "";
             descriptionTextBox.Text = "";
+        }
+
+        private void SetNameList()
+        {
+            customerComboBox.DataSource = new List<string> { "hi", "bye", "stuff" };
+        }
+
+        private void SetProductList()
+        {
+            productComboBox.DataSource = new List<string> { "hi", "bye", "stuff" };
         }
     }
 }
