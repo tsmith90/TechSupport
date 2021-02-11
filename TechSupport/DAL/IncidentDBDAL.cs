@@ -46,17 +46,47 @@ namespace TechSupport.DAL
                         }
                     }
                 }
+                connection.Close();
             }
 
             return incidentList; 
         }
 
+        /// <summary>
+        /// Method to read get the Customer names data from the TechSupport DB
+        /// </summary>
+        /// <returns>List of customers</returns>
         public List<string> GetCustomers()
         {
-            List<string> customers = new List<string> { "hello", "bye", "stuff" };
+            List<string> customers = new List<string> {};
+
+            string selectStatement = "SELECT Name FROM Customers;";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                           string name = reader["Name"].ToString();
+                           customers.Add(name);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
             return customers;
         }
 
+        /// <summary>
+        /// Method to read get the Product names data from the TechSupport DB
+        /// </summary>
+        /// <returns>List of products</returns>
         public List<string> GetProducts()
         {
             List<string> products = new List<string> { "hello", "bye", "stuff" };
