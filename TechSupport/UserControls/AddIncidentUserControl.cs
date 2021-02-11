@@ -31,6 +31,16 @@ namespace TechSupport.UserControls
 
         private void ClearControl()
         {
+            if (customerComboBox.SelectedIndex != -1)
+            {
+                customerComboBox.SelectedIndex = 0;
+            }
+
+            if (productComboBox.SelectedIndex != -1)
+            {
+                productComboBox.SelectedIndex = 0;
+            }
+
             titleTextBox.Text = "";
             descriptionTextBox.Text = "";
         }
