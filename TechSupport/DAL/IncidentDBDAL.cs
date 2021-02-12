@@ -21,8 +21,8 @@ namespace TechSupport.DAL
             string selectStatement = 
                 "SELECT ProductCode,  FORMAT (DateOpened, 'MM-dd-yyyy') as Date, c.Name as CustomerName, t.Name as TechName, Title " +
                 "FROM Incidents i " +
-                "JOIN Technicians t on i.TechID = t.TechID " +
-                "JOIN Customers c on i.CustomerID = c.CustomerID " +
+                "LEFT JOIN Technicians t on i.TechID = t.TechID " +
+                "LEFT JOIN Customers c on i.CustomerID = c.CustomerID " +
                 "WHERE DateClosed is null;";
 
             using (SqlConnection connection = IncidentDBConnection.GetConnection())

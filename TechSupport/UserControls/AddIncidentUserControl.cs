@@ -27,7 +27,10 @@ namespace TechSupport.UserControls
             ClearControl();
         }
 
-        private void ClearControl()
+        /// <summary>
+        /// Method to clear the user form     
+        /// </summary>
+        public void ClearControl()
         {
             if (customerComboBox.SelectedIndex != -1)
             {

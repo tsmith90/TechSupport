@@ -27,7 +27,9 @@ namespace TechSupport
                 (passwordTextBox.Text == "test1234"))
             {
                 Hide();
+                dashboard.SetUserName(userTextBox.Text);
                 dashboard.ShowDialog();
+                this.dashboard.
                 Close();
             }
             else
