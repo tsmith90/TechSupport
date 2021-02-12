@@ -30,11 +30,14 @@ namespace TechSupport.DAL
         /// <summary>
         /// Method to add an Incident object
         /// </summary>
-        /// <param name = "title">the title string to be added to the incidents list.</param> 
-        /// <param name = "description">the description string to be added to the incidents list.</param> 
-        /// <param name = "incident">the customerID int to be added to the incidents list.</param> 
+        /// <param name = "incident">the incident to be added to the incidents table.</param> 
         public void AddIncident(Incident incident)
         {
+            if (incident == null)
+            {
+                throw new ArgumentNullException("Please enter a valid incident.");
+            }
+
             incidents.Add(incident);
         }
 

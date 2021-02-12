@@ -192,13 +192,13 @@ namespace TechSupport.DAL
 
                     if(count > 0)
                     {
+                        connection.Close();
                         return true;
                     }
                 }
 
                 connection.Close();
             }
-
 
             return false; ;
         }

@@ -59,14 +59,20 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
-        /// Method to add Incident objects to the application list
+        /// Method to add Incidents to the DB
         /// </summary>
-        /// <param name = "title">the title string to be added to the incidents list.</param> 
-        /// <param name = "description">the description string to be added to the incidents list.</param> 
-        /// <param name = "customerID">the customerID int to be added to the incidents list.</param> 
+        /// <param name = "name">the customer's name</param> 
+        /// <param name = "product">the product name</param> 
+        /// <param name = "title">the title of the incident</param> 
+        /// <param name = "description">the description of the incident</param> 
         public void AddIncident(string name, string product, string title, string description)
         {
             Incident incident = new Incident();
+
+            if (name == null || product == null || title == null || description == null)
+            {
+                throw new ArgumentNullException("Field are not allowed to be empty or null.");
+            }
 
             incident.CustomerName = name;
             incident.ProductName = product;

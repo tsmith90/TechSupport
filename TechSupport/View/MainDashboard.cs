@@ -26,7 +26,7 @@ namespace TechSupport.View
         {
             if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["openIncidentsTabPage"])
             {
-                this.openIncidentsUserControl1.openIncidentsList();
+                this.openIncidentsUserControl1.OpenIncidentsList();
             }
             else if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["addIncidentTabPage"])
             {

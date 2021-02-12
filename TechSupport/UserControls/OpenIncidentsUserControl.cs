@@ -25,7 +25,7 @@ namespace TechSupport.UserControls
         /// <summary>
         /// Method to format and add open incidents to the ListView
         /// </summary>
-        public void openIncidentsList()
+        public void OpenIncidentsList()
         {
             openIncidentsListView.Items.Clear();
             List<Incident> incidentsList;

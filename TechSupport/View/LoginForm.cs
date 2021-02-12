@@ -9,8 +9,7 @@ namespace TechSupport
     /// </summary>
     public partial class LoginForm : Form
     {
-        public string UserName { get; set; }
-        public MainDashboard dashboard;
+        private readonly MainDashboard dashboard;
 
         /// <summary>
         /// 0-parameter constructor for the LoginForm object  
