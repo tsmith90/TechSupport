@@ -26,11 +26,12 @@ namespace TechSupport
             if ((userTextBox.Text == "Jane") &&
                 (passwordTextBox.Text == "test1234"))
             {
-                Hide();
                 dashboard.SetUserName(userTextBox.Text);
+                Hide();
                 dashboard.ShowDialog();
-                this.dashboard.
-                Close();
+                userTextBox.Text = "";
+                passwordTextBox.Text = "";
+                Show();
             }
             else
             {

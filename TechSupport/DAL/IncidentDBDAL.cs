@@ -121,9 +121,49 @@ namespace TechSupport.DAL
         /// </summary>
         public void AddIncident(Incident incident)
         {
-            if(CheckCustomerHistory(incident.CustomerName, incident.ProductName))
+            if (CheckCustomerHistory(incident.CustomerName, incident.ProductName))
             {
-                MessageBox.Show("Good");
+
+                String insert =
+                "INSERT INTO Incidents (CustomerID, ProductCode, DateOpened, Title, Description) " +
+                "SELECT r.CustomerID, r.ProductCode, @date, @title, @description " +
+                "FROM Products p " +
+                "JOIN Registrations r on p.ProductCode = r.ProductCode " +
+                "JOIN Customers c on r.CustomerID = c.CustomerID " +
+                "WHERE c.Name = @name and p.Name = @product;";
+                
+
+                using (SqlConnection connection = IncidentDBConnection.GetConnection())
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(insert, connection))
+                    {
+                        cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+                        cmd.Parameters["@name"].Value = incident.CustomerName;
+
+                        cmd.Parameters.Add("@product", System.Data.SqlDbType.VarChar);
+                        cmd.Parameters["@product"].Value = incident.ProductName;
+
+                        cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
+                        cmd.Parameters["@date"].Value = DateTime.Now;
+
+                        cmd.Parameters.Add("@title", System.Data.SqlDbType.VarChar);
+                        cmd.Parameters["@title"].Value = incident.Title;
+
+                        cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+                        cmd.Parameters["@description"].Value = incident.Description;
+
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+                }
+                MessageBox.Show("The incident has been added to the database.");
+            }
+            else 
+            {
+                MessageBox.Show("There is no registration associated with the product.");
             }
         }
 

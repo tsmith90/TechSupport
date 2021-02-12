@@ -35,6 +35,9 @@ namespace TechSupport.View
 
         }
 
+        /// <summary>
+        /// Sets the username label from the login form
+        /// </summary>
         public void SetUserName(string name)
         {
             usernameLabel.Text = name;
@@ -42,10 +45,7 @@ namespace TechSupport.View
 
         private void LogoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            LoginForm loginForm = new LoginForm();
-            this.Hide();
-            loginForm.ShowDialog();
-            this.Close();
+            Hide();
         }
     }
 }
