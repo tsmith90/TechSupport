@@ -69,5 +69,27 @@ namespace TechSupport.UserControls
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(String.IsNullOrEmpty(titleTextBox.Text))
+                {
+                    throw new Exception("Title cannot be empty");
+                }
+                else if (String.IsNullOrEmpty(descriptionTextBox.Text))
+                {
+                    throw new Exception("Description cannot be empty");
+                }
+
+                incidentController.AddIncident(customerComboBox.SelectedValue.ToString(), productComboBox.SelectedValue.ToString(), titleTextBox.Text, descriptionTextBox.Text);
+                ClearControl();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -11,6 +11,8 @@
 
         public string ProductCode { get; set; }
 
+        public string ProductName { get; set; }
+
         public string TechnicianName { get; set; }
 
         public string DateOpened { get; set; }

@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -112,6 +114,53 @@ namespace TechSupport.DAL
             }
 
             return products;
+        }
+
+        /// <summary>
+        /// Method to insert a new Incident into the TechSupport DB
+        /// </summary>
+        public void AddIncident(Incident incident)
+        {
+            if(CheckCustomerHistory(incident.CustomerName, incident.ProductName))
+            {
+                MessageBox.Show("Good");
+            }
+        }
+
+        private bool CheckCustomerHistory(String name, String product)
+        {
+            String query =
+                "SELECT count(r.CustomerID) " +
+                "FROM Registrations r " +
+                "LEFT JOIN Products p on r.ProductCode = p.ProductCode " +
+                "LEFT JOIN Customers c on c.CustomerID = r.CustomerID " +
+                "WHERE c.Name = @name and p.Name = @product;";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@name"].Value = name;
+
+                    cmd.Parameters.Add("@product", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@product"].Value = product;
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if(count > 0)
+                    {
+                        return true;
+                    }
+                }
+
+                connection.Close();
+            }
+
+
+            return false; ;
         }
     }
 }

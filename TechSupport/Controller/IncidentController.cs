@@ -64,13 +64,16 @@ namespace TechSupport.Controller
         /// <param name = "title">the title string to be added to the incidents list.</param> 
         /// <param name = "description">the description string to be added to the incidents list.</param> 
         /// <param name = "customerID">the customerID int to be added to the incidents list.</param> 
-        public void AddIncident(Incident incident)
+        public void AddIncident(string name, string product, string title, string description)
         {
-            if (incident == null)
-            {
-                throw new ArgumentNullException("incident cannot be null");
-            }
-            incidentSource.AddIncident(incident);
+            Incident incident = new Incident();
+
+            incident.CustomerName = name;
+            incident.ProductName = product;
+            incident.Title = title;
+            incident.Description = description;
+
+            incidentDBDAL.AddIncident(incident);
         }
 
         /// <summary>
