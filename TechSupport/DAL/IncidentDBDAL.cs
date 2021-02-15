@@ -10,7 +10,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// Class to read and interact with the TechSupport DB 
     /// </summary>
-    class IncidentDBDAL
+    public class IncidentDBDAL
     {
         /// <summary>
         /// Method to read Incidents without a DateClosed from the TechSupport DB 
