@@ -32,5 +32,22 @@ namespace TechSupport.UserControls
                 MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            ClearControls();
+        }
+
+        protected void ClearControls()
+        {
+            incidentTextBox.Text = "";
+            customerTextBox.Text = "";
+            productTextBox.Text = "";
+            technicianComboBox.Text = "-- Unassigned --";
+            titleTextBox.Text = "";
+            dateOpenedTextBox.Text = "";
+            descriptionTextBox.Text = "";
+            textToAddTextBox.Text = "";
+        }
     }
 }

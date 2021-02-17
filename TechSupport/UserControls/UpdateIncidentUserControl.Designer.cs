@@ -37,18 +37,18 @@ namespace TechSupport.UserControls
             this.titleLabel = new System.Windows.Forms.Label();
             this.dateOpenedLabel = new System.Windows.Forms.Label();
             this.descriptionLabel = new System.Windows.Forms.Label();
-            this.textToAddLabel = new System.Windows.Forms.Label();
             this.incidentTextBox = new System.Windows.Forms.TextBox();
-            this.getButton = new System.Windows.Forms.Button();
             this.customerTextBox = new System.Windows.Forms.TextBox();
             this.productTextBox = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.dateOpenedTextBox = new System.Windows.Forms.TextBox();
             this.descriptionTextBox = new System.Windows.Forms.TextBox();
             this.textToAddTextBox = new System.Windows.Forms.TextBox();
+            this.textToAddLabel = new System.Windows.Forms.Label();
+            this.getButton = new System.Windows.Forms.Button();
             this.updateButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
-            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.technicianComboBox = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -162,15 +162,6 @@ namespace TechSupport.UserControls
             this.descriptionLabel.TabIndex = 6;
             this.descriptionLabel.Text = "Description:";
             // 
-            // textToAddLabel
-            // 
-            this.textToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textToAddLabel.Location = new System.Drawing.Point(3, 377);
-            this.textToAddLabel.Name = "textToAddLabel";
-            this.textToAddLabel.Size = new System.Drawing.Size(93, 23);
-            this.textToAddLabel.TabIndex = 7;
-            this.textToAddLabel.Text = "Text to add:";
-            // 
             // incidentTextBox
             // 
             this.incidentTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,16 +169,6 @@ namespace TechSupport.UserControls
             this.incidentTextBox.Name = "incidentTextBox";
             this.incidentTextBox.Size = new System.Drawing.Size(142, 26);
             this.incidentTextBox.TabIndex = 8;
-            // 
-            // getButton
-            // 
-            this.getButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getButton.Location = new System.Drawing.Point(259, 28);
-            this.getButton.Name = "getButton";
-            this.getButton.Size = new System.Drawing.Size(144, 34);
-            this.getButton.TabIndex = 9;
-            this.getButton.Text = "Get";
-            this.getButton.UseVisualStyleBackColor = true;
             // 
             // customerTextBox
             // 
@@ -206,6 +187,15 @@ namespace TechSupport.UserControls
             this.productTextBox.Name = "productTextBox";
             this.productTextBox.Size = new System.Drawing.Size(439, 26);
             this.productTextBox.TabIndex = 11;
+            // 
+            // titleTextBox
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.titleTextBox, 3);
+            this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleTextBox.Location = new System.Drawing.Point(102, 185);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.Size = new System.Drawing.Size(439, 26);
+            this.titleTextBox.TabIndex = 13;
             // 
             // dateOpenedTextBox
             // 
@@ -235,6 +225,25 @@ namespace TechSupport.UserControls
             this.textToAddTextBox.Size = new System.Drawing.Size(439, 84);
             this.textToAddTextBox.TabIndex = 16;
             // 
+            // textToAddLabel
+            // 
+            this.textToAddLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textToAddLabel.Location = new System.Drawing.Point(3, 377);
+            this.textToAddLabel.Name = "textToAddLabel";
+            this.textToAddLabel.Size = new System.Drawing.Size(93, 23);
+            this.textToAddLabel.TabIndex = 7;
+            this.textToAddLabel.Text = "Text to add:";
+            // 
+            // getButton
+            // 
+            this.getButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.getButton.Location = new System.Drawing.Point(259, 28);
+            this.getButton.Name = "getButton";
+            this.getButton.Size = new System.Drawing.Size(144, 34);
+            this.getButton.TabIndex = 9;
+            this.getButton.Text = "Get";
+            this.getButton.UseVisualStyleBackColor = true;
+            // 
             // updateButton
             // 
             this.updateButton.Location = new System.Drawing.Point(102, 478);
@@ -261,26 +270,18 @@ namespace TechSupport.UserControls
             this.clearButton.TabIndex = 19;
             this.clearButton.Text = "Clear";
             this.clearButton.UseVisualStyleBackColor = true;
-            // 
-            // titleTextBox
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.titleTextBox, 3);
-            this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleTextBox.Location = new System.Drawing.Point(102, 185);
-            this.titleTextBox.Name = "titleTextBox";
-            this.titleTextBox.Size = new System.Drawing.Size(439, 26);
-            this.titleTextBox.TabIndex = 13;
+            this.clearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // technicianComboBox
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.technicianComboBox, 3);
+            this.technicianComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.technicianComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.technicianComboBox.FormattingEnabled = true;
             this.technicianComboBox.Location = new System.Drawing.Point(102, 135);
             this.technicianComboBox.Name = "technicianComboBox";
             this.technicianComboBox.Size = new System.Drawing.Size(439, 28);
             this.technicianComboBox.TabIndex = 20;
-            this.technicianComboBox.Text = "-- Unassigned --";
             // 
             // UpdateIncidentUserControl
             // 

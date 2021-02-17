@@ -92,6 +92,7 @@ namespace TechSupport.DAL
         public List<string> GetTechnicians()
         {
             List<string> technicians = new List<string> { };
+            technicians.Add("-- Unassigned --");
 
             string selectStatement = "SELECT Name FROM Technicians;";
 
