@@ -199,6 +199,60 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Method to retrieve an incident based on the ID from the TechSupport DB
+        /// </summary
+        /// <param name = "id">the incident id number in the DB</param>  
+        /// <returns>The IncidentDBDal Incident list by id</returns>
+        public Incident GetIncidentByID(int id) 
+        {
+            Incident incident = new Incident();
+
+            string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, i.Title as title, i.DateOpened as opened, i.DateClosed as closed, i.Description as description " +
+                "FROM Incidents i " +
+                "JOIN Customers c on c.CustomerID = i.CustomerID " +
+                "JOIN Technicians t on t.TechID = i.TechID " +
+                "WHERE i.IncidentID = " + id + ";";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["name"].ToString();
+                            incident.CustomerName = name;
+
+                            string product = reader["product"].ToString();
+                            incident.ProductCode = product;
+
+                            string techName = reader["techName"].ToString();
+                            incident.TechnicianName = techName;
+
+                            string title = reader["title"].ToString();
+                            incident.Title = title;
+
+                            string opened = reader["opened"].ToString();
+                            incident.DateOpened = opened;
+
+                            string closed = reader["closed"].ToString();
+                            incident.DateClosed = closed;
+
+                            string description = reader["description"].ToString();
+                            incident.Description = description;
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return incident;
+        }
+
         private bool CheckCustomerHistory(String name, String product)
         {
             String query =

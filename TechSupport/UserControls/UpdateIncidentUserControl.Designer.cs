@@ -176,6 +176,7 @@ namespace TechSupport.UserControls
             this.customerTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customerTextBox.Location = new System.Drawing.Point(102, 68);
             this.customerTextBox.Name = "customerTextBox";
+            this.customerTextBox.ReadOnly = true;
             this.customerTextBox.Size = new System.Drawing.Size(439, 26);
             this.customerTextBox.TabIndex = 10;
             // 
@@ -185,6 +186,7 @@ namespace TechSupport.UserControls
             this.productTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productTextBox.Location = new System.Drawing.Point(102, 101);
             this.productTextBox.Name = "productTextBox";
+            this.productTextBox.ReadOnly = true;
             this.productTextBox.Size = new System.Drawing.Size(439, 26);
             this.productTextBox.TabIndex = 11;
             // 
@@ -194,6 +196,7 @@ namespace TechSupport.UserControls
             this.titleTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleTextBox.Location = new System.Drawing.Point(102, 185);
             this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ReadOnly = true;
             this.titleTextBox.Size = new System.Drawing.Size(439, 26);
             this.titleTextBox.TabIndex = 13;
             // 
@@ -202,6 +205,7 @@ namespace TechSupport.UserControls
             this.dateOpenedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateOpenedTextBox.Location = new System.Drawing.Point(102, 223);
             this.dateOpenedTextBox.Name = "dateOpenedTextBox";
+            this.dateOpenedTextBox.ReadOnly = true;
             this.dateOpenedTextBox.Size = new System.Drawing.Size(151, 26);
             this.dateOpenedTextBox.TabIndex = 14;
             // 
@@ -212,6 +216,7 @@ namespace TechSupport.UserControls
             this.descriptionTextBox.Location = new System.Drawing.Point(102, 265);
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
+            this.descriptionTextBox.ReadOnly = true;
             this.descriptionTextBox.Size = new System.Drawing.Size(439, 92);
             this.descriptionTextBox.TabIndex = 15;
             // 
@@ -222,6 +227,7 @@ namespace TechSupport.UserControls
             this.textToAddTextBox.Location = new System.Drawing.Point(102, 380);
             this.textToAddTextBox.Multiline = true;
             this.textToAddTextBox.Name = "textToAddTextBox";
+            this.textToAddTextBox.ReadOnly = true;
             this.textToAddTextBox.Size = new System.Drawing.Size(439, 84);
             this.textToAddTextBox.TabIndex = 16;
             // 
@@ -243,9 +249,11 @@ namespace TechSupport.UserControls
             this.getButton.TabIndex = 9;
             this.getButton.Text = "Get";
             this.getButton.UseVisualStyleBackColor = true;
+            this.getButton.Click += new System.EventHandler(this.GetButton_Click);
             // 
             // updateButton
             // 
+            this.updateButton.Enabled = false;
             this.updateButton.Location = new System.Drawing.Point(102, 478);
             this.updateButton.Name = "updateButton";
             this.updateButton.Size = new System.Drawing.Size(142, 43);
@@ -255,6 +263,7 @@ namespace TechSupport.UserControls
             // 
             // closeButton
             // 
+            this.closeButton.Enabled = false;
             this.closeButton.Location = new System.Drawing.Point(259, 478);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(142, 43);

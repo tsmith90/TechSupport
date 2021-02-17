@@ -17,6 +17,8 @@
 
         public string DateOpened { get; set; }
 
+        public string DateClosed { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }

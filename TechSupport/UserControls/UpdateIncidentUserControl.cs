@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
@@ -48,6 +49,38 @@ namespace TechSupport.UserControls
             dateOpenedTextBox.Text = "";
             descriptionTextBox.Text = "";
             textToAddTextBox.Text = "";
+        }
+
+        private void GetButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Incident incident = GetIncidentByID();
+
+                closeButton.Enabled = true;
+                updateButton.Enabled = true;
+                textToAddTextBox.ReadOnly = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
+        }
+
+        private Incident GetIncidentByID()
+        {
+            int id = 0;
+
+            try
+            {
+                id = Int32.Parse(incidentTextBox.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Please enter a valid Incident ID number!");
+            }
+
+            return incidentController.GetIncidentByID(id);
         }
     }
 }

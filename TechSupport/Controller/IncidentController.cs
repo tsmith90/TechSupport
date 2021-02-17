@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -11,7 +10,6 @@ namespace TechSupport.Controller
     /// </summary>
     public class IncidentController
     {
-        private static IncidentDAL incidentSource;
         private static IncidentDBDAL incidentDBDAL;
 
         /// <summary>
@@ -19,17 +17,7 @@ namespace TechSupport.Controller
         /// </summary>
         public IncidentController()
         {
-            incidentSource = new IncidentDAL();
             incidentDBDAL = new IncidentDBDAL();
-        }
-
-        /// <summary>
-        /// Method to get the list of Incidents 
-        /// </summary>
-        /// <returns>The Incident list</returns>
-        public List<Incident> GetIncidents() 
-        {
-            return incidentSource.GetIncidents();
         }
 
         /// <summary>
@@ -69,6 +57,21 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
+        /// Method to retrieve an incident based on the ID from the TechSupport DB
+        /// </summary
+        /// <param name = "id">the incident id number in the DB</param>  
+        /// <returns>The IncidentDBDal Incident list by id</returns>
+        public Incident GetIncidentByID(int id)
+        {
+            if (id < 0)
+            {
+                throw new ArgumentOutOfRangeException("Please enter a valid Incident ID.");
+            }
+
+            return incidentDBDAL.GetIncidentByID(id);
+        }
+
+        /// <summary>
         /// Method to add Incidents to the DB
         /// </summary>
         /// <param name = "name">the customer's name</param> 
@@ -90,21 +93,6 @@ namespace TechSupport.Controller
             incident.Description = description;
 
             incidentDBDAL.AddIncident(incident);
-        }
-
-        /// <summary>
-        /// Method to search Incident objects
-        /// </summary>
-        /// <param name = "customerID">Searches the Incident list for certain objects for a given CustomerID</param>
-        /// <returns>A new Incident list of only incidents of a given customerID</returns>
-        public List<Incident> SearchIncidentsByCustomerID(int customerID)
-        {
-            if (customerID < 0)
-            {
-                throw new ArgumentOutOfRangeException("customerID must be a positive number");
-            }
-
-            return incidentSource.SearchIncidentsByCustomerID(customerID);
         }
     }
 }
