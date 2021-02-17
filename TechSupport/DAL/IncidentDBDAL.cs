@@ -86,6 +86,37 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
+        /// Method to read get the Technician names data from the TechSupport DB
+        /// </summary>
+        /// <returns>List of technicians</returns>
+        public List<string> GetTechnicians()
+        {
+            List<string> technicians = new List<string> { };
+
+            string selectStatement = "SELECT Name FROM Technicians;";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string name = reader["Name"].ToString();
+                            technicians.Add(name);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return technicians;
+        }
+
+        /// <summary>
         /// Method to read get the Product names data from the TechSupport DB
         /// </summary>
         /// <returns>List of products</returns>

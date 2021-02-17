@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -29,6 +30,15 @@ namespace TechSupport.Controller
         public List<Incident> GetIncidents() 
         {
             return incidentSource.GetIncidents();
+        }
+
+        /// <summary>
+        /// Method to interact with IncidentDBDal and get available technicians
+        /// </summary
+        /// <returns>The IncidentDBDal technician list</returns>
+        public List<string> GetTechnicians()
+        {
+            return incidentDBDAL.GetTechnicians();
         }
 
         /// <summary>

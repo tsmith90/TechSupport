@@ -100,12 +100,12 @@ namespace TechSupport.View
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.47974F));
             this.tableLayoutPanel1.Controls.Add(this.usernameLabel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.logoutLink, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 2);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(7, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(617, 409);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.92308F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.07692F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(617, 65);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // usernameLabel
@@ -133,7 +133,7 @@ namespace TechSupport.View
             // openIncidentsUserControl1
             // 
             this.openIncidentsUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openIncidentsUserControl1.Location = new System.Drawing.Point(0, 4);
+            this.openIncidentsUserControl1.Location = new System.Drawing.Point(0, 0);
             this.openIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(4);
             this.openIncidentsUserControl1.Name = "openIncidentsUserControl1";
             this.openIncidentsUserControl1.Size = new System.Drawing.Size(628, 603);

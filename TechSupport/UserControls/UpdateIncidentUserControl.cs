@@ -18,6 +18,19 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             incidentController = new IncidentController();
+            SetTechncicianList();
+        }
+
+        private void SetTechncicianList()
+        {
+            try
+            {
+                technicianComboBox.DataSource = incidentController.GetTechnicians();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }
