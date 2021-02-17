@@ -69,11 +69,11 @@
     <Compile Include="UserControls\OpenIncidentsUserControl.Designer.cs">
       <DependentUpon>OpenIncidentsUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\SearchIncidentUserControl.cs">
+    <Compile Include="UserControls\UpdateIncidentUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\SearchIncidentUserControl.Designer.cs">
-      <DependentUpon>SearchIncidentUserControl.cs</DependentUpon>
+    <Compile Include="UserControls\UpdateIncidentUserControl.Designer.cs">
+      <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="UserControls\OpenIncidentsUserControl.resx">
       <DependentUpon>OpenIncidentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\SearchIncidentUserControl.resx">
-      <DependentUpon>SearchIncidentUserControl.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UpdateIncidentUserControl.resx">
+      <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
