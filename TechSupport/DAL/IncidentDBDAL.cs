@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -48,9 +47,7 @@ namespace TechSupport.DAL
                         }
                     }
                 }
-                connection.Close();
             }
-
             return incidentList; 
         }
 
@@ -79,9 +76,7 @@ namespace TechSupport.DAL
                         }
                     }
                 }
-                connection.Close();
             }
-
             return customers;
         }
 
@@ -111,9 +106,7 @@ namespace TechSupport.DAL
                         }
                     }
                 }
-                connection.Close();
             }
-
             return technicians;
         }
 
@@ -142,7 +135,6 @@ namespace TechSupport.DAL
                         }
                     }
                 }
-                connection.Close();
             }
 
             return products;
@@ -153,8 +145,6 @@ namespace TechSupport.DAL
         /// </summary>
         public void AddIncident(Incident incident)
         {
-            if (CheckCustomerHistory(incident.CustomerName, incident.ProductName))
-            {
 
                 String insert =
                 "INSERT INTO Incidents (CustomerID, ProductCode, DateOpened, Title, Description) " +
@@ -188,15 +178,7 @@ namespace TechSupport.DAL
 
                         cmd.ExecuteNonQuery();
                     }
-
-                    connection.Close();
                 }
-                MessageBox.Show("The incident has been added to the database.");
-            }
-            else 
-            {
-                MessageBox.Show("There is no registration associated with the product.");
-            }
         }
 
         /// <summary>
@@ -210,8 +192,8 @@ namespace TechSupport.DAL
 
             string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, i.Title as title, i.DateOpened as opened, i.DateClosed as closed, i.Description as description " +
                 "FROM Incidents i " +
-                "JOIN Customers c on c.CustomerID = i.CustomerID " +
-                "JOIN Technicians t on t.TechID = i.TechID " +
+                "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
+                "LEFT JOIN Technicians t on t.TechID = i.TechID " +
                 "WHERE i.IncidentID = " + id + ";";
 
             using (SqlConnection connection = IncidentDBConnection.GetConnection())
@@ -247,13 +229,11 @@ namespace TechSupport.DAL
                         }
                     }
                 }
-                connection.Close();
             }
-
             return incident;
         }
 
-        private bool CheckCustomerHistory(String name, String product)
+        public bool CheckCustomerHistory(String name, String product)
         {
             String query =
                 "SELECT count(r.CustomerID) " +
@@ -278,14 +258,10 @@ namespace TechSupport.DAL
 
                     if(count > 0)
                     {
-                        connection.Close();
                         return true;
                     }
                 }
-
-                connection.Close();
             }
-
             return false; ;
         }
     }

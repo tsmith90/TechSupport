@@ -32,15 +32,15 @@ namespace TechSupport.View
         private void InitializeComponent()
         {
             this.openIncidentsTabPage = new System.Windows.Forms.TabPage();
+            this.openIncidentsUserControl1 = new TechSupport.UserControls.OpenIncidentsUserControl();
             this.updateIncidentTabPage = new System.Windows.Forms.TabPage();
+            this.searchIncidentUserControl1 = new TechSupport.UserControls.UpdateIncidentUserControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
+            this.addIncidentUserControl1 = new TechSupport.UserControls.AddIncidentUserControl();
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.logoutLink = new System.Windows.Forms.LinkLabel();
-            this.openIncidentsUserControl1 = new TechSupport.UserControls.OpenIncidentsUserControl();
-            this.addIncidentUserControl1 = new TechSupport.UserControls.AddIncidentUserControl();
-            this.searchIncidentUserControl1 = new TechSupport.UserControls.UpdateIncidentUserControl();
             this.openIncidentsTabPage.SuspendLayout();
             this.updateIncidentTabPage.SuspendLayout();
             this.addIncidentTabPage.SuspendLayout();
@@ -53,10 +53,19 @@ namespace TechSupport.View
             this.openIncidentsTabPage.Controls.Add(this.openIncidentsUserControl1);
             this.openIncidentsTabPage.Location = new System.Drawing.Point(4, 25);
             this.openIncidentsTabPage.Name = "openIncidentsTabPage";
-            this.openIncidentsTabPage.Size = new System.Drawing.Size(632, 607);
+            this.openIncidentsTabPage.Size = new System.Drawing.Size(600, 607);
             this.openIncidentsTabPage.TabIndex = 3;
             this.openIncidentsTabPage.Text = "Display Open Incidents";
             this.openIncidentsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // openIncidentsUserControl1
+            // 
+            this.openIncidentsUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.openIncidentsUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.openIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.openIncidentsUserControl1.Name = "openIncidentsUserControl1";
+            this.openIncidentsUserControl1.Size = new System.Drawing.Size(600, 603);
+            this.openIncidentsUserControl1.TabIndex = 0;
             // 
             // updateIncidentTabPage
             // 
@@ -67,6 +76,15 @@ namespace TechSupport.View
             this.updateIncidentTabPage.TabIndex = 2;
             this.updateIncidentTabPage.Text = "Update";
             this.updateIncidentTabPage.UseVisualStyleBackColor = true;
+            // 
+            // searchIncidentUserControl1
+            // 
+            this.searchIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.searchIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchIncidentUserControl1.Name = "searchIncidentUserControl1";
+            this.searchIncidentUserControl1.Size = new System.Drawing.Size(636, 535);
+            this.searchIncidentUserControl1.TabIndex = 0;
             // 
             // addIncidentTabPage
             // 
@@ -79,6 +97,15 @@ namespace TechSupport.View
             this.addIncidentTabPage.Text = "Add";
             this.addIncidentTabPage.UseVisualStyleBackColor = true;
             // 
+            // addIncidentUserControl1
+            // 
+            this.addIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
+            this.addIncidentUserControl1.Size = new System.Drawing.Size(632, 384);
+            this.addIncidentUserControl1.TabIndex = 0;
+            // 
             // dashboardTabControl
             // 
             this.dashboardTabControl.Controls.Add(this.openIncidentsTabPage);
@@ -89,7 +116,7 @@ namespace TechSupport.View
             this.dashboardTabControl.Location = new System.Drawing.Point(0, 40);
             this.dashboardTabControl.Name = "dashboardTabControl";
             this.dashboardTabControl.SelectedIndex = 0;
-            this.dashboardTabControl.Size = new System.Drawing.Size(640, 636);
+            this.dashboardTabControl.Size = new System.Drawing.Size(608, 636);
             this.dashboardTabControl.TabIndex = 3;
             this.dashboardTabControl.SelectedIndexChanged += new System.EventHandler(this.Dashboard_SelectedIndexChanged);
             // 
@@ -105,14 +132,14 @@ namespace TechSupport.View
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.92308F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.07692F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(617, 65);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(597, 65);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // usernameLabel
             // 
             this.usernameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.Location = new System.Drawing.Point(463, 0);
+            this.usernameLabel.Location = new System.Drawing.Point(445, 0);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(74, 35);
             this.usernameLabel.TabIndex = 0;
@@ -121,47 +148,20 @@ namespace TechSupport.View
             // logoutLink
             // 
             this.logoutLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutLink.Location = new System.Drawing.Point(543, 0);
+            this.logoutLink.Location = new System.Drawing.Point(525, 0);
             this.logoutLink.Name = "logoutLink";
-            this.logoutLink.Size = new System.Drawing.Size(71, 35);
+            this.logoutLink.Size = new System.Drawing.Size(69, 35);
             this.logoutLink.TabIndex = 1;
             this.logoutLink.TabStop = true;
             this.logoutLink.Text = "Logout";
             this.logoutLink.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LogoutLink_LinkClicked);
             // 
-            // openIncidentsUserControl1
-            // 
-            this.openIncidentsUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openIncidentsUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.openIncidentsUserControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.openIncidentsUserControl1.Name = "openIncidentsUserControl1";
-            this.openIncidentsUserControl1.Size = new System.Drawing.Size(628, 603);
-            this.openIncidentsUserControl1.TabIndex = 0;
-            // 
-            // addIncidentUserControl1
-            // 
-            this.addIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.addIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.addIncidentUserControl1.Name = "addIncidentUserControl1";
-            this.addIncidentUserControl1.Size = new System.Drawing.Size(632, 384);
-            this.addIncidentUserControl1.TabIndex = 0;
-            // 
-            // searchIncidentUserControl1
-            // 
-            this.searchIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.searchIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchIncidentUserControl1.Name = "searchIncidentUserControl1";
-            this.searchIncidentUserControl1.Size = new System.Drawing.Size(636, 535);
-            this.searchIncidentUserControl1.TabIndex = 0;
-            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 676);
+            this.ClientSize = new System.Drawing.Size(608, 676);
             this.Controls.Add(this.dashboardTabControl);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;

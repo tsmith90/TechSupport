@@ -44,11 +44,14 @@ namespace TechSupport.UserControls
             incidentTextBox.Text = "";
             customerTextBox.Text = "";
             productTextBox.Text = "";
-            technicianComboBox.Text = "-- Unassigned --";
+            technicianComboBox.Text = "";
             titleTextBox.Text = "";
             dateOpenedTextBox.Text = "";
             descriptionTextBox.Text = "";
             textToAddTextBox.Text = "";
+            closeButton.Enabled = false;
+            updateButton.Enabled = false;
+            textToAddTextBox.ReadOnly = true;
         }
 
         private void GetButton_Click(object sender, EventArgs e)
@@ -56,6 +59,22 @@ namespace TechSupport.UserControls
             try
             {
                 Incident incident = GetIncidentByID();
+
+                customerTextBox.Text = incident.CustomerName;
+                productTextBox.Text = incident.ProductCode;
+
+                if(String.IsNullOrEmpty(incident.TechnicianName))
+                {
+                    technicianComboBox.Text = "-- Unassigned --";
+                }
+                else
+                {
+                    technicianComboBox.Text = incident.TechnicianName;
+                }
+
+                titleTextBox.Text = incident.Title;
+                dateOpenedTextBox.Text = incident.DateOpened;
+                descriptionTextBox.Text = incident.Description;
 
                 closeButton.Enabled = true;
                 updateButton.Enabled = true;

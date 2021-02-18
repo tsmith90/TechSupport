@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using TechSupport.DAL;
 using TechSupport.Model;
 
@@ -87,12 +88,23 @@ namespace TechSupport.Controller
                 throw new ArgumentNullException("Field are not allowed to be empty or null.");
             }
 
+
             incident.CustomerName = name;
             incident.ProductName = product;
             incident.Title = title;
             incident.Description = description;
 
-            incidentDBDAL.AddIncident(incident);
+
+
+            if(incidentDBDAL.CheckCustomerHistory(name, product))
+            {
+                incidentDBDAL.AddIncident(incident);
+                MessageBox.Show("The incident has been added to the database.");
+            }
+            else
+            {
+                MessageBox.Show("There is no registration associated with the product.");
+            }
         }
     }
 }
