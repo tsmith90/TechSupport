@@ -19,7 +19,6 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             incidentController = new IncidentController();
-            SetTechncicianList();
         }
 
         private void SetTechncicianList()
@@ -58,6 +57,7 @@ namespace TechSupport.UserControls
         {
             try
             {
+                SetTechncicianList();
                 Incident incident = GetIncidentByID();
 
                 customerTextBox.Text = incident.CustomerName;
@@ -76,9 +76,20 @@ namespace TechSupport.UserControls
                 dateOpenedTextBox.Text = incident.DateOpened;
                 descriptionTextBox.Text = incident.Description;
 
-                closeButton.Enabled = true;
-                updateButton.Enabled = true;
-                textToAddTextBox.ReadOnly = false;
+                if(String.IsNullOrEmpty(incident.DateClosed))
+                {
+                    closeButton.Enabled = true;
+                    updateButton.Enabled = true;
+                    textToAddTextBox.ReadOnly = false;
+                    technicianComboBox.Enabled = true;
+                }
+                else
+                {
+                    closeButton.Enabled = false;
+                    updateButton.Enabled = false;
+                    textToAddTextBox.ReadOnly = true;
+                    technicianComboBox.Enabled = false;
+                }
             }
             catch (Exception ex)
             {

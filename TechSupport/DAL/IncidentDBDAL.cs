@@ -190,7 +190,8 @@ namespace TechSupport.DAL
         {
             Incident incident = new Incident();
 
-            string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, i.Title as title, i.DateOpened as opened, i.DateClosed as closed, i.Description as description " +
+            string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, " +
+                "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, i.DateClosed as closed, i.Description as description " +
                 "FROM Incidents i " +
                 "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
                 "LEFT JOIN Technicians t on t.TechID = i.TechID " +
