@@ -32,6 +32,10 @@ namespace TechSupport.View
             {
                 this.addIncidentUserControl1.ClearControl();
             }
+            else if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["updateIncidentTabPage"])
+            {
+                this.updateIncidentUserControl1.ClearControls();
+            }
 
         }
 

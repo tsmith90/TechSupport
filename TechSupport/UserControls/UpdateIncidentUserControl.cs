@@ -11,6 +11,7 @@ namespace TechSupport.UserControls
     public partial class UpdateIncidentUserControl : UserControl
     {
         private readonly IncidentController incidentController;
+        private Incident incident;
 
         /// <summary>
         /// 0-parameter constructor for the SearchIncidentDialog class  
@@ -18,6 +19,7 @@ namespace TechSupport.UserControls
         public UpdateIncidentUserControl()
         {
             InitializeComponent();
+            incident = new Incident();
             incidentController = new IncidentController();
         }
 
@@ -38,12 +40,12 @@ namespace TechSupport.UserControls
             ClearControls();
         }
 
-        protected void ClearControls()
+        public void ClearControls()
         {
             incidentTextBox.Text = "";
             customerTextBox.Text = "";
             productTextBox.Text = "";
-            technicianComboBox.Text = "";
+            technicianComboBox.DataSource = null;
             titleTextBox.Text = "";
             dateOpenedTextBox.Text = "";
             descriptionTextBox.Text = "";
@@ -57,38 +59,46 @@ namespace TechSupport.UserControls
         {
             try
             {
-                SetTechncicianList();
-                Incident incident = GetIncidentByID();
+                incident = GetIncidentByID();
 
-                customerTextBox.Text = incident.CustomerName;
-                productTextBox.Text = incident.ProductCode;
-
-                if(String.IsNullOrEmpty(incident.TechnicianName))
+                if (String.IsNullOrEmpty(incident.DateOpened))
                 {
-                    technicianComboBox.Text = "-- Unassigned --";
+                    ClearControls();
+                    MessageBox.Show("There currently isn't an incident with that id.");
                 }
                 else
                 {
-                    technicianComboBox.Text = incident.TechnicianName;
-                }
+                    SetTechncicianList();
+                    customerTextBox.Text = incident.CustomerName;
+                    productTextBox.Text = incident.ProductCode;
 
-                titleTextBox.Text = incident.Title;
-                dateOpenedTextBox.Text = incident.DateOpened;
-                descriptionTextBox.Text = incident.Description;
+                    if (String.IsNullOrEmpty(incident.TechnicianName))
+                    {
+                        technicianComboBox.Text = "-- Unassigned --";
+                    }
+                    else
+                    {
+                        technicianComboBox.Text = incident.TechnicianName;
+                    }
 
-                if(String.IsNullOrEmpty(incident.DateClosed))
-                {
-                    closeButton.Enabled = true;
-                    updateButton.Enabled = true;
-                    textToAddTextBox.ReadOnly = false;
-                    technicianComboBox.Enabled = true;
-                }
-                else
-                {
-                    closeButton.Enabled = false;
-                    updateButton.Enabled = false;
-                    textToAddTextBox.ReadOnly = true;
-                    technicianComboBox.Enabled = false;
+                    titleTextBox.Text = incident.Title;
+                    dateOpenedTextBox.Text = incident.DateOpened;
+                    descriptionTextBox.Text = incident.Description;
+
+                    if (String.IsNullOrEmpty(incident.DateClosed))
+                    {
+                        closeButton.Enabled = true;
+                        updateButton.Enabled = true;
+                        textToAddTextBox.ReadOnly = false;
+                        technicianComboBox.Enabled = true;
+                    }
+                    else
+                    {
+                        closeButton.Enabled = false;
+                        updateButton.Enabled = false;
+                        textToAddTextBox.ReadOnly = true;
+                        technicianComboBox.Enabled = false;
+                    }
                 }
             }
             catch (Exception ex)

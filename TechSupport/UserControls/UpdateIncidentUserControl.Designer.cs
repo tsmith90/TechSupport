@@ -288,6 +288,7 @@ namespace TechSupport.UserControls
             this.technicianComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.technicianComboBox.FormattingEnabled = true;
             this.technicianComboBox.Location = new System.Drawing.Point(102, 135);
+            this.technicianComboBox.MaxDropDownItems = 12;
             this.technicianComboBox.Name = "technicianComboBox";
             this.technicianComboBox.Size = new System.Drawing.Size(439, 28);
             this.technicianComboBox.TabIndex = 20;

@@ -34,7 +34,7 @@ namespace TechSupport.View
             this.openIncidentsTabPage = new System.Windows.Forms.TabPage();
             this.openIncidentsUserControl1 = new TechSupport.UserControls.OpenIncidentsUserControl();
             this.updateIncidentTabPage = new System.Windows.Forms.TabPage();
-            this.searchIncidentUserControl1 = new TechSupport.UserControls.UpdateIncidentUserControl();
+            this.updateIncidentUserControl1 = new TechSupport.UserControls.UpdateIncidentUserControl();
             this.addIncidentTabPage = new System.Windows.Forms.TabPage();
             this.addIncidentUserControl1 = new TechSupport.UserControls.AddIncidentUserControl();
             this.dashboardTabControl = new System.Windows.Forms.TabControl();
@@ -69,7 +69,7 @@ namespace TechSupport.View
             // 
             // updateIncidentTabPage
             // 
-            this.updateIncidentTabPage.Controls.Add(this.searchIncidentUserControl1);
+            this.updateIncidentTabPage.Controls.Add(this.updateIncidentUserControl1);
             this.updateIncidentTabPage.Location = new System.Drawing.Point(4, 25);
             this.updateIncidentTabPage.Name = "updateIncidentTabPage";
             this.updateIncidentTabPage.Size = new System.Drawing.Size(632, 607);
@@ -79,12 +79,12 @@ namespace TechSupport.View
             // 
             // searchIncidentUserControl1
             // 
-            this.searchIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.searchIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.searchIncidentUserControl1.Name = "searchIncidentUserControl1";
-            this.searchIncidentUserControl1.Size = new System.Drawing.Size(636, 535);
-            this.searchIncidentUserControl1.TabIndex = 0;
+            this.updateIncidentUserControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateIncidentUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.updateIncidentUserControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.updateIncidentUserControl1.Name = "searchIncidentUserControl1";
+            this.updateIncidentUserControl1.Size = new System.Drawing.Size(636, 535);
+            this.updateIncidentUserControl1.TabIndex = 0;
             // 
             // addIncidentTabPage
             // 
@@ -184,7 +184,7 @@ namespace TechSupport.View
 
         private System.Windows.Forms.TabPage openIncidentsTabPage;
         private System.Windows.Forms.TabPage updateIncidentTabPage;
-        private UserControls.UpdateIncidentUserControl searchIncidentUserControl1;
+        private UserControls.UpdateIncidentUserControl updateIncidentUserControl1;
         private System.Windows.Forms.TabPage addIncidentTabPage;
         private UserControls.AddIncidentUserControl addIncidentUserControl1;
         private System.Windows.Forms.TabControl dashboardTabControl;
