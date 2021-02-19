@@ -183,7 +183,7 @@ namespace TechSupport.DAL
 
         /// <summary>
         /// Method to retrieve an incident based on the ID from the TechSupport DB
-        /// </summary
+        /// </summary>
         /// <param name = "id">the incident id number in the DB</param>  
         /// <returns>The IncidentDBDal Incident list by id</returns>
         public Incident GetIncidentByID(int id) 
@@ -195,14 +195,17 @@ namespace TechSupport.DAL
                 "FROM Incidents i " +
                 "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
                 "LEFT JOIN Technicians t on t.TechID = i.TechID " +
-                "WHERE i.IncidentID = " + id + ";";
+                "WHERE i.IncidentID = @id ;";
 
             using (SqlConnection connection = IncidentDBConnection.GetConnection())
             {
                 connection.Open();
 
-                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection)) 
                 {
+                    selectCommand.Parameters.Add("@id", System.Data.SqlDbType.Int);
+                    selectCommand.Parameters["@id"].Value = id;
+
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
                         while (reader.Read())
@@ -234,6 +237,12 @@ namespace TechSupport.DAL
             return incident;
         }
 
+        /// <summary>
+        /// Method to retrieve whether a product had been bought by a customer
+        /// </summary>
+        /// <param name = "name">the name of the customer in the DB</param>  
+        /// <param name = "product">the product supposedly bought by the customer</param>  
+        /// <returns>True if there is a customer with a given product</returns>
         public bool CheckCustomerHistory(String name, String product)
         {
             String query =
@@ -264,6 +273,14 @@ namespace TechSupport.DAL
                 }
             }
             return false; ;
+        }
+
+        /// <summary>
+        /// Method to update an incident in the DB
+        /// </summary>
+        public void UpdateIncident(Incident incident)
+        {
+            
         }
     }
 }

@@ -88,13 +88,10 @@ namespace TechSupport.Controller
                 throw new ArgumentNullException("Field are not allowed to be empty or null.");
             }
 
-
             incident.CustomerName = name;
             incident.ProductName = product;
             incident.Title = title;
             incident.Description = description;
-
-
 
             if(incidentDBDAL.CheckCustomerHistory(name, product))
             {
@@ -113,9 +110,12 @@ namespace TechSupport.Controller
         /// <param name = "incident">The incident to be updated in the DB</param> 
         public void UpdateIncident(Incident incident)
         {
-            
-            MessageBox.Show("Controller");
-            
+            if (incident == null)
+            {
+                throw new ArgumentNullException("Please enter a valid update incident.");
+            }
+
+            incidentDBDAL.UpdateIncident(incident);
         }
     }
 }

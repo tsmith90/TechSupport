@@ -40,6 +40,9 @@ namespace TechSupport.UserControls
             ClearControls();
         }
 
+        /// <summary>
+        /// Method to reset all current fields of the user control
+        /// </summary>
         public void ClearControls()
         {
             incidentTextBox.Text = "";
@@ -103,11 +106,33 @@ namespace TechSupport.UserControls
             {
                 string checkDescription = incident.Description + Environment.NewLine + "<" + DateTime.Today.ToString("MM/dd/yyyy") + ">" + textToAddTextBox.Text;
                     
-                if ((incident.Description + "\n" + ) <= 200)
+                if (checkDescription.Length > 200)
                 {
-                    this.incidentController.UpdateIncident(incident);
+                    DialogResult dialogResult = MessageBox.Show("Sorry, only 200 letters allowed. Would you like to trim it down to 200?", "The description too big!", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        incident.Description = checkDescription.Substring(200);
+                        UpdateIncident();
+                        SetControls();
+                    }
+                }
+                else
+                {
+                    UpdateIncident();
                     SetControls();
                 }
+            }
+        }
+
+        private void UpdateIncident()
+        {
+            try
+            {
+                this.incidentController.UpdateIncident(this.incident);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
             }
         }
 
