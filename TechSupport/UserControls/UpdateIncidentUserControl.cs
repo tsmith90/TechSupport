@@ -101,7 +101,7 @@ namespace TechSupport.UserControls
             if (String.IsNullOrEmpty(textToAddTextBox.Text) && (technicianComboBox.Text == incident.TechnicianName || technicianComboBox.Text.Equals("-- Unassigned --")))
             {
                 MessageBox.Show("Please enter a valid update to the incident!");
-            }
+            } 
             else
             {
                 string checkDescription = incident.Description + Environment.NewLine + "<" + DateTime.Today.ToString("MM/dd/yyyy") + ">" + textToAddTextBox.Text;
@@ -111,13 +111,24 @@ namespace TechSupport.UserControls
                     DialogResult dialogResult = MessageBox.Show("Sorry, only 200 letters allowed. Would you like to trim it down to 200?", "The description too big!", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        incident.Description = checkDescription.Substring(200);
+                        incident.Description = checkDescription.Substring(0, 200);
+                        
+                        if(!technicianComboBox.Text.Equals("-- Unassigned --"))
+                        {
+                            incident.TechnicianName = technicianComboBox.Text;
+                        }
+
                         UpdateIncident();
                         SetControls();
                     }
                 }
                 else
                 {
+                    if (!String.IsNullOrEmpty(textToAddTextBox.Text))
+                    {
+                        incident.Description = checkDescription;
+                    }
+                    incident.TechnicianName = technicianComboBox.Text;
                     UpdateIncident();
                     SetControls();
                 }
@@ -128,6 +139,7 @@ namespace TechSupport.UserControls
         {
             try
             {
+
                 this.incidentController.UpdateIncident(this.incident);
             }
             catch (Exception ex)
@@ -147,12 +159,6 @@ namespace TechSupport.UserControls
             customerTextBox.Text = incident.CustomerName;
             productTextBox.Text = incident.ProductCode;
             textToAddTextBox.Text = "";
-
-            if(incident.Description.Length >= 200)
-            {
-                MessageBox.Show("Further description can't be added to this incident");
-                textToAddTextBox.ReadOnly = true;
-            }
 
             if (String.IsNullOrEmpty(incident.TechnicianName))
             {
@@ -180,6 +186,12 @@ namespace TechSupport.UserControls
                 updateButton.Enabled = false;
                 textToAddTextBox.ReadOnly = true;
                 technicianComboBox.Enabled = false;
+            }
+
+            if (incident.Description.Length >= 200)
+            {
+                MessageBox.Show("Further description can't be added to this incident");
+                textToAddTextBox.ReadOnly = true;
             }
         }
     }

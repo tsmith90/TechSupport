@@ -191,7 +191,7 @@ namespace TechSupport.DAL
             Incident incident = new Incident();
 
             string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, " +
-                "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, i.DateClosed as closed, i.Description as description " +
+                "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, i.DateClosed as closed, i.Description as description, i.IncidentID as incident " +
                 "FROM Incidents i " +
                 "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
                 "LEFT JOIN Technicians t on t.TechID = i.TechID " +
@@ -230,6 +230,9 @@ namespace TechSupport.DAL
 
                             string description = reader["description"].ToString();
                             incident.Description = description;
+
+                            int incidentId = (int)reader["incident"];
+                            incident.IncidentID = incidentId;
                         }
                     }
                 }
@@ -278,9 +281,32 @@ namespace TechSupport.DAL
         /// <summary>
         /// Method to update an incident in the DB
         /// </summary>
+        /// <param name="incident">The incident to be updated in the DB</param>
         public void UpdateIncident(Incident incident)
         {
-            
+            string update = "UPDATE Incidents " +
+                "SET Description = @description,  " +
+                "TechID = (SELECT distinct(TechID) FROM Technicians WHERE Name = @name) " +
+                "WHERE IncidentID = @id ;";
+
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(update, connection))
+                {
+                    cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@description"].Value = incident.Description;
+
+                    cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@name"].Value = incident.TechnicianName;
+
+                    cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@id"].Value = incident.IncidentID;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
