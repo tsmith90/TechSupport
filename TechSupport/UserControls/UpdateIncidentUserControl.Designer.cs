@@ -260,6 +260,7 @@ namespace TechSupport.UserControls
             this.updateButton.TabIndex = 17;
             this.updateButton.Text = "Update";
             this.updateButton.UseVisualStyleBackColor = true;
+            this.updateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // closeButton
             // 
@@ -270,6 +271,7 @@ namespace TechSupport.UserControls
             this.closeButton.TabIndex = 18;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // clearButton
             // 
@@ -292,6 +294,7 @@ namespace TechSupport.UserControls
             this.technicianComboBox.Name = "technicianComboBox";
             this.technicianComboBox.Size = new System.Drawing.Size(439, 28);
             this.technicianComboBox.TabIndex = 20;
+
             // 
             // UpdateIncidentUserControl
             // 

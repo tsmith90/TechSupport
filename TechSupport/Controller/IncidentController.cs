@@ -106,5 +106,16 @@ namespace TechSupport.Controller
                 MessageBox.Show("There is no registration associated with the product.");
             }
         }
+
+        /// <summary>
+        /// Method update a given Incident object
+        /// </summary>
+        /// <param name = "incident">The incident to be updated in the DB</param> 
+        public void UpdateIncident(Incident incident)
+        {
+            
+            MessageBox.Show("Controller");
+            
+        }
     }
 }

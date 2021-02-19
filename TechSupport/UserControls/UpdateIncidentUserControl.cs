@@ -68,37 +68,7 @@ namespace TechSupport.UserControls
                 }
                 else
                 {
-                    SetTechncicianList();
-                    customerTextBox.Text = incident.CustomerName;
-                    productTextBox.Text = incident.ProductCode;
-
-                    if (String.IsNullOrEmpty(incident.TechnicianName))
-                    {
-                        technicianComboBox.Text = "-- Unassigned --";
-                    }
-                    else
-                    {
-                        technicianComboBox.Text = incident.TechnicianName;
-                    }
-
-                    titleTextBox.Text = incident.Title;
-                    dateOpenedTextBox.Text = incident.DateOpened;
-                    descriptionTextBox.Text = incident.Description;
-
-                    if (String.IsNullOrEmpty(incident.DateClosed))
-                    {
-                        closeButton.Enabled = true;
-                        updateButton.Enabled = true;
-                        textToAddTextBox.ReadOnly = false;
-                        technicianComboBox.Enabled = true;
-                    }
-                    else
-                    {
-                        closeButton.Enabled = false;
-                        updateButton.Enabled = false;
-                        textToAddTextBox.ReadOnly = true;
-                        technicianComboBox.Enabled = false;
-                    }
+                    SetControls();
                 }
             }
             catch (Exception ex)
@@ -121,6 +91,71 @@ namespace TechSupport.UserControls
             }
 
             return incidentController.GetIncidentByID(id);
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textToAddTextBox.Text) && (technicianComboBox.Text == incident.TechnicianName || technicianComboBox.Text.Equals("-- Unassigned --")))
+            {
+                MessageBox.Show("Please enter a valid update to the incident!");
+            }
+            else
+            {
+                string checkDescription = incident.Description + Environment.NewLine + "<" + DateTime.Today.ToString("MM/dd/yyyy") + ">" + textToAddTextBox.Text;
+                    
+                if ((incident.Description + "\n" + ) <= 200)
+                {
+                    this.incidentController.UpdateIncident(incident);
+                    SetControls();
+                }
+            }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SetControls()
+        {
+            SetTechncicianList();
+            customerTextBox.Text = incident.CustomerName;
+            productTextBox.Text = incident.ProductCode;
+            textToAddTextBox.Text = "";
+
+            if(incident.Description.Length >= 200)
+            {
+                MessageBox.Show("Further description can't be added to this incident");
+                textToAddTextBox.ReadOnly = true;
+            }
+
+            if (String.IsNullOrEmpty(incident.TechnicianName))
+            {
+                technicianComboBox.Text = "-- Unassigned --";
+            }
+            else
+            {
+                technicianComboBox.Text = incident.TechnicianName;
+            }
+
+            titleTextBox.Text = incident.Title;
+            dateOpenedTextBox.Text = incident.DateOpened;
+            descriptionTextBox.Text = incident.Description;
+
+            if (String.IsNullOrEmpty(incident.DateClosed))
+            {
+                closeButton.Enabled = true;
+                updateButton.Enabled = true;
+                textToAddTextBox.ReadOnly = false;
+                technicianComboBox.Enabled = true;
+            }
+            else
+            {
+                closeButton.Enabled = false;
+                updateButton.Enabled = false;
+                textToAddTextBox.ReadOnly = true;
+                technicianComboBox.Enabled = false;
+            }
         }
     }
 }
