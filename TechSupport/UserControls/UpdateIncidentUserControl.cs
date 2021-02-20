@@ -72,6 +72,10 @@ namespace TechSupport.UserControls
                 else
                 {
                     SetControls();
+                    if (incident.Description.Length >= 200)
+                    {
+                        MessageBox.Show("Further description can't be added to this incident");
+                    }
                 }
             }
             catch (Exception ex)
@@ -216,7 +220,6 @@ namespace TechSupport.UserControls
 
             if (incident.Description.Length >= 200)
             {
-                MessageBox.Show("Further description can't be added to this incident");
                 textToAddTextBox.ReadOnly = true;
             }
         }

@@ -315,9 +315,23 @@ namespace TechSupport.DAL
         /// <param name="incident">The incident to be closed in the DB</param>
         public void CloseIncident(Incident incident)
         {
-            string closeIncident = "";
+            string closeIncident = "UPDATE Incidents SET DateClosed = @date WHERE IncidentID = @id;";
 
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
 
+                using (SqlCommand cmd = new SqlCommand(closeIncident, connection))
+                {
+                    cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
+                    cmd.Parameters["@date"].Value = DateTime.Parse(incident.DateClosed);
+
+                    cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@id"].Value = incident.IncidentID;
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
