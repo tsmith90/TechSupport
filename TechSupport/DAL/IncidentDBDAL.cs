@@ -284,7 +284,7 @@ namespace TechSupport.DAL
         /// <param name="incident">The incident to be updated in the DB</param>
         public void UpdateIncident(Incident incident)
         {
-            string update = "UPDATE Incidents " +
+            string updateIncident = "UPDATE Incidents " +
                 "SET Description = @description,  " +
                 "TechID = (SELECT distinct(TechID) FROM Technicians WHERE Name = @name) " +
                 "WHERE IncidentID = @id ;";
@@ -293,7 +293,7 @@ namespace TechSupport.DAL
             {
                 connection.Open();
 
-                using (SqlCommand cmd = new SqlCommand(update, connection))
+                using (SqlCommand cmd = new SqlCommand(updateIncident, connection))
                 {
                     cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
                     cmd.Parameters["@description"].Value = incident.Description;
@@ -307,6 +307,17 @@ namespace TechSupport.DAL
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        /// <summary>
+        /// Method to close an incident in the DB
+        /// </summary>
+        /// <param name="incident">The incident to be closed in the DB</param>
+        public void CloseIncident(Incident incident)
+        {
+            string closeIncident = "";
+
+
         }
     }
 }

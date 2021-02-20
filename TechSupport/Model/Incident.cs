@@ -1,4 +1,6 @@
-﻿namespace TechSupport.Model
+﻿using System;
+
+namespace TechSupport.Model
 {
     /// <summary>
     /// Model for the Incident object

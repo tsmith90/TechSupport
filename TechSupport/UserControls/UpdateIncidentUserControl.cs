@@ -135,12 +135,30 @@ namespace TechSupport.UserControls
             }
         }
 
-        private void UpdateIncident()
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            if(technicianComboBox.Text.Equals("-- Unassigned --"))
+            {
+                MessageBox.Show("Please assign a technician before closing the incident!");
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Are you sure you would like to close this incident?", "Confirm Incident Closure", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    incident.DateClosed = DateTime.Now.ToString();
+                    CloseIncident();
+                    ClearControls();
+                    SetControls();
+                }
+            }
+        }
+
+        private void CloseIncident()
         {
             try
             {
-
-                this.incidentController.UpdateIncident(this.incident);
+                incidentController.CloseIncident(incident);
             }
             catch (Exception ex)
             {
@@ -148,9 +166,17 @@ namespace TechSupport.UserControls
             }
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private void UpdateIncident()
         {
+            try
+            {
 
+                incidentController.UpdateIncident(incident);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void SetControls()

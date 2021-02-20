@@ -105,7 +105,7 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
-        /// Method update a given Incident object
+        /// Method to update a given Incident object
         /// </summary>
         /// <param name = "incident">The incident to be updated in the DB</param> 
         public void UpdateIncident(Incident incident)
@@ -116,6 +116,20 @@ namespace TechSupport.Controller
             }
 
             incidentDBDAL.UpdateIncident(incident);
+        }
+
+        /// <summary>
+        /// Method to close a given Incident object
+        /// </summary>
+        /// <param name = "incident">The incident to be closed in the DB</param> 
+        public void CloseIncident(Incident incident)
+        {
+            if (incident == null)
+            {
+                throw new ArgumentNullException("Please enter a valid incident to close.");
+            }
+
+            incidentDBDAL.CloseIncident(incident);
         }
     }
 }
