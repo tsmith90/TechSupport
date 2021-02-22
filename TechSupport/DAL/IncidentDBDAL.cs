@@ -145,8 +145,7 @@ namespace TechSupport.DAL
         /// </summary>
         public void AddIncident(Incident incident)
         {
-
-                String insert =
+            String insert =
                 "INSERT INTO Incidents (CustomerID, ProductCode, DateOpened, Title, Description) " +
                 "SELECT r.CustomerID, r.ProductCode, @date, @title, @description " +
                 "FROM Products p " +
@@ -154,8 +153,7 @@ namespace TechSupport.DAL
                 "JOIN Customers c on r.CustomerID = c.CustomerID " +
                 "WHERE c.Name = @name and p.Name = @product;";
                 
-
-                using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = IncidentDBConnection.GetConnection())
                 {
                     connection.Open();
 
@@ -178,7 +176,7 @@ namespace TechSupport.DAL
 
                         cmd.ExecuteNonQuery();
                     }
-                }
+            }
         }
 
         /// <summary>

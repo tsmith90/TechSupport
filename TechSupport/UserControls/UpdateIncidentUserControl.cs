@@ -94,7 +94,6 @@ namespace TechSupport.UserControls
             }
             catch (FormatException)
             {
-                MessageBox.Show("Please enter a valid Incident ID number!");
             }
 
             return incidentController.GetIncidentByID(id);
@@ -106,6 +105,10 @@ namespace TechSupport.UserControls
             {
                 MessageBox.Show("Please enter a valid update to the incident!");
             } 
+            else if (!descriptionTextBox.Text.Equals(incident.Description))
+            {
+                MessageBox.Show("The description has been changed incorrectly!");
+            }
             else
             {
                 string checkDescription = incident.Description + Environment.NewLine + "<" + DateTime.Today.ToString("MM/dd/yyyy") + ">" + textToAddTextBox.Text;
