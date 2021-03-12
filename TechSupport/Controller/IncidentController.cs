@@ -79,7 +79,7 @@ namespace TechSupport.Controller
         /// <param name = "product">the product name</param> 
         /// <param name = "title">the title of the incident</param> 
         /// <param name = "description">the description of the incident</param> 
-        public void AddIncident(string name, string product, string title, string description)
+        public bool AddIncident(string name, string product, string title, string description)
         {
             Incident incident = new Incident();
 
@@ -96,11 +96,11 @@ namespace TechSupport.Controller
             if(incidentDBDAL.CheckCustomerHistory(name, product))
             {
                 incidentDBDAL.AddIncident(incident);
-                MessageBox.Show("The incident has been added to the database.");
+                return true;
             }
             else
             {
-                MessageBox.Show("There is no registration associated with the product.");
+                return false;
             }
         }
 

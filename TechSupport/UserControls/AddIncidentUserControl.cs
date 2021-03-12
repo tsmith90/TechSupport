@@ -83,7 +83,14 @@ namespace TechSupport.UserControls
                     throw new Exception("Description cannot be empty");
                 }
 
-                incidentController.AddIncident(customerComboBox.SelectedValue.ToString(), productComboBox.SelectedValue.ToString(), titleTextBox.Text, descriptionTextBox.Text);
+                if (incidentController.AddIncident(customerComboBox.SelectedValue.ToString(), productComboBox.SelectedValue.ToString(), titleTextBox.Text, descriptionTextBox.Text))
+                {
+                    MessageBox.Show("The incident has been added to the database.");
+                }
+                else
+                {
+                    MessageBox.Show("There is no registration associated with the product.");
+                }
                 ClearControl();
             }
             catch (Exception ex)
