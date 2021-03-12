@@ -19,8 +19,8 @@ namespace TechSupport.DAL
         {
             List<Incident> incidentList = new List<Incident>();
 
-            string selectStatement = 
-                "SELECT ProductCode,  FORMAT (DateOpened, 'MM-dd-yyyy') as Date, c.Name as CustomerName, t.Name as TechName, Title " +
+            string selectStatement =
+                "SELECT ProductCode,  DateOpened, c.Name as CustomerName, t.Name as TechName, Title " +
                 "FROM Incidents i " +
                 "LEFT JOIN Technicians t on i.TechID = t.TechID " +
                 "LEFT JOIN Customers c on i.CustomerID = c.CustomerID " +
@@ -34,11 +34,12 @@ namespace TechSupport.DAL
                 {
                     using (SqlDataReader reader = selectCommand.ExecuteReader())
                     {
-                        while (reader.Read()) {
+                        while (reader.Read())
+                        {
                             Incident incident = new Incident();
 
                             incident.ProductCode = reader["ProductCode"].ToString();
-                            incident.DateOpened = reader["Date"].ToString();
+                            incident.DateOpened = (DateTime)reader["DateOpened"];
                             incident.CustomerName = reader["CustomerName"].ToString();
                             incident.TechnicianName = reader["TechName"].ToString();
                             incident.Title = reader["Title"].ToString();
@@ -48,7 +49,7 @@ namespace TechSupport.DAL
                     }
                 }
             }
-            return incidentList; 
+            return incidentList;
         }
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace TechSupport.DAL
         /// <returns>List of customers</returns>
         public List<string> GetCustomers()
         {
-            List<string> customers = new List<string> {};
+            List<string> customers = new List<string> { };
 
             string selectStatement = "SELECT Name FROM Customers;";
 
@@ -71,8 +72,8 @@ namespace TechSupport.DAL
                     {
                         while (reader.Read())
                         {
-                           string name = reader["Name"].ToString();
-                           customers.Add(name);
+                            string name = reader["Name"].ToString();
+                            customers.Add(name);
                         }
                     }
                 }
@@ -116,7 +117,7 @@ namespace TechSupport.DAL
         /// <returns>List of products</returns>
         public List<string> GetProducts()
         {
-            List<string> products = new List<string> {};
+            List<string> products = new List<string> { };
 
             string selectStatement = "SELECT Name FROM Products;";
 
@@ -152,30 +153,30 @@ namespace TechSupport.DAL
                 "JOIN Registrations r on p.ProductCode = r.ProductCode " +
                 "JOIN Customers c on r.CustomerID = c.CustomerID " +
                 "WHERE c.Name = @name and p.Name = @product;";
-                
+
             using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(insert, connection))
                 {
-                    connection.Open();
+                    cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@name"].Value = incident.CustomerName;
 
-                    using (SqlCommand cmd = new SqlCommand(insert, connection))
-                    {
-                        cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
-                        cmd.Parameters["@name"].Value = incident.CustomerName;
+                    cmd.Parameters.Add("@product", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@product"].Value = incident.ProductName;
 
-                        cmd.Parameters.Add("@product", System.Data.SqlDbType.VarChar);
-                        cmd.Parameters["@product"].Value = incident.ProductName;
+                    cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
+                    cmd.Parameters["@date"].Value = DateTime.Now;
 
-                        cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
-                        cmd.Parameters["@date"].Value = DateTime.Now;
+                    cmd.Parameters.Add("@title", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@title"].Value = incident.Title;
 
-                        cmd.Parameters.Add("@title", System.Data.SqlDbType.VarChar);
-                        cmd.Parameters["@title"].Value = incident.Title;
+                    cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@description"].Value = incident.Description;
 
-                        cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
-                        cmd.Parameters["@description"].Value = incident.Description;
-
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
 
@@ -184,12 +185,12 @@ namespace TechSupport.DAL
         /// </summary>
         /// <param name = "id">the incident id number in the DB</param>  
         /// <returns>The IncidentDBDal Incident list by id</returns>
-        public Incident GetIncidentByID(int id) 
+        public Incident GetIncidentByID(int id)
         {
             Incident incident = new Incident();
 
             string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, " +
-                "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, i.DateClosed as closed, i.Description as description, i.IncidentID as incident " +
+                "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, DateClosed as closed, i.Description as description, i.IncidentID as incident " +
                 "FROM Incidents i " +
                 "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
                 "LEFT JOIN Technicians t on t.TechID = i.TechID " +
@@ -199,7 +200,7 @@ namespace TechSupport.DAL
             {
                 connection.Open();
 
-                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection)) 
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
                 {
                     selectCommand.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     selectCommand.Parameters["@id"].Value = id;
@@ -221,10 +222,12 @@ namespace TechSupport.DAL
                             incident.Title = title;
 
                             string opened = reader["opened"].ToString();
-                            incident.DateOpened = opened;
+                            incident.DateOpened = DateTime.Parse(opened);
 
-                            string closed = reader["closed"].ToString();
-                            incident.DateClosed = closed;
+                            if(reader["closed"] != DBNull.Value)
+                            {
+                                incident.DateClosed = (DateTime)reader["closed"];
+                            }
 
                             string description = reader["description"].ToString();
                             incident.Description = description;
@@ -267,7 +270,7 @@ namespace TechSupport.DAL
 
                     int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    if(count > 0)
+                    if (count > 0)
                     {
                         return true;
                     }
@@ -322,7 +325,7 @@ namespace TechSupport.DAL
                 using (SqlCommand cmd = new SqlCommand(closeIncident, connection))
                 {
                     cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
-                    cmd.Parameters["@date"].Value = DateTime.Parse(incident.DateClosed);
+                    cmd.Parameters["@date"].Value = incident.DateClosed;
 
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     cmd.Parameters["@id"].Value = incident.IncidentID;
@@ -333,3 +336,4 @@ namespace TechSupport.DAL
         }
     }
 }
+

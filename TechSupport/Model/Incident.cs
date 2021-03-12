@@ -21,9 +21,9 @@ namespace TechSupport.Model
 
         public int TechnicianID { get; set; }
 
-        public string DateOpened { get; set; }
+        public DateTime DateOpened { get; set; }
 
-        public string DateClosed { get; set; }
+        public DateTime DateClosed { get; set; }
 
         public string Title { get; set; }
 

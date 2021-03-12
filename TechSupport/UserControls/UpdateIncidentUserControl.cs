@@ -64,7 +64,7 @@ namespace TechSupport.UserControls
             {
                 incident = GetIncidentByID();
 
-                if (String.IsNullOrEmpty(incident.DateOpened))
+                if (String.IsNullOrEmpty(incident.CustomerName))
                 {
                     ClearControls();
                     MessageBox.Show("There currently isn't an incident with that id.");
@@ -153,7 +153,7 @@ namespace TechSupport.UserControls
                 DialogResult dialogResult = MessageBox.Show("Are you sure you would like to close this incident?", "Confirm Incident Closure", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    incident.DateClosed = DateTime.Now.ToString();
+                    incident.DateClosed = DateTime.Now;
                     CloseIncident();
                     ClearControls();
                     SetControls();
@@ -203,10 +203,10 @@ namespace TechSupport.UserControls
             }
 
             titleTextBox.Text = incident.Title;
-            dateOpenedTextBox.Text = incident.DateOpened;
+            dateOpenedTextBox.Text = incident.DateOpened.ToShortDateString();
             descriptionTextBox.Text = incident.Description;
 
-            if (String.IsNullOrEmpty(incident.DateClosed))
+            if (incident.DateClosed.ToString().Equals("1/1/0001 12:00:00 AM"))
             {
                 closeButton.Enabled = true;
                 updateButton.Enabled = true;
