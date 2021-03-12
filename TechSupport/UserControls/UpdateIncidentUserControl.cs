@@ -94,6 +94,7 @@ namespace TechSupport.UserControls
             }
             catch (FormatException)
             {
+                MessageBox.Show("Please enter a valid incident ID (number)");
             }
 
             return incidentController.GetIncidentByID(id);
@@ -127,6 +128,7 @@ namespace TechSupport.UserControls
 
                         UpdateIncident();
                         SetControls();
+                        MessageBox.Show("incident updated");
                     }
                 }
                 else
@@ -138,6 +140,7 @@ namespace TechSupport.UserControls
                     incident.TechnicianName = technicianComboBox.Text;
                     UpdateIncident();
                     SetControls();
+                    MessageBox.Show("incident updated");
                 }
             }
         }
@@ -159,6 +162,7 @@ namespace TechSupport.UserControls
                     updateButton.Enabled = false;
                     textToAddTextBox.ReadOnly = true;
                     technicianComboBox.Enabled = false;
+                    MessageBox.Show("incident closed");
                 }
             }
         }
