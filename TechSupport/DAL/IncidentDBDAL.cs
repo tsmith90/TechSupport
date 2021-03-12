@@ -26,7 +26,7 @@ namespace TechSupport.DAL
                 "LEFT JOIN Customers c on i.CustomerID = c.CustomerID " +
                 "WHERE DateClosed is null;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -62,7 +62,7 @@ namespace TechSupport.DAL
 
             string selectStatement = "SELECT Name FROM Customers;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -92,7 +92,7 @@ namespace TechSupport.DAL
 
             string selectStatement = "SELECT Name FROM Technicians;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -121,7 +121,7 @@ namespace TechSupport.DAL
 
             string selectStatement = "SELECT Name FROM Products;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -154,7 +154,7 @@ namespace TechSupport.DAL
                 "JOIN Customers c on r.CustomerID = c.CustomerID " +
                 "WHERE c.Name = @name and p.Name = @product;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -196,7 +196,7 @@ namespace TechSupport.DAL
                 "LEFT JOIN Technicians t on t.TechID = i.TechID " +
                 "WHERE i.IncidentID = @id ;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -256,7 +256,7 @@ namespace TechSupport.DAL
                 "LEFT JOIN Customers c on c.CustomerID = r.CustomerID " +
                 "WHERE c.Name = @name and p.Name = @product;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -290,7 +290,7 @@ namespace TechSupport.DAL
                 "TechID = (SELECT distinct(TechID) FROM Technicians WHERE TechID = @tech) " +
                 "WHERE IncidentID = @id ;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 
@@ -318,7 +318,7 @@ namespace TechSupport.DAL
         {
             string closeIncident = "UPDATE Incidents SET DateClosed = @date WHERE IncidentID = @id;";
 
-            using (SqlConnection connection = IncidentDBConnection.GetConnection())
+            using (SqlConnection connection = DBConnection.GetConnection())
             {
                 connection.Open();
 

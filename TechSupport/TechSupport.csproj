@@ -53,7 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\IncidentController.cs" />
-    <Compile Include="DAL\IncidentDBConnection.cs" />
+    <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\IncidentDBDAL.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Incident.cs" />
@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="UserControls\OpenIncidentsUserControl.Designer.cs">
       <DependentUpon>OpenIncidentsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TechnicianIncidentsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\TechnicianIncidentsUserControl.Designer.cs">
+      <DependentUpon>TechnicianIncidentsUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UpdateIncidentUserControl.cs">
       <SubType>UserControl</SubType>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\OpenIncidentsUserControl.resx">
       <DependentUpon>OpenIncidentsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\TechnicianIncidentsUserControl.resx">
+      <DependentUpon>TechnicianIncidentsUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UpdateIncidentUserControl.resx">
       <DependentUpon>UpdateIncidentUserControl.cs</DependentUpon>

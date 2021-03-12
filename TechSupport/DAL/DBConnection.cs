@@ -5,7 +5,7 @@ namespace TechSupport.DAL
     /// <summary>
     /// Class to establish a connection to the TechSupport DB
     /// </summary>
-    public class IncidentDBConnection
+    public class DBConnection
     {
         /// <summary>
         /// Method to establish a connection to the TechSupport DB
