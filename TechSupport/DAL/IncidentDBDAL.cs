@@ -287,7 +287,7 @@ namespace TechSupport.DAL
         {
             string updateIncident = "UPDATE Incidents " +
                 "SET Description = @description,  " +
-                "TechID = (SELECT distinct(TechID) FROM Technicians WHERE Name = @name) " +
+                "TechID = (SELECT distinct(TechID) FROM Technicians WHERE TechID = @tech) " +
                 "WHERE IncidentID = @id ;";
 
             using (SqlConnection connection = IncidentDBConnection.GetConnection())
@@ -299,8 +299,8 @@ namespace TechSupport.DAL
                     cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
                     cmd.Parameters["@description"].Value = incident.Description;
 
-                    cmd.Parameters.Add("@name", System.Data.SqlDbType.VarChar);
-                    cmd.Parameters["@name"].Value = incident.TechnicianName;
+                    cmd.Parameters.Add("@tech", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@tech"].Value = incident.TechnicianID;
 
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     cmd.Parameters["@id"].Value = incident.IncidentID;
