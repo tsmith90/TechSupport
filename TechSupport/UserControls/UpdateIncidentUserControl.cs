@@ -155,8 +155,10 @@ namespace TechSupport.UserControls
                 {
                     incident.DateClosed = DateTime.Now;
                     CloseIncident();
-                    ClearControls();
-                    SetControls();
+                    closeButton.Enabled = false;
+                    updateButton.Enabled = false;
+                    textToAddTextBox.ReadOnly = true;
+                    technicianComboBox.Enabled = false;
                 }
             }
         }

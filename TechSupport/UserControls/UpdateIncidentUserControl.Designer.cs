@@ -217,6 +217,7 @@ namespace TechSupport.UserControls
             this.descriptionTextBox.Multiline = true;
             this.descriptionTextBox.Name = "descriptionTextBox";
             this.descriptionTextBox.ReadOnly = true;
+            this.descriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.descriptionTextBox.Size = new System.Drawing.Size(439, 92);
             this.descriptionTextBox.TabIndex = 15;
             // 
@@ -294,7 +295,6 @@ namespace TechSupport.UserControls
             this.technicianComboBox.Name = "technicianComboBox";
             this.technicianComboBox.Size = new System.Drawing.Size(439, 28);
             this.technicianComboBox.TabIndex = 20;
-
             // 
             // UpdateIncidentUserControl
             // 
