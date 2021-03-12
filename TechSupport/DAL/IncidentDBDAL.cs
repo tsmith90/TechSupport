@@ -7,7 +7,7 @@ namespace TechSupport.DAL
 {
 
     /// <summary>
-    /// Class to read and interact with the TechSupport DB 
+    /// Class to read and interact with the TechSupport DB for incidents
     /// </summary>
     public class IncidentDBDAL
     {
