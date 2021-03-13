@@ -76,6 +76,7 @@ namespace TechSupport.UserControls
             this.technicianEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianEmail", true));
             this.technicianEmailTextBox.Location = new System.Drawing.Point(169, 125);
             this.technicianEmailTextBox.Name = "technicianEmailTextBox";
+            this.technicianEmailTextBox.ReadOnly = true;
             this.technicianEmailTextBox.Size = new System.Drawing.Size(121, 20);
             this.technicianEmailTextBox.TabIndex = 2;
             // 
@@ -88,6 +89,7 @@ namespace TechSupport.UserControls
             this.technicianNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.technicianBindingSource, "TechnicianName", true));
             this.technicianNameComboBox.DataSource = this.technicianBindingSource;
             this.technicianNameComboBox.DisplayMember = "TechnicianName";
+            this.technicianNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.technicianNameComboBox.FormattingEnabled = true;
             this.technicianNameComboBox.Location = new System.Drawing.Point(169, 54);
             this.technicianNameComboBox.Name = "technicianNameComboBox";
@@ -101,6 +103,7 @@ namespace TechSupport.UserControls
             this.technicianPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianPhone", true));
             this.technicianPhoneTextBox.Location = new System.Drawing.Point(166, 196);
             this.technicianPhoneTextBox.Name = "technicianPhoneTextBox";
+            this.technicianPhoneTextBox.ReadOnly = true;
             this.technicianPhoneTextBox.Size = new System.Drawing.Size(121, 20);
             this.technicianPhoneTextBox.TabIndex = 8;
             // 
