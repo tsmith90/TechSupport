@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using TechSupport.DAL;
+using TechSupport.Model;
 
 namespace TechSupport.Controller
 {
@@ -11,6 +9,24 @@ namespace TechSupport.Controller
     /// </summary>
     class TechnicianController
     {
+        private static TechnicianDBDAL technicianDBDAL;
 
+        /// <summary>
+        /// Method to get the Technician list with incidents populated in the DBDAL
+        /// </summary>
+        /// <returns>List of technicians with incidents</returns>
+        public List<Technician> GetTechniciansWithIncidents()
+        {
+            return technicianDBDAL.GetTechniciansWithIncidents();
+        }
+
+        /// <summary>
+        /// Method to get the full Technician list populated in the DBDAL
+        /// </summary>
+        /// <returns>List of all technicians</returns>
+        public List<Technician> GetTechnicians()
+        {
+            return technicianDBDAL.GetTechnicians();
+        }
     }
 }

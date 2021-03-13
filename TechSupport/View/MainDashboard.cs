@@ -24,20 +24,20 @@ namespace TechSupport.View
 
         private void Dashboard_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["openIncidentsTabPage"])
+            if (technicianTabControl.SelectedTab == technicianTabControl.TabPages["openIncidentsTabPage"])
             {
                 this.openIncidentsUserControl1.OpenIncidentsList();
             }
-            else if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["addIncidentTabPage"])
+            else if (technicianTabControl.SelectedTab == technicianTabControl.TabPages["addIncidentTabPage"])
             {
                 this.addIncidentUserControl1.ClearControl();
             }
-            else if (dashboardTabControl.SelectedTab == dashboardTabControl.TabPages["updateIncidentTabPage"])
+            else if (technicianTabControl.SelectedTab == technicianTabControl.TabPages["updateIncidentTabPage"])
             {
                 this.updateIncidentUserControl1.ClearControls();
             }
-
         }
+
 
         /// <summary>
         /// Sets the username label from the login form

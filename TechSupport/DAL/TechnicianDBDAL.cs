@@ -56,7 +56,7 @@ namespace TechSupport.DAL
         }
 
         /// <summary>
-        /// Method to read get the Technician names data from the TechSupport DB
+        /// Method to read the Technician names data from the TechSupport DB
         /// </summary>
         /// <returns>List of technicians</returns>
         public List<Technician> GetTechnicians()
