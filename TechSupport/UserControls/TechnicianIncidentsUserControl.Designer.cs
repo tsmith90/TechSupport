@@ -1,4 +1,5 @@
 ﻿
+
 namespace TechSupport.UserControls
 {
     partial class technicianIncidentsUserControl
@@ -33,8 +34,8 @@ namespace TechSupport.UserControls
             System.Windows.Forms.Label technicianEmailLabel;
             System.Windows.Forms.Label technicianNameLabel;
             System.Windows.Forms.Label technicianPhoneLabel;
-            this.technicianBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.technicianEmailTextBox = new System.Windows.Forms.TextBox();
+            this.technicianBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.technicianNameComboBox = new System.Windows.Forms.ComboBox();
             this.technicianPhoneTextBox = new System.Windows.Forms.TextBox();
             technicianEmailLabel = new System.Windows.Forms.Label();
@@ -46,7 +47,7 @@ namespace TechSupport.UserControls
             // technicianEmailLabel
             // 
             technicianEmailLabel.AutoSize = true;
-            technicianEmailLabel.Location = new System.Drawing.Point(101, 67);
+            technicianEmailLabel.Location = new System.Drawing.Point(66, 125);
             technicianEmailLabel.Name = "technicianEmailLabel";
             technicianEmailLabel.Size = new System.Drawing.Size(91, 13);
             technicianEmailLabel.TabIndex = 1;
@@ -55,7 +56,7 @@ namespace TechSupport.UserControls
             // technicianNameLabel
             // 
             technicianNameLabel.AutoSize = true;
-            technicianNameLabel.Location = new System.Drawing.Point(101, 119);
+            technicianNameLabel.Location = new System.Drawing.Point(66, 54);
             technicianNameLabel.Name = "technicianNameLabel";
             technicianNameLabel.Size = new System.Drawing.Size(94, 13);
             technicianNameLabel.TabIndex = 5;
@@ -64,23 +65,23 @@ namespace TechSupport.UserControls
             // technicianPhoneLabel
             // 
             technicianPhoneLabel.AutoSize = true;
-            technicianPhoneLabel.Location = new System.Drawing.Point(101, 146);
+            technicianPhoneLabel.Location = new System.Drawing.Point(63, 199);
             technicianPhoneLabel.Name = "technicianPhoneLabel";
             technicianPhoneLabel.Size = new System.Drawing.Size(97, 13);
             technicianPhoneLabel.TabIndex = 7;
             technicianPhoneLabel.Text = "Technician Phone:";
             // 
-            // technicianBindingSource
-            // 
-            this.technicianBindingSource.DataSource = typeof(TechSupport.Model.Technician);
-            // 
             // technicianEmailTextBox
             // 
             this.technicianEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianEmail", true));
-            this.technicianEmailTextBox.Location = new System.Drawing.Point(204, 64);
+            this.technicianEmailTextBox.Location = new System.Drawing.Point(169, 125);
             this.technicianEmailTextBox.Name = "technicianEmailTextBox";
             this.technicianEmailTextBox.Size = new System.Drawing.Size(121, 20);
             this.technicianEmailTextBox.TabIndex = 2;
+            // 
+            // technicianBindingSource
+            // 
+            this.technicianBindingSource.DataSource = typeof(TechSupport.Model.Technician);
             // 
             // technicianNameComboBox
             // 
@@ -88,16 +89,17 @@ namespace TechSupport.UserControls
             this.technicianNameComboBox.DataSource = this.technicianBindingSource;
             this.technicianNameComboBox.DisplayMember = "TechnicianName";
             this.technicianNameComboBox.FormattingEnabled = true;
-            this.technicianNameComboBox.Location = new System.Drawing.Point(204, 116);
+            this.technicianNameComboBox.Location = new System.Drawing.Point(169, 54);
             this.technicianNameComboBox.Name = "technicianNameComboBox";
-            this.technicianNameComboBox.Size = new System.Drawing.Size(190, 21);
+            this.technicianNameComboBox.Size = new System.Drawing.Size(210, 21);
             this.technicianNameComboBox.TabIndex = 6;
-            this.technicianNameComboBox.ValueMember = "TechnicianID";
+            this.technicianNameComboBox.ValueMember = "TechnicianName";
+            this.technicianNameComboBox.SelectedIndexChanged += new System.EventHandler(this.technicianNameComboBox_SelectedIndexChanged);
             // 
             // technicianPhoneTextBox
             // 
             this.technicianPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianPhone", true));
-            this.technicianPhoneTextBox.Location = new System.Drawing.Point(204, 143);
+            this.technicianPhoneTextBox.Location = new System.Drawing.Point(166, 196);
             this.technicianPhoneTextBox.Name = "technicianPhoneTextBox";
             this.technicianPhoneTextBox.Size = new System.Drawing.Size(121, 20);
             this.technicianPhoneTextBox.TabIndex = 8;
@@ -113,7 +115,7 @@ namespace TechSupport.UserControls
             this.Controls.Add(technicianPhoneLabel);
             this.Controls.Add(this.technicianPhoneTextBox);
             this.Name = "technicianIncidentsUserControl";
-            this.Size = new System.Drawing.Size(592, 565);
+            this.Size = new System.Drawing.Size(533, 565);
             this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).EndInit();
             this.ResumeLayout(false);
