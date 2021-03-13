@@ -96,6 +96,7 @@ namespace TechSupport.UserControls
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "Email", true));
             this.emailTextBox.Location = new System.Drawing.Point(92, 63);
             this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(234, 20);
             this.emailTextBox.TabIndex = 6;
             // 
@@ -104,6 +105,7 @@ namespace TechSupport.UserControls
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "Phone", true));
             this.phoneTextBox.Location = new System.Drawing.Point(92, 101);
             this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.ReadOnly = true;
             this.phoneTextBox.Size = new System.Drawing.Size(234, 20);
             this.phoneTextBox.TabIndex = 8;
             // 
@@ -135,6 +137,7 @@ namespace TechSupport.UserControls
             this.nameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.techniciansBindingSource, "Name", true));
             this.nameComboBox.DataSource = this.techniciansBindingSource;
             this.nameComboBox.DisplayMember = "Name";
+            this.nameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.nameComboBox.FormattingEnabled = true;
             this.nameComboBox.Location = new System.Drawing.Point(92, 24);
             this.nameComboBox.Name = "nameComboBox";

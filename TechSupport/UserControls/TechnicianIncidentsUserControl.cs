@@ -20,6 +20,12 @@ namespace TechSupport.UserControls
 
         private void Form_Load(object sender, EventArgs e)
         {
+            Fill_Form();
+        }
+
+        public void Fill_Form()
+        {
+
             this.techniciansTableAdapter.Fill(this.techSupportDataSet.Technicians);
         }
     
