@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -23,7 +19,7 @@ namespace TechSupport.DAL
             List<Technician> technicians = new List<Technician> { };
 
 
-            string selectStatement = "SELECT t.Name as name, t.Email as email, t.Phone as phone FROM Technicians t JOIN Incidents i on t.TechID = i.TechID;";
+            string selectStatement = "SELECT distinct(t.Name) as name, t.Email as email, t.Phone as phone FROM Technicians t JOIN Incidents i on i.TechID = t.TechID;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {

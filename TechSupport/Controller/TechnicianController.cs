@@ -11,6 +11,11 @@ namespace TechSupport.Controller
     {
         private static TechnicianDBDAL technicianDBDAL;
 
+        public TechnicianController()
+        {
+            technicianDBDAL = new TechnicianDBDAL();
+        }
+
         /// <summary>
         /// Method to get the Technician list with incidents populated in the DBDAL
         /// </summary>

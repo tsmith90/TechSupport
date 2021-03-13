@@ -36,10 +36,6 @@ namespace TechSupport.View
             {
                 this.updateIncidentUserControl1.ClearControls();
             }
-            else if (technicianTabControl.SelectedTab == technicianTabControl.TabPages["technicianTabPage"])
-            {
-                this.technicianIncidentsUserControl1.Fill_Form();
-            }
         }
 
 

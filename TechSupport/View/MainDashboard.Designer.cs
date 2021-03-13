@@ -39,7 +39,7 @@ namespace TechSupport.View
             this.addIncidentUserControl1 = new TechSupport.UserControls.AddIncidentUserControl();
             this.technicianTabControl = new System.Windows.Forms.TabControl();
             this.technicianTabPage = new System.Windows.Forms.TabPage();
-            this.technicianIncidentsUserControl1 = new TechSupport.UserControls.TechnicianIncidentsUserControl();
+            this.technicianIncidentsUserControl1 = new TechSupport.UserControls.technicianIncidentsUserControl();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.logoutLink = new System.Windows.Forms.LinkLabel();
@@ -215,6 +215,6 @@ namespace TechSupport.View
         private System.Windows.Forms.Label usernameLabel;
         private System.Windows.Forms.LinkLabel logoutLink;
         private System.Windows.Forms.TabPage technicianTabPage;
-        private UserControls.TechnicianIncidentsUserControl technicianIncidentsUserControl1;
+        private UserControls.technicianIncidentsUserControl technicianIncidentsUserControl1;
     }
 }
