@@ -6,12 +6,12 @@ using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
-    public partial class technicianIncidentsUserControl : UserControl
+    public partial class TechnicianIncidentsUserControl : UserControl
     {
         private TechnicianController technicianController;
         private List<Technician> technicianList;
 
-        public technicianIncidentsUserControl()
+        public TechnicianIncidentsUserControl()
         {
             InitializeComponent();
             technicianList = new List<Technician>();
