@@ -130,5 +130,15 @@ namespace TechSupport.Controller
 
             incidentDBDAL.CloseIncident(incident);
         }
+
+        public List<Incident> GetIncidentsByTechnician(int id)
+        {
+            if (id < 0)
+            {
+                throw new ArgumentOutOfRangeException("Please enter a valid Incident ID.");
+            }
+
+            return incidentDBDAL.GetIncidentsByTechnician(id);
+        }
     }
 }

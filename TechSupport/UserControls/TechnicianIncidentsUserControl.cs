@@ -9,13 +9,17 @@ namespace TechSupport.UserControls
     public partial class TechnicianIncidentsUserControl : UserControl
     {
         private TechnicianController technicianController;
+        private IncidentController incidentController;
         private List<Technician> technicianList;
+        private List<Incident> incidentsList;
 
         public TechnicianIncidentsUserControl()
         {
             InitializeComponent();
-            technicianList = new List<Technician>();
             technicianController = new TechnicianController();
+            incidentController = new IncidentController();
+            technicianList = new List<Technician>();
+            incidentsList = new List<Incident>();
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -25,7 +29,7 @@ namespace TechSupport.UserControls
             technicianNameComboBox.DataSource = technicianList;
         }
 
-        private void technicianNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void TechnicianNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (technicianNameComboBox.SelectedIndex < 0)
             {
@@ -33,9 +37,16 @@ namespace TechSupport.UserControls
             }
 
             Technician technician = technicianList[technicianNameComboBox.SelectedIndex];
-
+            SetIncidentsView(technicianNameComboBox.SelectedIndex);
+            
             technicianBindingSource.Clear();
             technicianBindingSource.Add(technician);
+        }
+
+        private void SetIncidentsView(int id)
+        {
+            incidentsList = incidentController.GetIncidentsByTechnician(id);
+            incidentDataGridView.DataSource = incidentsList;
         }
     }
 }

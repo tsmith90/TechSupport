@@ -334,6 +334,14 @@ namespace TechSupport.DAL
                 }
             }
         }
+
+        public List<Incident> GetIncidentsByTechnician(int id)
+        {
+            List<Incident> incidentList = new List<Incident> { };
+
+
+            return incidentList;
+        }
     }
 }
 

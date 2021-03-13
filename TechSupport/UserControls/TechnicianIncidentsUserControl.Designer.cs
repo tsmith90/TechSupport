@@ -39,11 +39,19 @@ namespace TechSupport.UserControls
             this.technicianNameComboBox = new System.Windows.Forms.ComboBox();
             this.technicianPhoneTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.incidentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.incidentDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             technicianEmailLabel = new System.Windows.Forms.Label();
             technicianNameLabel = new System.Windows.Forms.Label();
             technicianPhoneLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // technicianEmailLabel
@@ -98,7 +106,7 @@ namespace TechSupport.UserControls
             this.technicianNameComboBox.Size = new System.Drawing.Size(270, 21);
             this.technicianNameComboBox.TabIndex = 6;
             this.technicianNameComboBox.ValueMember = "TechnicianName";
-            this.technicianNameComboBox.SelectedIndexChanged += new System.EventHandler(this.technicianNameComboBox_SelectedIndexChanged);
+            this.technicianNameComboBox.SelectedIndexChanged += new System.EventHandler(this.TechnicianNameComboBox_SelectedIndexChanged);
             // 
             // technicianPhoneTextBox
             // 
@@ -115,6 +123,7 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450F));
+            this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.technicianPhoneTextBox, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.technicianEmailTextBox, 2, 2);
             this.tableLayoutPanel1.Controls.Add(technicianEmailLabel, 1, 2);
@@ -129,8 +138,60 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 266F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 476);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 437);
             this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // incidentBindingSource
+            // 
+            this.incidentBindingSource.DataSource = typeof(TechSupport.Model.Incident);
+            // 
+            // incidentDataGridView
+            // 
+            this.incidentDataGridView.AllowUserToAddRows = false;
+            this.incidentDataGridView.AllowUserToDeleteRows = false;
+            this.incidentDataGridView.AutoGenerateColumns = false;
+            this.incidentDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.incidentDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn10});
+            this.tableLayoutPanel1.SetColumnSpan(this.incidentDataGridView, 2);
+            this.incidentDataGridView.DataSource = this.incidentBindingSource;
+            this.incidentDataGridView.Location = new System.Drawing.Point(14, 174);
+            this.incidentDataGridView.Name = "incidentDataGridView";
+            this.incidentDataGridView.ReadOnly = true;
+            this.incidentDataGridView.Size = new System.Drawing.Size(497, 260);
+            this.incidentDataGridView.TabIndex = 8;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ProductName";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "DateOpened";
+            this.dataGridViewTextBoxColumn8.HeaderText = "DateOpened";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CustomerName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CustomerName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
             // TechnicianIncidentsUserControl
             // 
@@ -143,6 +204,8 @@ namespace TechSupport.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -154,5 +217,11 @@ namespace TechSupport.UserControls
         private System.Windows.Forms.ComboBox technicianNameComboBox;
         private System.Windows.Forms.TextBox technicianPhoneTextBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.DataGridView incidentDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.BindingSource incidentBindingSource;
     }
 }
