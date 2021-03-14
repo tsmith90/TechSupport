@@ -4,6 +4,9 @@ using TechSupport.Model;
 
 namespace TechSupport.DAL
 {
+    /// <summary>
+    /// Class to interact for Customers in the TechSupport DB
+    /// </summary
     class CustomerDBDAL
     {
         /// <summary>

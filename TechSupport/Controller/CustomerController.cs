@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TechSupport.DAL;
 using TechSupport.Model;
 
 namespace TechSupport.Controller
 {
+    /// <summary>
+    /// Class to controller interaction with Customers in the DB
+    /// </summary
     class CustomerController
     {
         private static CustomerDBDAL customerDBDAL;
 
+        /// <summary>
+        /// Constructor for the CustomerController class
+        /// </summary
         public CustomerController()
         {
             customerDBDAL = new CustomerDBDAL();
