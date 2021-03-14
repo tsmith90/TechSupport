@@ -335,6 +335,10 @@ namespace TechSupport.DAL
             }
         }
 
+        /// <summary>
+        /// Method to get incidents by technician
+        /// </summary>
+        /// <param name="id">The ID of the technician</param>
         public List<Incident> GetIncidentsByTechnician(int id)
         {
             List<Incident> incidentList = new List<Incident> { };

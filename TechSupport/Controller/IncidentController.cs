@@ -131,7 +131,11 @@ namespace TechSupport.Controller
             incidentDBDAL.CloseIncident(incident);
         }
 
-        public List<Incident> GetIncidentsByTechnician(int id)
+        /// <summary>
+        /// Method to get open incidents assigned to each technician
+        /// </summary>
+        /// <param name = "id">The ID of the technician</param> 
+        public List<Incident> GetOpenIncidentsByTechnician(int id)
         {
             if (id < 0)
             {

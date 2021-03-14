@@ -11,6 +11,9 @@ namespace TechSupport.Controller
     {
         private static TechnicianDBDAL technicianDBDAL;
 
+        /// <summary>
+        /// Constructor for the TechnicianController class
+        /// </summary>
         public TechnicianController()
         {
             technicianDBDAL = new TechnicianDBDAL();
@@ -20,9 +23,9 @@ namespace TechSupport.Controller
         /// Method to get the Technician list with incidents populated in the DBDAL
         /// </summary>
         /// <returns>List of technicians with incidents</returns>
-        public List<Technician> GetTechniciansWithIncidents()
+        public List<Technician> GetTechniciansWithOpenIncidents()
         {
-            return technicianDBDAL.GetTechniciansWithIncidents();
+            return technicianDBDAL.GetTechniciansWithOpenIncidents();
         }
 
         /// <summary>

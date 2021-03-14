@@ -6,35 +6,37 @@ using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
+    /// <summary>
+    /// Class to define and utilize the Technician Open Incident UserControl
+    /// </summary>
     public partial class TechnicianIncidentsUserControl : UserControl
     {
         private TechnicianController technicianController;
         private IncidentController incidentController;
         private List<Technician> technicianList;
-        private List<Incident> incidentsList;
 
+        /// <summary>
+        /// Constructor for the TechnicianIncidentsUserControl
+        /// </summary>
         public TechnicianIncidentsUserControl()
         {
             InitializeComponent();
             technicianController = new TechnicianController();
             incidentController = new IncidentController();
             technicianList = new List<Technician>();
-            incidentsList = new List<Incident>();
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
-            technicianList = technicianController.GetTechniciansWithIncidents();
+            technicianList = technicianController.GetTechniciansWithOpenIncidents();
 
             technicianNameComboBox.DataSource = technicianList;
         }
 
         private void TechnicianNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             try
             {
-
                 int techID = technicianList[technicianNameComboBox.SelectedIndex].TechnicianID;
 
                 if (technicianNameComboBox.SelectedIndex < 0)
@@ -42,7 +44,7 @@ namespace TechSupport.UserControls
                     return;
                 }
 
-                incidentBindingSource.DataSource = incidentController.GetIncidentsByTechnician(techID);
+                incidentBindingSource.DataSource = incidentController.GetOpenIncidentsByTechnician(techID);
 
                 Technician technician = technicianList[technicianNameComboBox.SelectedIndex];
 

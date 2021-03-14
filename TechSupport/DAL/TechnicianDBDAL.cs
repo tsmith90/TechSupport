@@ -12,8 +12,8 @@ namespace TechSupport.DAL
         /// <summary>
         /// Method to read Technicians from the DB and return ones with incidents
         /// </summary>
-        /// <returns>List of working technicians</returns>
-        public List<Technician> GetTechniciansWithIncidents()
+        /// <returns>List of technicians with open incidents</returns>
+        public List<Technician> GetTechniciansWithOpenIncidents()
         {
 
             List<Technician> technicians = new List<Technician> { };
