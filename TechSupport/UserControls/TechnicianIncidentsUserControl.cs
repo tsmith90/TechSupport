@@ -28,9 +28,16 @@ namespace TechSupport.UserControls
 
         private void Form_Load(object sender, EventArgs e)
         {
-            technicianList = technicianController.GetTechniciansWithOpenIncidents();
+            try
+            {
+                technicianList = technicianController.GetTechniciansWithOpenIncidents();
 
-            technicianNameComboBox.DataSource = technicianList;
+                technicianNameComboBox.DataSource = technicianList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
 
         private void TechnicianNameComboBox_SelectedIndexChanged(object sender, EventArgs e)

@@ -104,7 +104,7 @@ namespace TechSupport.UserControls
             }
             catch (FormatException)
             {
-                MessageBox.Show("Please enter a valid incident ID (number)");
+                throw new FormatException("Please enter a valid id number (int)");
             }
 
             return incidentController.GetIncidentByID(id);
