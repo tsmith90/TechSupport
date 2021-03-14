@@ -52,8 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\IncidentController.cs" />
     <Compile Include="Controller\TechnicianController.cs" />
+    <Compile Include="DAL\CustomerDBDAL.cs" />
     <Compile Include="DAL\DBConnection.cs" />
     <Compile Include="DAL\IncidentDBDAL.cs" />
     <Compile Include="DAL\TechnicianDBDAL.cs" />

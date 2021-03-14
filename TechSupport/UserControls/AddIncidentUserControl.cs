@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
+using TechSupport.Model;
 
 namespace TechSupport.UserControls
 {
@@ -10,6 +12,7 @@ namespace TechSupport.UserControls
     public partial class AddIncidentUserControl : UserControl
     {
         private readonly IncidentController incidentController;
+        private readonly CustomerController customerController;
 
         /// <summary>
         /// 0-parameter constructor for the AddIncidentDialog class    
@@ -18,6 +21,7 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             incidentController = new IncidentController();
+            customerController = new CustomerController();
             SetNameList();
             SetProductList();
         }
@@ -50,7 +54,14 @@ namespace TechSupport.UserControls
         {
             try
             {
-                customerComboBox.DataSource = incidentController.GetCustomers();
+                List<string> customerList = new List<string>();
+
+                foreach(Customer c in customerController.GetCustomers())
+                {
+                    customerList.Add(c.CustomerName);
+                }
+
+                customerComboBox.DataSource = customerList;
             }
             catch (Exception ex)
             {

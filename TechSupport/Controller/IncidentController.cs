@@ -21,30 +21,12 @@ namespace TechSupport.Controller
         }
 
         /// <summary>
-        /// Method to interact with IncidentDBDal and get available technicians
-        /// </summary
-        /// <returns>The IncidentDBDal technician list</returns>
-        public List<string> GetTechnicians()
-        {
-            return incidentDBDAL.GetTechnicians();
-        }
-
-        /// <summary>
         /// Method to interact with IncidentDBDal and get the open incidents  
         /// </summary
         /// <returns>The IncidentDBDal open incident list</returns>
         public List<Incident> GetOpenIncidents()
         {
             return incidentDBDAL.GetOpenIncidents();
-        }
-
-        /// <summary>
-        /// Method to retrieve the customer name list from the DB
-        /// </summary
-        /// <returns>The IncidentDBDal customers list</returns>
-        public List<string> GetCustomers()
-        {  
-            return incidentDBDAL.GetCustomers();
         }
 
         /// <summary>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 using TechSupport.Controller;
 using TechSupport.Model;
@@ -11,6 +12,7 @@ namespace TechSupport.UserControls
     public partial class UpdateIncidentUserControl : UserControl
     {
         private readonly IncidentController incidentController;
+        private readonly TechnicianController technicianController;
         private Incident incident;
 
         /// <summary>
@@ -21,13 +23,21 @@ namespace TechSupport.UserControls
             InitializeComponent();
             incident = new Incident();
             incidentController = new IncidentController();
+            technicianController = new TechnicianController();
         }
 
         private void SetTechncicianList()
         {
             try
             {
-                technicianComboBox.DataSource = incidentController.GetTechnicians();
+                List<string> technicianList = new List<string> { };
+
+                foreach (Technician t in technicianController.GetTechnicians())
+                {
+                    technicianList.Add(t.TechnicianName);
+                }
+
+                technicianComboBox.DataSource = technicianList;
             }
             catch (Exception ex)
             {
