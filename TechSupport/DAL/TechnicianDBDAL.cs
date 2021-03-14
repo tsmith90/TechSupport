@@ -19,7 +19,7 @@ namespace TechSupport.DAL
             List<Technician> technicians = new List<Technician> { };
 
 
-            string selectStatement = "SELECT distinct(t.Name) as name, t.Email as email, t.Phone as phone FROM Technicians t JOIN Incidents i on i.TechID = t.TechID;";
+            string selectStatement = "SELECT distinct(t.Name) as name, t.Email as email, t.Phone as phone, t.TechID as id FROM Technicians t JOIN Incidents i on i.TechID = t.TechID;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -41,6 +41,9 @@ namespace TechSupport.DAL
 
                             string phone = reader["phone"].ToString();
                             technician.TechnicianPhone = phone;
+
+                            int id =(int)reader["id"];
+                            technician.TechnicianID = id;
 
                             technicians.Add(technician);
                         }

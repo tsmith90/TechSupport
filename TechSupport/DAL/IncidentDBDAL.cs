@@ -339,6 +339,38 @@ namespace TechSupport.DAL
         {
             List<Incident> incidentList = new List<Incident> { };
 
+            string selectStatement = 
+                "SELECT p.Name as product, i.DateOpened as date,  c.Name as customer, i.Title as title " +
+                "FROM Incidents i JOIN Products p ON i.ProductCode = p.ProductCode " +
+                "JOIN Customers c ON  i.CustomerID = c.CustomerID " +
+                "WHERE  i.TechID = @id and i.DateClosed is NULL;";
+
+
+            using (SqlConnection connection = DBConnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand selectCommand = new SqlCommand(selectStatement, connection))
+                {
+                    selectCommand.Parameters.Add("@id", System.Data.SqlDbType.Int);
+                    selectCommand.Parameters["@id"].Value = id;
+
+                    using (SqlDataReader reader = selectCommand.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Incident incident = new Incident();
+
+                            incident.ProductName = reader["product"].ToString();
+                            incident.DateOpened = (DateTime)reader["date"];
+                            incident.CustomerName = reader["customer"].ToString();
+                            incident.Title = reader["title"].ToString();
+
+                            incidentList.Add(incident);
+                        }
+                    }
+                }
+            }
 
             return incidentList;
         }

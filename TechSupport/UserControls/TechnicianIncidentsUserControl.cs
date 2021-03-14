@@ -31,22 +31,28 @@ namespace TechSupport.UserControls
 
         private void TechnicianNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (technicianNameComboBox.SelectedIndex < 0)
+
+            try
             {
-                return;
+
+                int techID = technicianList[technicianNameComboBox.SelectedIndex].TechnicianID;
+
+                if (technicianNameComboBox.SelectedIndex < 0)
+                {
+                    return;
+                }
+
+                incidentBindingSource.DataSource = incidentController.GetIncidentsByTechnician(techID);
+
+                Technician technician = technicianList[technicianNameComboBox.SelectedIndex];
+
+                technicianBindingSource.Clear();
+                technicianBindingSource.Add(technician);
             }
-
-            Technician technician = technicianList[technicianNameComboBox.SelectedIndex];
-            SetIncidentsView(technicianNameComboBox.SelectedIndex);
-            
-            technicianBindingSource.Clear();
-            technicianBindingSource.Add(technician);
-        }
-
-        private void SetIncidentsView(int id)
-        {
-            incidentsList = incidentController.GetIncidentsByTechnician(id);
-            incidentDataGridView.DataSource = incidentsList;
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, ex.GetType().ToString());
+            }
         }
     }
 }

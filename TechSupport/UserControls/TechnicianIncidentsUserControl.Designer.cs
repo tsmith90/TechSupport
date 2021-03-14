@@ -37,21 +37,23 @@ namespace TechSupport.UserControls
             this.technicianEmailTextBox = new System.Windows.Forms.TextBox();
             this.technicianBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.technicianNameComboBox = new System.Windows.Forms.ComboBox();
+            this.incidentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.technicianPhoneTextBox = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.incidentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.incidentDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.technicianBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             technicianEmailLabel = new System.Windows.Forms.Label();
             technicianNameLabel = new System.Windows.Forms.Label();
             technicianPhoneLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // technicianEmailLabel
@@ -84,7 +86,7 @@ namespace TechSupport.UserControls
             // technicianEmailTextBox
             // 
             this.technicianEmailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianEmail", true));
-            this.technicianEmailTextBox.Location = new System.Drawing.Point(67, 77);
+            this.technicianEmailTextBox.Location = new System.Drawing.Point(154, 77);
             this.technicianEmailTextBox.Name = "technicianEmailTextBox";
             this.technicianEmailTextBox.ReadOnly = true;
             this.technicianEmailTextBox.Size = new System.Drawing.Size(270, 20);
@@ -96,22 +98,25 @@ namespace TechSupport.UserControls
             // 
             // technicianNameComboBox
             // 
-            this.technicianNameComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.technicianBindingSource, "TechnicianName", true));
             this.technicianNameComboBox.DataSource = this.technicianBindingSource;
             this.technicianNameComboBox.DisplayMember = "TechnicianName";
             this.technicianNameComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.technicianNameComboBox.FormattingEnabled = true;
-            this.technicianNameComboBox.Location = new System.Drawing.Point(67, 37);
+            this.technicianNameComboBox.Location = new System.Drawing.Point(154, 37);
             this.technicianNameComboBox.Name = "technicianNameComboBox";
             this.technicianNameComboBox.Size = new System.Drawing.Size(270, 21);
             this.technicianNameComboBox.TabIndex = 6;
-            this.technicianNameComboBox.ValueMember = "TechnicianName";
+            this.technicianNameComboBox.ValueMember = "TechnicianID";
             this.technicianNameComboBox.SelectedIndexChanged += new System.EventHandler(this.TechnicianNameComboBox_SelectedIndexChanged);
+            // 
+            // incidentBindingSource
+            // 
+            this.incidentBindingSource.DataSource = typeof(TechSupport.Model.Incident);
             // 
             // technicianPhoneTextBox
             // 
             this.technicianPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.technicianBindingSource, "TechnicianPhone", true));
-            this.technicianPhoneTextBox.Location = new System.Drawing.Point(67, 120);
+            this.technicianPhoneTextBox.Location = new System.Drawing.Point(154, 120);
             this.technicianPhoneTextBox.Name = "technicianPhoneTextBox";
             this.technicianPhoneTextBox.ReadOnly = true;
             this.technicianPhoneTextBox.Size = new System.Drawing.Size(144, 20);
@@ -121,8 +126,8 @@ namespace TechSupport.UserControls
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 11F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 450F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 140F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 363F));
             this.tableLayoutPanel1.Controls.Add(this.incidentDataGridView, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.technicianPhoneTextBox, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.technicianEmailTextBox, 2, 2);
@@ -139,12 +144,8 @@ namespace TechSupport.UserControls
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 266F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 437);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(514, 474);
             this.tableLayoutPanel1.TabIndex = 9;
-            // 
-            // incidentBindingSource
-            // 
-            this.incidentBindingSource.DataSource = typeof(TechSupport.Model.Incident);
             // 
             // incidentDataGridView
             // 
@@ -193,6 +194,10 @@ namespace TechSupport.UserControls
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             // 
+            // technicianBindingSource1
+            // 
+            this.technicianBindingSource1.DataSource = typeof(TechSupport.Model.Technician);
+            // 
             // TechnicianIncidentsUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,10 +207,11 @@ namespace TechSupport.UserControls
             this.Size = new System.Drawing.Size(533, 565);
             this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.incidentBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.incidentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.technicianBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +229,6 @@ namespace TechSupport.UserControls
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.BindingSource incidentBindingSource;
+        private System.Windows.Forms.BindingSource technicianBindingSource1;
     }
 }
