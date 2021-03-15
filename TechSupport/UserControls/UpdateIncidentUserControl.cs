@@ -31,6 +31,7 @@ namespace TechSupport.UserControls
             try
             {
                 List<string> technicianList = new List<string> { };
+                technicianList.Add("-- Unassigned --");
 
                 foreach (Technician t in technicianController.GetTechnicians())
                 {
