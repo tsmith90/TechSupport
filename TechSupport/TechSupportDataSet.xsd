@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TechSupportDataSet" targetNamespace="http://tempuri.org/TechSupportDataSet.xsd" xmlns:mstns="http://tempuri.org/TechSupportDataSet.xsd" xmlns="http://tempuri.org/TechSupportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TechSupportConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TechSupportConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TechSupport.Properties.Settings.GlobalReference.Default.TechSupportConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IncidentsTableAdapter" GeneratorDataComponentClassName="IncidentsTableAdapter" Name="Incidents" UserDataComponentName="IncidentsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TechSupportConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Products.Name, Incidents.Title, Customers.Name AS customer, Incidents.DateOpened, Technicians.Name AS technician
+FROM            Customers LEFT OUTER JOIN
+                         Incidents ON Customers.CustomerID = Incidents.CustomerID LEFT OUTER JOIN
+                         Products ON Incidents.ProductCode = Products.ProductCode LEFT OUTER JOIN
+                         Technicians ON Incidents.TechID = Technicians.TechID
+WHERE        (Incidents.DateClosed IS NULL) AND (Incidents.TechID IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DateOpened" DataSetColumn="DateOpened" />
+              <Mapping SourceColumn="Title" DataSetColumn="Title" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="customer" DataSetColumn="customer" />
+              <Mapping SourceColumn="technician" DataSetColumn="technician" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TechSupportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TechSupportDataSet" msprop:Generator_UserDSName="TechSupportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Incidents" msprop:Generator_TableClassName="IncidentsDataTable" msprop:Generator_TableVarName="tableIncidents" msprop:Generator_RowChangedName="IncidentsRowChanged" msprop:Generator_TablePropName="Incidents" msprop:Generator_RowDeletingName="IncidentsRowDeleting" msprop:Generator_RowChangingName="IncidentsRowChanging" msprop:Generator_RowEvHandlerName="IncidentsRowChangeEventHandler" msprop:Generator_RowDeletedName="IncidentsRowDeleted" msprop:Generator_RowClassName="IncidentsRow" msprop:Generator_UserTableName="Incidents" msprop:Generator_RowEvArgName="IncidentsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DateOpened" msprop:Generator_ColumnVarNameInTable="columnDateOpened" msprop:Generator_ColumnPropNameInRow="DateOpened" msprop:Generator_ColumnPropNameInTable="DateOpenedColumn" msprop:Generator_UserColumnName="DateOpened" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="customer" msprop:Generator_ColumnVarNameInTable="columncustomer" msprop:Generator_ColumnPropNameInRow="customer" msprop:Generator_ColumnPropNameInTable="customerColumn" msprop:Generator_UserColumnName="customer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="technician" msprop:Generator_ColumnVarNameInTable="columntechnician" msprop:Generator_ColumnPropNameInRow="technician" msprop:Generator_ColumnPropNameInTable="technicianColumn" msprop:Generator_UserColumnName="technician" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
