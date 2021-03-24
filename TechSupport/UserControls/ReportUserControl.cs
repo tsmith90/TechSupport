@@ -16,5 +16,12 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+            this.incidentsTableAdapter.Fill(this.techSupportDataSet.Incidents);
+
+            this.reportViewer1.RefreshReport();
+        }
     }
 }
