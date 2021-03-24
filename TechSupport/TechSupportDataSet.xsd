@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="TechSupportConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        Products.Name, Incidents.Title, Customers.Name AS customer, Incidents.DateOpened, Technicians.Name AS technician
+                    <CommandText>SELECT        Products.Name, Incidents.Title, Customers.Name AS customer, FORMAT(Incidents.DateOpened, 'dd-MM-yyyy') AS date, Technicians.Name AS technician
 FROM            Customers LEFT OUTER JOIN
                          Incidents ON Customers.CustomerID = Incidents.CustomerID LEFT OUTER JOIN
                          Products ON Incidents.ProductCode = Products.ProductCode LEFT OUTER JOIN
@@ -24,11 +24,11 @@ WHERE        (Incidents.DateClosed IS NULL) AND (Incidents.TechID IS NOT NULL)</
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="DateOpened" DataSetColumn="DateOpened" />
               <Mapping SourceColumn="Title" DataSetColumn="Title" />
               <Mapping SourceColumn="Name" DataSetColumn="Name" />
               <Mapping SourceColumn="customer" DataSetColumn="customer" />
               <Mapping SourceColumn="technician" DataSetColumn="technician" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -40,10 +40,9 @@ WHERE        (Incidents.DateClosed IS NULL) AND (Incidents.TechID IS NOT NULL)</
   <xs:element name="TechSupportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TechSupportDataSet" msprop:Generator_UserDSName="TechSupportDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Incidents" msprop:Generator_TableClassName="IncidentsDataTable" msprop:Generator_TableVarName="tableIncidents" msprop:Generator_RowChangedName="IncidentsRowChanged" msprop:Generator_TablePropName="Incidents" msprop:Generator_RowDeletingName="IncidentsRowDeleting" msprop:Generator_RowChangingName="IncidentsRowChanging" msprop:Generator_RowEvHandlerName="IncidentsRowChangeEventHandler" msprop:Generator_RowDeletedName="IncidentsRowDeleted" msprop:Generator_RowClassName="IncidentsRow" msprop:Generator_UserTableName="Incidents" msprop:Generator_RowEvArgName="IncidentsRowChangeEvent">
+        <xs:element name="Incidents" msprop:Generator_TableClassName="IncidentsDataTable" msprop:Generator_TableVarName="tableIncidents" msprop:Generator_TablePropName="Incidents" msprop:Generator_RowDeletingName="IncidentsRowDeleting" msprop:Generator_RowChangingName="IncidentsRowChanging" msprop:Generator_RowEvHandlerName="IncidentsRowChangeEventHandler" msprop:Generator_RowDeletedName="IncidentsRowDeleted" msprop:Generator_UserTableName="Incidents" msprop:Generator_RowChangedName="IncidentsRowChanged" msprop:Generator_RowEvArgName="IncidentsRowChangeEvent" msprop:Generator_RowClassName="IncidentsRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="DateOpened" msprop:Generator_ColumnVarNameInTable="columnDateOpened" msprop:Generator_ColumnPropNameInRow="DateOpened" msprop:Generator_ColumnPropNameInTable="DateOpenedColumn" msprop:Generator_UserColumnName="DateOpened" type="xs:dateTime" minOccurs="0" />
               <xs:element name="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_UserColumnName="Title" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -69,6 +68,13 @@ WHERE        (Incidents.DateClosed IS NULL) AND (Incidents.TechID IS NOT NULL)</
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="date" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

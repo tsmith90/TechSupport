@@ -36,6 +36,11 @@ namespace TechSupport.View
             {
                 this.updateIncidentUserControl1.ClearControls();
             }
+            else if (technicianTabControl.SelectedTab == technicianTabControl.TabPages["reportTabPage"])
+            {
+                this.reportUserControl1.RefreshReport();
+            }
+
         }
 
 

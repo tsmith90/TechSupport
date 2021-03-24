@@ -81,6 +81,9 @@
     <Compile Include="Model\Incident.cs" />
     <Compile Include="Model\Technician.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="TechSupportDataSet.cs">
+      <DependentUpon>TechSupportDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TechSupportDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,7 +142,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="OpenIncidentsWithTechAssignedReport.rdlc" />
+    <EmbeddedResource Include="OpenAssignedIncidentsReport.rdlc" />
     <EmbeddedResource Include="UserControls\AddIncidentUserControl.resx">
       <DependentUpon>AddIncidentUserControl.cs</DependentUpon>
     </EmbeddedResource>
