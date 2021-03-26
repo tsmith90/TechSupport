@@ -185,8 +185,7 @@
                             <TextRun>
                               <Value>=Count(Fields!date.Value)</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
+                                <FontWeight>SemiBold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -218,10 +217,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>incidents assigned</Value>
+                              <Value>=IIf(Count(Fields!date.Value) = 1, "incident assigned", "incidents assigned")</Value>
                               <Style>
-                                <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
+                                <FontWeight>SemiBold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -566,8 +564,7 @@
                           <TextRun>
                             <Value>Total:</Value>
                             <Style>
-                              <FontWeight>Normal</FontWeight>
-                              <Color>#333333</Color>
+                              <FontWeight>SemiBold</FontWeight>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -607,8 +604,7 @@
                               <TextRun>
                                 <Value />
                                 <Style>
-                                  <FontWeight>Normal</FontWeight>
-                                  <Color>#333333</Color>
+                                  <FontWeight>SemiBold</FontWeight>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -648,8 +644,7 @@
                                   <TextRun>
                                     <Value />
                                     <Style>
-                                      <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
+                                      <FontWeight>SemiBold</FontWeight>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
