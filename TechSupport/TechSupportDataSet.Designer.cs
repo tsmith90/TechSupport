@@ -900,7 +900,7 @@ namespace TechSupport.TechSupportDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Products.Name, Incidents.Title, Customers.Name AS customer, FORMAT(Incidents.DateOpened, 'dd-MM-yyyy') AS date, Technicians.Name AS technician
+            this._commandCollection[0].CommandText = @"SELECT        Products.Name, Incidents.Title, Customers.Name AS customer, FORMAT(Incidents.DateOpened, 'MM/dd/yyyy') AS date, Technicians.Name AS technician
 FROM            Customers LEFT OUTER JOIN
                          Incidents ON Customers.CustomerID = Incidents.CustomerID LEFT OUTER JOIN
                          Products ON Incidents.ProductCode = Products.ProductCode LEFT OUTER JOIN
