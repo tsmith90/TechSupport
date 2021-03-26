@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.3in</Width>
+              <Width>1.31875in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.3in</Width>
+              <Width>1.37083in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -25,16 +25,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>date</Value>
+                              <Value>Date Opened</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -48,7 +48,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -66,16 +66,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>technician</Value>
+                              <Value>Technician Name</Value>
                               <Style>
                                 <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
-                                <Color>#666666</Color>
+                                <Color>White</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Right</TextAlign>
+                            <TextAlign>Center</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -89,7 +89,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>CornflowerBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -115,11 +115,12 @@
                               <Value>=Fields!date.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>date</rd:DefaultName>
@@ -148,7 +149,6 @@
                               <Value>=Fields!technician.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -200,7 +200,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -233,7 +233,7 @@
                         <Border>
                           <Style>None</Style>
                         </Border>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>Silver</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -256,7 +256,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>1.3in</Size>
+                <Size>1.31875in</Size>
                 <CellContents>
                   <Textbox Name="Textbox9">
                     <CanGrow>true</CanGrow>
@@ -265,16 +265,16 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Name</Value>
+                            <Value>Product Name</Value>
                             <Style>
                               <FontSize>11pt</FontSize>
                               <FontWeight>Bold</FontWeight>
-                              <Color>#666666</Color>
+                              <Color>White</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
                         <Style>
-                          <TextAlign>Right</TextAlign>
+                          <TextAlign>Center</TextAlign>
                         </Style>
                       </Paragraph>
                     </Paragraphs>
@@ -288,7 +288,7 @@
                         <Style>Solid</Style>
                         <Width>1pt</Width>
                       </BottomBorder>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>CornflowerBlue</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -300,7 +300,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1.3in</Size>
+                    <Size>1.31875in</Size>
                     <CellContents>
                       <Textbox Name="Textbox7">
                         <CanGrow>true</CanGrow>
@@ -309,16 +309,16 @@
                           <Paragraph>
                             <TextRuns>
                               <TextRun>
-                                <Value>Title</Value>
+                                <Value>Incident Title</Value>
                                 <Style>
                                   <FontSize>11pt</FontSize>
                                   <FontWeight>Bold</FontWeight>
-                                  <Color>#666666</Color>
+                                  <Color>White</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
                             <Style>
-                              <TextAlign>Right</TextAlign>
+                              <TextAlign>Center</TextAlign>
                             </Style>
                           </Paragraph>
                         </Paragraphs>
@@ -332,7 +332,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>CornflowerBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -344,7 +344,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.3in</Size>
+                        <Size>1.31875in</Size>
                         <CellContents>
                           <Textbox Name="Textbox5">
                             <CanGrow>true</CanGrow>
@@ -353,16 +353,16 @@
                               <Paragraph>
                                 <TextRuns>
                                   <TextRun>
-                                    <Value>customer</Value>
+                                    <Value>Customer Name</Value>
                                     <Style>
                                       <FontSize>11pt</FontSize>
                                       <FontWeight>Bold</FontWeight>
-                                      <Color>#666666</Color>
+                                      <Color>White</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
                                 <Style>
-                                  <TextAlign>Right</TextAlign>
+                                  <TextAlign>Center</TextAlign>
                                 </Style>
                               </Paragraph>
                             </Paragraphs>
@@ -376,7 +376,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>CornflowerBlue</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -406,7 +406,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>1.3in</Size>
+                <Size>1.31875in</Size>
                 <CellContents>
                   <Textbox Name="Name">
                     <CanGrow>true</CanGrow>
@@ -418,7 +418,6 @@
                             <Value>=Fields!Name.Value</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
-                              <Color>#333333</Color>
                             </Style>
                           </TextRun>
                         </TextRuns>
@@ -435,7 +434,7 @@
                         <Style>Solid</Style>
                         <Width>1pt</Width>
                       </BottomBorder>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>CornflowerBlue</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -457,7 +456,7 @@
                     </SortExpression>
                   </SortExpressions>
                   <TablixHeader>
-                    <Size>1.3in</Size>
+                    <Size>1.31875in</Size>
                     <CellContents>
                       <Textbox Name="Title">
                         <CanGrow>true</CanGrow>
@@ -469,7 +468,6 @@
                                 <Value>=Fields!Title.Value</Value>
                                 <Style>
                                   <FontWeight>Normal</FontWeight>
-                                  <Color>#333333</Color>
                                 </Style>
                               </TextRun>
                             </TextRuns>
@@ -486,7 +484,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>LightBlue</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -508,7 +506,7 @@
                         </SortExpression>
                       </SortExpressions>
                       <TablixHeader>
-                        <Size>1.3in</Size>
+                        <Size>1.31875in</Size>
                         <CellContents>
                           <Textbox Name="customer">
                             <CanGrow>true</CanGrow>
@@ -520,7 +518,6 @@
                                     <Value>=Fields!customer.Value</Value>
                                     <Style>
                                       <FontWeight>Normal</FontWeight>
-                                      <Color>#333333</Color>
                                     </Style>
                                   </TextRun>
                                 </TextRuns>
@@ -537,7 +534,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>PaleTurquoise</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -558,7 +555,7 @@
             </TablixMember>
             <TablixMember>
               <TablixHeader>
-                <Size>1.3in</Size>
+                <Size>1.31875in</Size>
                 <CellContents>
                   <Textbox Name="Textbox11">
                     <CanGrow>true</CanGrow>
@@ -587,7 +584,7 @@
                         <Style>Solid</Style>
                         <Width>1pt</Width>
                       </BottomBorder>
-                      <BackgroundColor>White</BackgroundColor>
+                      <BackgroundColor>Silver</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -599,7 +596,7 @@
               <TablixMembers>
                 <TablixMember>
                   <TablixHeader>
-                    <Size>1.3in</Size>
+                    <Size>1.31875in</Size>
                     <CellContents>
                       <Textbox Name="Textbox12">
                         <CanGrow>true</CanGrow>
@@ -628,7 +625,7 @@
                             <Style>Solid</Style>
                             <Width>1pt</Width>
                           </BottomBorder>
-                          <BackgroundColor>White</BackgroundColor>
+                          <BackgroundColor>Silver</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -640,7 +637,7 @@
                   <TablixMembers>
                     <TablixMember>
                       <TablixHeader>
-                        <Size>1.3in</Size>
+                        <Size>1.31875in</Size>
                         <CellContents>
                           <Textbox Name="Textbox13">
                             <CanGrow>true</CanGrow>
@@ -669,7 +666,7 @@
                                 <Style>Solid</Style>
                                 <Width>1pt</Width>
                               </BottomBorder>
-                              <BackgroundColor>White</BackgroundColor>
+                              <BackgroundColor>Silver</BackgroundColor>
                               <PaddingLeft>2pt</PaddingLeft>
                               <PaddingRight>2pt</PaddingRight>
                               <PaddingTop>2pt</PaddingTop>
@@ -688,9 +685,9 @@
         </TablixRowHierarchy>
         <DataSetName>OpenAssignedIncidentsDataSet</DataSetName>
         <Top>0.72917in</Top>
-        <Left>0.36458in</Left>
+        <Left>0.27083in</Left>
         <Height>1.03124in</Height>
-        <Width>6.5in</Width>
+        <Width>6.64583in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -698,7 +695,7 @@
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox1">
+      <Textbox Name="BannerTextbox">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -706,7 +703,10 @@
             <TextRuns>
               <TextRun>
                 <Value>Open Incidents Assigned to Technicians</Value>
-                <Style />
+                <Style>
+                  <FontSize>14pt</FontSize>
+                  <Color>White</Color>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style>
@@ -714,17 +714,16 @@
             </Style>
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.16542in</Top>
         <Left>1.0925in</Left>
-        <Height>0.25in</Height>
+        <Height>0.32292in</Height>
         <Width>4.90625in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
-          <BackgroundColor>LightBlue</BackgroundColor>
+          <BackgroundColor>CornflowerBlue</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
