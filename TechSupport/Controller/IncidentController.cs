@@ -60,6 +60,7 @@ namespace TechSupport.Controller
         /// <param name = "product">the product name</param> 
         /// <param name = "title">the title of the incident</param> 
         /// <param name = "description">the description of the incident</param> 
+        /// <returns>True if and incident is successfully added</returns>
         public bool AddIncident(string name, string product, string title, string description)
         {
             Incident incident = new Incident();
@@ -90,6 +91,7 @@ namespace TechSupport.Controller
         /// </summary>
         /// <param name = "incident">The incident to be updated in the DB</param> 
         /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param>
+        /// <returns>True if and incident is successfully updated</returns>
         public bool UpdateIncident(Incident incident, Incident oldIncident)
         {
             if (incident == null || oldIncident == null)
@@ -105,6 +107,7 @@ namespace TechSupport.Controller
         /// </summary>
         /// <param name = "incident">The incident to be closed in the DB</param> 
         /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param> 
+        /// <returns>True if and incident is successfully closed</returns>
         public bool CloseIncident(Incident incident, Incident oldIncident)
         {
             if (incident == null || oldIncident == null)
@@ -119,6 +122,7 @@ namespace TechSupport.Controller
         /// Method to get open incidents assigned to each technician
         /// </summary>
         /// <param name = "id">The ID of the technician</param> 
+        /// <returns>a list of open incidents by a techID</returns>
         public List<Incident> GetOpenIncidentsByTechnician(int id)
         {
             if (id < 0)
