@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -130,7 +131,7 @@ namespace TechSupport.DAL
         {
             Incident incident = new Incident();
 
-            string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  t.Name as techName, " +
+            string selectStatement = "SELECT c.Name as name, i.ProductCode as product,  i.TechID as techID, t.Name as techName, " +
                 "i.Title as title, FORMAT (i.DateOpened, 'MM-dd-yyyy') as opened, DateClosed as closed, i.Description as description, i.IncidentID as incident " +
                 "FROM Incidents i " +
                 "LEFT JOIN Customers c on c.CustomerID = i.CustomerID " +
@@ -155,6 +156,11 @@ namespace TechSupport.DAL
 
                             string product = reader["product"].ToString();
                             incident.ProductCode = product;
+
+                            if ((int)reader["techID"] > 0)
+                            {
+                                incident.TechnicianID = (int)reader["techID"];
+                            }
 
                             string techName = reader["techName"].ToString();
                             incident.TechnicianName = techName;
@@ -255,9 +261,14 @@ namespace TechSupport.DAL
         /// Method to close an incident in the DB
         /// </summary>
         /// <param name="incident">The incident to be closed in the DB</param>
-        public void CloseIncident(Incident incident)
+        /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param> 
+        public bool CloseIncident(Incident incident, Incident oldIncident)
         {
-            string closeIncident = "UPDATE Incidents SET DateClosed = @date WHERE IncidentID = @id;";
+            string closeIncident = 
+                "UPDATE Incidents SET DateClosed = @date " +
+                "WHERE IncidentID = @id " +
+                "and Description = @oldDescription " +
+                "and TechID = @oldTechID;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -265,13 +276,27 @@ namespace TechSupport.DAL
 
                 using (SqlCommand cmd = new SqlCommand(closeIncident, connection))
                 {
+                    cmd.Parameters.Add("@oldDescription", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@oldDescription"].Value = oldIncident.Description;
+
+                    cmd.Parameters.Add("@oldTechID", System.Data.SqlDbType.Int);
+                    cmd.Parameters["@oldTechID"].Value = oldIncident.TechnicianID;
+
                     cmd.Parameters.Add("@date", System.Data.SqlDbType.DateTime);
                     cmd.Parameters["@date"].Value = incident.DateClosed;
 
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     cmd.Parameters["@id"].Value = incident.IncidentID;
 
-                    cmd.ExecuteNonQuery();
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
         }

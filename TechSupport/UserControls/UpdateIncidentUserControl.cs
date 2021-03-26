@@ -14,6 +14,7 @@ namespace TechSupport.UserControls
         private readonly IncidentController incidentController;
         private readonly TechnicianController technicianController;
         private Incident incident;
+        private Incident oldIncident;
 
         /// <summary>
         /// 0-parameter constructor for the SearchIncidentDialog class  
@@ -22,6 +23,7 @@ namespace TechSupport.UserControls
         {
             InitializeComponent();
             incident = new Incident();
+            oldIncident = new Incident();
             incidentController = new IncidentController();
             technicianController = new TechnicianController();
         }
@@ -74,6 +76,7 @@ namespace TechSupport.UserControls
             try
             {
                 incident = GetIncidentByID();
+                oldIncident = incident;
 
                 if (String.IsNullOrEmpty(incident.CustomerName))
                 {
@@ -169,11 +172,6 @@ namespace TechSupport.UserControls
                 {
                     incident.DateClosed = DateTime.Now;
                     CloseIncident();
-                    closeButton.Enabled = false;
-                    updateButton.Enabled = false;
-                    textToAddTextBox.ReadOnly = true;
-                    technicianComboBox.Enabled = false;
-                    MessageBox.Show("incident closed");
                 }
             }
         }
@@ -182,7 +180,18 @@ namespace TechSupport.UserControls
         {
             try
             {
-                incidentController.CloseIncident(incident);
+                if (incidentController.CloseIncident(incident, oldIncident))
+                {
+                    MessageBox.Show("incident closed");
+                    closeButton.Enabled = false;
+                    updateButton.Enabled = false;
+                    textToAddTextBox.ReadOnly = true;
+                    technicianComboBox.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("incident could not be closed");
+                }
             }
             catch (Exception ex)
             {
@@ -195,6 +204,7 @@ namespace TechSupport.UserControls
             try
             {
                 incidentController.UpdateIncident(incident);
+                oldIncident = incident;
             }
             catch (Exception ex)
             {

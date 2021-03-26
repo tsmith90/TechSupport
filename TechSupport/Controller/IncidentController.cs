@@ -103,14 +103,15 @@ namespace TechSupport.Controller
         /// Method to close a given Incident object
         /// </summary>
         /// <param name = "incident">The incident to be closed in the DB</param> 
-        public void CloseIncident(Incident incident)
+        /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param> 
+        public bool CloseIncident(Incident incident, Incident oldIncident)
         {
-            if (incident == null)
+            if (incident == null || oldIncident == null)
             {
                 throw new ArgumentNullException("Please enter a valid incident to close.");
             }
 
-            incidentDBDAL.CloseIncident(incident);
+            return incidentDBDAL.CloseIncident(incident, oldIncident);
         }
 
         /// <summary>
