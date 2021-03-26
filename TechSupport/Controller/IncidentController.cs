@@ -89,14 +89,15 @@ namespace TechSupport.Controller
         /// Method to update a given Incident object
         /// </summary>
         /// <param name = "incident">The incident to be updated in the DB</param> 
-        public void UpdateIncident(Incident incident)
+        /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param>
+        public bool UpdateIncident(Incident incident, Incident oldIncident)
         {
-            if (incident == null)
+            if (incident == null || oldIncident == null)
             {
-                throw new ArgumentNullException("Please enter a valid update incident.");
+                throw new ArgumentNullException("Please enter a valid incident.");
             }
 
-            incidentDBDAL.UpdateIncident(incident);
+            return incidentDBDAL.UpdateIncident(incident, oldIncident);
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace TechSupport.Controller
         {
             if (incident == null || oldIncident == null)
             {
-                throw new ArgumentNullException("Please enter a valid incident to close.");
+                throw new ArgumentNullException("Please enter a valid incident.");
             }
 
             return incidentDBDAL.CloseIncident(incident, oldIncident);

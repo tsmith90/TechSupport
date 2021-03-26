@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Windows.Forms;
 using TechSupport.Model;
 
 namespace TechSupport.DAL
@@ -86,6 +85,7 @@ namespace TechSupport.DAL
         /// <summary>
         /// Method to insert a new Incident into the TechSupport DB
         /// </summary>
+        /// <param name = "incident">the incident to be added to the DB</param>   
         public void AddIncident(Incident incident)
         {
             String insert =
@@ -157,7 +157,7 @@ namespace TechSupport.DAL
                             string product = reader["product"].ToString();
                             incident.ProductCode = product;
 
-                            if ((int)reader["techID"] > 0)
+                            if (reader["techID"] != DBNull.Value)
                             {
                                 incident.TechnicianID = (int)reader["techID"];
                             }
@@ -230,12 +230,16 @@ namespace TechSupport.DAL
         /// Method to update an incident in the DB
         /// </summary>
         /// <param name="incident">The incident to be updated in the DB</param>
-        public void UpdateIncident(Incident incident)
+        /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param>
+        /// <returns>True if incident is successfully updated </returns>
+        public bool UpdateIncident(Incident incident, Incident oldIncident)
         {
             string updateIncident = "UPDATE Incidents " +
                 "SET Description = @description,  " +
                 "TechID = (SELECT TechID FROM Technicians WHERE Name = @tech) " +
-                "WHERE IncidentID = @id ;";
+                "WHERE IncidentID = @id " +
+                "and Description = @oldDescription " +
+                "and (TechID = @oldTechID or (TechID is null and @oldTechID is null));";
 
             using (SqlConnection connection = DBConnection.GetConnection())
             {
@@ -252,7 +256,29 @@ namespace TechSupport.DAL
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     cmd.Parameters["@id"].Value = incident.IncidentID;
 
-                    cmd.ExecuteNonQuery();
+                    if (oldIncident.TechnicianID == 0)
+                    {
+                        cmd.Parameters.Add("@oldTechID", System.Data.SqlDbType.Int);
+                        cmd.Parameters["@oldTechID"].Value = DBNull.Value;
+                    }
+                    else
+                    {
+                        cmd.Parameters.Add("@oldTechID", System.Data.SqlDbType.Int);
+                        cmd.Parameters["@oldTechID"].Value = oldIncident.IncidentID;
+                    }
+
+                    cmd.Parameters.Add("@oldDescription", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@oldDescription"].Value = oldIncident.Description;
+
+                    int count = cmd.ExecuteNonQuery();
+                    if(count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
         }
@@ -262,6 +288,7 @@ namespace TechSupport.DAL
         /// </summary>
         /// <param name="incident">The incident to be closed in the DB</param>
         /// <param name = "oldIncident">The incident to be checked in the DB for continuity</param> 
+        /// <returns>True if incident is successfully closed</returns>
         public bool CloseIncident(Incident incident, Incident oldIncident)
         {
             string closeIncident = 
@@ -305,6 +332,7 @@ namespace TechSupport.DAL
         /// Method to get incidents by technician
         /// </summary>
         /// <param name="id">The ID of the technician</param>
+        /// <returns>List of incidents by technician</returns>
         public List<Incident> GetIncidentsByTechnician(int id)
         {
             List<Incident> incidentList = new List<Incident> { };

@@ -76,7 +76,7 @@ namespace TechSupport.UserControls
             try
             {
                 incident = GetIncidentByID();
-                oldIncident = incident;
+                oldIncident = GetIncidentByID();
 
                 if (String.IsNullOrEmpty(incident.CustomerName))
                 {
@@ -141,8 +141,7 @@ namespace TechSupport.UserControls
                         }
 
                         UpdateIncident();
-                        SetControls();
-                        MessageBox.Show("incident updated");
+                        
                     }
                 }
                 else
@@ -152,9 +151,7 @@ namespace TechSupport.UserControls
                         incident.Description = checkDescription;
                     }
                     incident.TechnicianName = technicianComboBox.Text;
-                    UpdateIncident();
-                    SetControls();
-                    MessageBox.Show("incident updated");
+                    UpdateIncident(); 
                 }
             }
         }
@@ -203,8 +200,16 @@ namespace TechSupport.UserControls
         {
             try
             {
-                incidentController.UpdateIncident(incident);
-                oldIncident = incident;
+                if (incidentController.UpdateIncident(incident, oldIncident))
+                {
+                    oldIncident = incidentController.GetIncidentByID(oldIncident.IncidentID);
+                    SetControls();
+                    MessageBox.Show("incident updated");
+                }
+                else
+                {
+                    MessageBox.Show("incident was not updated");
+                }
             }
             catch (Exception ex)
             {
