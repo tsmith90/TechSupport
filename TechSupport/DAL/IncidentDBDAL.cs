@@ -228,7 +228,7 @@ namespace TechSupport.DAL
         {
             string updateIncident = "UPDATE Incidents " +
                 "SET Description = @description,  " +
-                "TechID = (SELECT distinct(TechID) FROM Technicians WHERE TechID = @tech) " +
+                "TechID = (SELECT TechID FROM Technicians WHERE Name = @tech) " +
                 "WHERE IncidentID = @id ;";
 
             using (SqlConnection connection = DBConnection.GetConnection())
@@ -240,8 +240,8 @@ namespace TechSupport.DAL
                     cmd.Parameters.Add("@description", System.Data.SqlDbType.VarChar);
                     cmd.Parameters["@description"].Value = incident.Description;
 
-                    cmd.Parameters.Add("@tech", System.Data.SqlDbType.Int);
-                    cmd.Parameters["@tech"].Value = incident.TechnicianID;
+                    cmd.Parameters.Add("@tech", System.Data.SqlDbType.VarChar);
+                    cmd.Parameters["@tech"].Value = incident.TechnicianName;
 
                     cmd.Parameters.Add("@id", System.Data.SqlDbType.Int);
                     cmd.Parameters["@id"].Value = incident.IncidentID;

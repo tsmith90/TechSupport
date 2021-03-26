@@ -183,14 +183,16 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>=Count(Fields!date.Value)</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -216,7 +218,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value />
+                              <Value>incidents assigned</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
                                 <Color>#333333</Color>
@@ -565,7 +567,7 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value />
+                            <Value>Total:</Value>
                             <Style>
                               <FontWeight>Normal</FontWeight>
                               <Color>#333333</Color>
@@ -685,25 +687,65 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>OpenAssignedIncidentsDataSet</DataSetName>
-        <Height>1.03125in</Height>
+        <Top>0.72917in</Top>
+        <Left>0.36458in</Left>
+        <Height>1.03124in</Height>
         <Width>6.5in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
+          <BackgroundColor>White</BackgroundColor>
         </Style>
       </Tablix>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Open Incidents Assigned to Technicians</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>0.16542in</Top>
+        <Left>1.0925in</Left>
+        <Height>0.25in</Height>
+        <Width>4.90625in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BackgroundColor>LightBlue</BackgroundColor>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>2in</Height>
-    <Style />
+    <Height>4.0625in</Height>
+    <Style>
+      <BackgroundColor>White</BackgroundColor>
+    </Style>
   </Body>
-  <Width>6.5in</Width>
+  <Width>7.09375in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
     <BottomMargin>1in</BottomMargin>
-    <Style />
+    <Style>
+      <BackgroundColor>CornflowerBlue</BackgroundColor>
+    </Style>
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>

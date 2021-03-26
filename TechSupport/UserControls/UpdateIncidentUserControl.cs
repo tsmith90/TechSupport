@@ -194,7 +194,6 @@ namespace TechSupport.UserControls
         {
             try
             {
-
                 incidentController.UpdateIncident(incident);
             }
             catch (Exception ex)

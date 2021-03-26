@@ -30,7 +30,7 @@ namespace TechSupport.UserControls
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.incidentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.techSupportDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.techSupportDataSet = new TechSupport.TechSupportDataSet();
@@ -59,9 +59,9 @@ namespace TechSupport.UserControls
             // reportViewer
             // 
             this.reportViewer.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "OpenAssignedIncidentsDataSet";
-            reportDataSource1.Value = this.incidentsBindingSource;
-            this.reportViewer.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "OpenAssignedIncidentsDataSet";
+            reportDataSource2.Value = this.incidentsBindingSource;
+            this.reportViewer.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer.LocalReport.ReportEmbeddedResource = "TechSupport.OpenAssignedIncidentsReport.rdlc";
             this.reportViewer.Location = new System.Drawing.Point(0, 0);
             this.reportViewer.Name = "reportViewer";
